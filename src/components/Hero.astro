@@ -1,0 +1,119 @@
+<section class="hero">
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="/video/herovid.mp4" type="video/mp4" />
+    Tu navegador no soporta video HTML5.
+  </video>
+
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Valquirias Estética</h1>
+      <p>Realzá tu belleza con manos profesionales.</p>
+      <a href="/servicios" class="boton-cta">ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(232, 214, 244, 0.7), rgba(0, 0, 0, 0.2));
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .hero-content {
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    color: #a25ccf;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .boton-cta {
+    background-color: #d4af37;
+    color: #fff;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .boton-cta:hover {
+    background-color: #b8922c;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .boton-cta {
+      padding: 10px 24px;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content {
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+
+    .hero h1 {
+      font-size: 1.6rem;
+    }
+
+    .hero p {
+      font-size: 0.9rem;
+    }
+  }
+</style>

@@ -1,0 +1,72 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="/img/logoimg.png" alt="Valquirias Logo" />
+    </div>
+    <div class="footer-social">
+      <a
+        href="https://www.instagram.com"
+        target="_blank"
+        aria-label="Instagram"
+      >
+        <img src="/icons/instagram.svg" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+        <img src="/icons/facebook.svg" alt="Facebook" />
+      </a>
+      <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+        <img src="/icons/tiktok.svg" alt="TikTok" />
+      </a>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2025 Valquirias Estética. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(90deg, #f9f5fc, #fff1f9);
+    padding: 32px 20px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-logo img {
+    max-height: 64px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+  }
+
+  .footer-social img {
+    height: 32px;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
+    filter: grayscale(20%) brightness(0.9);
+  }
+
+  .footer-social img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%) brightness(1.2);
+  }
+
+  .footer-copy p {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+</style>
