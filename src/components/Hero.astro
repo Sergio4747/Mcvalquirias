@@ -14,78 +14,80 @@
 </section>
 
 <style>
-  * {
+  :global(*) {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  html,
-  body {
+  :global(html),
+  :global(body) {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    background-color: #000;
   }
 
   .hero {
     position: relative;
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Poppins", sans-serif;
+    overflow: hidden;
   }
 
   .background-video {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    min-width: 100%;
     object-fit: cover;
     z-index: 1;
-    filter: brightness(0.8);
+    filter: brightness(0.75);
+    pointer-events: none;
   }
 
   .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+    z-index: 2;
     background: linear-gradient(
       to bottom,
-      rgba(162, 92, 207, 0.3),
+      rgba(162, 92, 207, 0.4),
       rgba(0, 0, 0, 0.6)
     );
-    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
   }
 
   .hero-content {
     z-index: 3;
-    color: #fff;
-    max-width: 700px;
-    padding: 0 20px;
+    max-width: 720px;
+    padding: 1rem;
+    color: #ffffff;
     animation: fadeInUp 1.2s ease both;
   }
 
   .hero h1 {
-    font-size: 3.2rem;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
     color: #e96ee3;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
 
   .hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    color: #f5f5f5;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: #f0f0f0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   }
 
   .boton-cta {
@@ -93,11 +95,12 @@
     color: white;
     padding: 14px 32px;
     font-size: 1rem;
-    font-weight: bold;
-    border-radius: 40px;
+    font-weight: 600;
+    border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: inline-block;
   }
 
   .boton-cta:hover {
@@ -116,18 +119,38 @@
     }
   }
 
-  /* Responsive */
+  /* Tablets */
   @media (max-width: 768px) {
     .hero {
       height: 100dvh;
     }
 
     .hero-content {
-      padding-top: 60px;
+      padding: 1.5rem;
     }
 
     .hero h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    .boton-cta {
+      padding: 12px 28px;
+      font-size: 0.95rem;
+    }
+  }
+
+  /* Teléfonos */
+  @media (max-width: 480px) {
+    .hero-content {
+      padding-top: 80px;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
     }
 
     .hero p {
@@ -135,22 +158,7 @@
     }
 
     .boton-cta {
-      padding: 12px 24px;
-      font-size: 0.95rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: 1.6rem;
-    }
-
-    .hero p {
-      font-size: 0.95rem;
-    }
-
-    .boton-cta {
-      padding: 10px 20px;
+      padding: 10px 22px;
       font-size: 0.9rem;
     }
   }
