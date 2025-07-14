@@ -14,19 +14,18 @@
 </section>
 
 <style>
-  :global(*) {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  :global(html),
-  :global(body) {
+  html,
+  body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
     font-family: "Poppins", sans-serif;
-    background-color: #000;
   }
 
   .hero {
@@ -46,7 +45,7 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    filter: brightness(0.75);
+    filter: brightness(0.7);
     pointer-events: none;
   }
 
@@ -56,51 +55,47 @@
     z-index: 2;
     background: linear-gradient(
       to bottom,
-      rgba(162, 92, 207, 0.4),
+      rgba(162, 92, 207, 0.3),
       rgba(0, 0, 0, 0.6)
     );
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 20px;
     text-align: center;
   }
 
   .hero-content {
     z-index: 3;
-    max-width: 720px;
+    max-width: 800px;
+    color: white;
     padding: 1rem;
-    color: #ffffff;
-    animation: fadeInUp 1.2s ease both;
   }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-size: 3.5rem;
     color: #e96ee3;
     font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   .hero p {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: #f0f0f0;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
-    line-height: 1.6;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    color: #f2f2f2;
   }
 
   .boton-cta {
     background-color: #d4af37;
     color: white;
-    padding: 14px 32px;
-    font-size: 1rem;
+    padding: 16px 36px;
+    font-size: 1.2rem;
     font-weight: 600;
-    border-radius: 50px;
+    border-radius: 40px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
   .boton-cta:hover {
@@ -108,25 +103,9 @@
     transform: scale(1.05);
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Responsive – celulares */
-  @media (max-width: 480px) {
-    .hero-content {
-      padding-top: 80px;
-    }
-
+  @media (max-width: 768px) {
     .hero h1 {
-      font-size: 2.3rem;
+      font-size: 2.8rem;
     }
 
     .hero p {
@@ -134,22 +113,23 @@
     }
 
     .boton-cta {
-      padding: 14px 26px;
       font-size: 1.1rem;
+      padding: 14px 30px;
     }
   }
+
   @media (max-width: 480px) {
     .hero h1 {
-      font-size: 2.8rem !important;
+      font-size: 2.4rem;
     }
 
     .hero p {
-      font-size: 1.5rem !important;
+      font-size: 1.2rem;
     }
 
     .boton-cta {
-      font-size: 1.2rem !important;
-      padding: 16px 30px !important;
+      font-size: 1.05rem;
+      padding: 14px 26px;
     }
   }
 </style>
