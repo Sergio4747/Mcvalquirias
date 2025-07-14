@@ -75,7 +75,7 @@
   }
 
   .hero h1 {
-    font-size: (2.5rem, 6vw, 3.5rem);
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
     color: #e96ee3;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -83,7 +83,7 @@
   }
 
   .hero p {
-    font-size: (1.1rem, 2.5vw, 1.4rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     color: #f0f0f0;
     margin-bottom: 2rem;
     line-height: 1.6;
@@ -122,16 +122,16 @@
   /* Responsive – celulares */
   @media (max-width: 768px) {
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
     }
 
     .hero p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
     .boton-cta {
       padding: 16px 32px;
-      font-size: 2rem;
+      font-size: 1.05rem;
     }
   }
 
@@ -156,11 +156,11 @@
     }
 
     .hero p {
-      font-size: 1.7rem !important;
+      font-size: 1.5rem !important;
     }
 
     .boton-cta {
-      font-size: 1.7rem !important;
+      font-size: 1.2rem !important;
       padding: 16px 30px !important;
     }
   }
