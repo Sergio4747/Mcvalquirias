@@ -1,163 +1,399 @@
 ---
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 ---
 
+<Header />
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto - Valquirias Uñas</title>
+  <title>Servicios - Valquirias Estética</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
-<section class="contacto">
-  <h2>Reservá tu turno para Uñas</h2>
-  <p class="intro">
-    Este formulario está destinado exclusivamente al local de Uñas.
-  </p>
+<section class="servicios">
+  <h2>Servicios</h2>
+  <div class="accordion">
+    <details>
+      <summary>💇‍♀️ Peluquería</summary>
+      <ul>
+        <li><span>Corte - $20.000</span><a href="/contacto">Reservar</a></li>
+        <li>
+          <span>Nutrición - $30.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li><span>Alisado - $40.000</span><a href="/contacto">Reservar</a></li>
+        <li><span>Peinados - $30.000</span><a href="/contacto">Reservar</a></li>
+        <li>
+          <span>Color S/ Deco - $35.000</span><a href="/contacto">Reservar</a>
+        </li>
+      </ul>
+    </details>
 
-  <form class="formulario" onsubmit="enviarWhatsapp(event)">
-    <label for="nombre">Nombre completo</label>
-    <input type="text" id="nombre" name="nombre" required />
+    <details>
+      <summary>👁️ Lashista</summary>
+      <ul>
+        <li>
+          <span>Clásicas PXP - $21.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li>
+          <span>2D Clásicas - $23.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li><span>2D Rímel - $24.000</span><a href="/contacto">Reservar</a></li>
+        <li>
+          <span>Volumen Mojado - $45.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li>
+          <span>Volumen Brasileño - $22.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+        <li>
+          <span>Volumen Híbrido - $38.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li>
+          <span>Volumen Egipcio - $40.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li>
+          <span>Volumen Ruso - $40.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li><span>Foxy - $30.000</span><a href="/contacto">Reservar</a></li>
+        <li><span>Wispy - $32.000</span><a href="/contacto">Reservar</a></li>
+        <li><span>Kim K - $32.000</span><a href="/contacto">Reservar</a></li>
+        <li><span>Retiro - $7.000</span><a href="/contacto">Reservar</a></li>
+        <li><span>Lifting - $20.000</span><a href="/contacto">Reservar</a></li>
+        <li>
+          <span>Nutrición + Color - $30.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+      </ul>
+    </details>
 
-    <label for="telefono">Teléfono</label>
-    <input type="tel" id="telefono" name="telefono" required />
+    <details>
+      <summary>🪞 Cejas</summary>
+      <ul>
+        <li>
+          <span>Perfilado c/ Hilo - $6.000</span><a href="/contacto">Reservar</a
+          >
+        </li>
+        <li>
+          <span>Con Navaja - $6.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li><span>Laminado - $20.000</span><a href="/contacto">Reservar</a></li>
+        <li><span>Henna - $15.000</span><a href="/contacto">Reservar</a></li>
+        <li>
+          <span>Nutrición Cejas - $30.000</span><a href="/contacto">Reservar</a>
+        </li>
+      </ul>
+    </details>
 
-    <label for="servicio">Servicio de Uñas</label>
-    <select id="servicio" name="servicio" required>
-      <option value="">Seleccioná un servicio</option>
-      <option value="Semipermanente">Semipermanente</option>
-      <option value="Capping/Rubber">Capping/Rubber</option>
-      <option value="Polygel">Polygel</option>
-      <option value="Soft Gel">Soft Gel</option>
-      <option value="Acrílicas">Acrílicas</option>
-      <option value="Service">Service</option>
-      <option value="Remoción">Remoción</option>
-    </select>
+    <details>
+      <summary>💅 Manicura</summary>
+      <ul>
+        <li>
+          <span>Semipermanente - $20.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li>
+          <span>Capping/Rubber - $26.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li>
+          <span>Capping Polygel - $27.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li><span>Dipping - $29.000</span><a href="/contacto">Reservar</a></li>
+        <li><span>Soft Gel - $27.000</span><a href="/contacto">Reservar</a></li>
+        <li><span>Polygel - $30.000</span><a href="/coentacto">Reservar</a></li>
+        <li><span>Gel - $30.000</span><a href="/contacto">Reservar</a></li>
+        <li>
+          <span>Acrílicas - $32.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li><span>Nail Art - $6.000</span><a href="/contacto">Reservar</a></li>
+        <li>
+          <span>Remoción (s/ Ap) - $6.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li>
+          <span>Retiro (Nueva Ap) - $5.000</span><a href="/contacto">Reservar</a
+          >
+        </li>
+        <li>
+          <span>Retiro Otro Salón - $8.000</span><a href="/contacto">Reservar</a
+          >
+        </li>
+        <li>
+          <span>Service Soft Gel - $23.000</span><a href="/contacto">Reservar</a
+          >
+        </li>
+        <li>
+          <span>Service Esc. Polygel - $25.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+        <li>
+          <span>Service Esc. Acrílico - $27.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+        <li>
+          <span>Service Esc. Gel - $25.000</span><a href="/contacto">Reservar</a
+          >
+        </li>
+        <li>
+          <span>Esmaltado Tradicional - $15.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+      </ul>
+    </details>
 
-    <label for="mensaje">Mensaje adicional</label>
-    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+    <details>
+      <summary>🧖‍♀️ Spa</summary>
+      <ul>
+        <li><span>Manos - $12.000</span><a href="/contacto">Reservar</a></li>
+        <li>
+          <span>Pies s/ Esmaltado - $12.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+        <li>
+          <span>Pies c/ Esmaltado - $25.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+      </ul>
+    </details>
 
-    <button type="submit" class="whatsapp-btn">
-      <img src="/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon" />
-      Enviar por WhatsApp
-    </button>
-  </form>
+    <details>
+      <summary>🧴 Facial</summary>
+      <ul>
+        <li>
+          <span>Higiene de Rostro Básico - $25.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+        <li>
+          <span>Limpieza e Hidratación - $35.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+        <li>
+          <span>Revitalización Cutánea - $30.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+        <li>
+          <span>Humectación - $30.000</span><a href="/contacto">Reservar</a>
+        </li>
+        <li><span>Peelings - $45.000</span><a href="/contacto">Reservar</a></li>
+        <li>
+          <span>Máscara Desestresante - $30.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+        <li>
+          <span>Radiofrecuencia - $35.000</span><a href="/contacto">Reservar</a>
+        </li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🪒 Depilación</summary>
+      <ul>
+        <li>
+          <span>Láser Cuerpo Completo - $30.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+        <li>
+          <span>5 Zonas a Elección - $25.000</span><a href="/contacto"
+            >Reservar</a
+          >
+        </li>
+      </ul>
+    </details>
+  </div>
 </section>
-
-<script is:inline>
-  function enviarWhatsapp(event) {
-    event.preventDefault();
-
-    const nombre = document.getElementById("nombre").value;
-    const telefono = document.getElementById("telefono").value;
-    const servicio = document.getElementById("servicio").value;
-    const mensaje = document.getElementById("mensaje").value;
-
-    const texto = `Hola! Quiero reservar un turno para Uñas:\n\nNombre: ${nombre}\nTeléfono: ${telefono}\nServicio: ${servicio}\nMensaje: ${mensaje}`;
-
-    const url = `https://wa.me/5491176039317?text=${encodeURIComponent(texto)}`;
-    window.open(url, "_blank");
-  }
-</script>
+<Footer />
 
 <style>
-  .contacto {
-    background: linear-gradient(to bottom, #f9f5fc, #fefefe);
-    padding: 100px 24px;
+  :root {
+    --lila: #a25ccf;
+    --lila-dark: #8b49ba;
+    --dorado: #d4af37;
+    --blanco: #ffffff;
+    --fuente: "Poppins", sans-serif;
+    --suave: #fdf9ff;
+    --linea: #e8d9f6;
+    --sombra: 0 4px 30px rgba(162, 92, 207, 0.1);
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--fuente);
+    background-color: var(--suave);
+  }
+
+  .servicios {
+    background: radial-gradient(circle at top left, #fff1ff, #fdfbff);
+    padding: 100px 24px 80px;
     text-align: center;
-    font-family: "Poppins", sans-serif;
-    animation: fadeInUp 0.8s ease-in-out both;
+    position: relative;
+    overflow: hidden;
   }
 
-  .contacto h2 {
-    color: #a25ccf;
-    font-size: 3rem;
-    margin-bottom: 16px;
-    animation: fadeIn 1s ease-in-out both;
+  .servicios::before,
+  .servicios::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(var(--dorado), transparent);
+    opacity: 0.06;
+    animation: flotar 10s infinite ease-in-out;
   }
 
-  .contacto .intro {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    color: #555;
-    animation: fadeIn 1.2s ease-in-out both;
+  .servicios::before {
+    top: -80px;
+    left: -80px;
   }
 
-  .formulario {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  .servicios::after {
+    bottom: -80px;
+    right: -80px;
+  }
+
+  .servicios h2 {
+    color: var(--lila);
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    position: relative;
+    animation: fadeInDown 1s ease-in-out;
+  }
+
+  .servicios h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: var(--dorado);
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+
+  .intro {
+    color: #6a6a6a;
+    font-size: 1.2rem;
+    margin-bottom: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+
+  .accordion details {
     background: #fff;
-    padding: 32px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    animation: fadeInUp 1.3s ease-in-out both;
+    border: 1px solid var(--linea);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+    margin-bottom: 28px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
   }
 
-  .formulario label {
-    font-weight: 600;
-    color: #333;
-    text-align: left;
-    transition: color 0.3s;
+  .accordion details[open] {
+    transform: scale(1.01);
+    border-color: var(--lila);
   }
 
-  .formulario input,
-  .formulario select,
-  .formulario textarea {
-    padding: 12px 16px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: all 0.3s ease;
-  }
-
-  .formulario input:focus,
-  .formulario select:focus,
-  .formulario textarea:focus {
-    border-color: #a25ccf;
-    box-shadow: 0 0 0 3px rgba(162, 92, 207, 0.2);
-    outline: none;
-  }
-
-  .formulario button {
-    background: #25d366;
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 600;
+  .accordion summary {
+    background: linear-gradient(90deg, var(--dorado), var(--lila));
+    color: var(--blanco);
+    font-size: 1.6rem;
+    padding: 22px 30px;
     cursor: pointer;
-    transition:
-      transform 0.3s,
-      background 0.3s,
-      box-shadow 0.3s;
-    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.25);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+  }
+
+  .accordion summary:hover {
+    filter: brightness(1.08);
+  }
+
+  .accordion ul {
+    list-style: none;
+    margin: 0;
+    padding: 32px 20px;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .accordion li {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    margin-bottom: 16px;
+    padding: 18px 24px;
+    background: var(--blanco);
+    border-left: 6px solid var(--lila);
+    border-radius: 14px;
+    font-size: 1.1rem;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(162, 92, 207, 0.08);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
-  .formulario button:hover {
-    background: #1ebe5b;
+  .accordion li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(162, 92, 207, 0.15);
+  }
+
+  .accordion li span {
+    text-align: left;
+    flex: 1;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #4a4a4a;
+  }
+
+  .accordion li .precio {
+    color: var(--dorado);
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    margin-top: 4px;
+  }
+
+  .accordion li a {
+    background: var(--lila);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(162, 92, 207, 0.12);
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .accordion li a:hover {
+    background: var(--lila-dark);
     transform: scale(1.05);
-    box-shadow: 0 6px 14px rgba(37, 211, 102, 0.3);
   }
 
-  .whatsapp-icon {
-    height: 20px;
-    width: 20px;
-    filter: brightness(0) invert(1);
-  }
-
-  @keyframes fadeInUp {
+  @keyframes fadeInDown {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(-20px);
     }
     to {
       opacity: 1;
@@ -171,6 +407,38 @@ import Footer from "../components/Footer.astro";
     }
     to {
       opacity: 1;
+    }
+  }
+
+  @keyframes flotar {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .accordion li {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+  }
+  html,
+  body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+  }
+  @media (max-width: 768px) {
+    .nav-toggle {
+      margin-right: 16px;
     }
   }
 </style>

@@ -15,6 +15,10 @@ import Header from "../components/Header.astro";
 </head>
 
 <section class="servicios">
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="/video/fondo.mp4" type="video/mp4" />
+    Tu navegador no soporta video HTML5.
+  </video>
   <h2>Servicios</h2>
   <div class="accordion">
     <details>
@@ -232,36 +236,30 @@ import Header from "../components/Header.astro";
     margin: 0;
     font-family: var(--fuente);
     background-color: var(--suave);
+    background-image: none;
   }
 
   .servicios {
-    background: radial-gradient(circle at top left, #fff1ff, #fdfbff);
+    position: relative;
     padding: 100px 24px 80px;
     text-align: center;
-    position: relative;
     overflow: hidden;
   }
 
-  .servicios::before,
-  .servicios::after {
-    content: "";
+  .background-video {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(var(--dorado), transparent);
-    opacity: 0.06;
-    animation: flotar 10s infinite ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.5);
   }
 
-  .servicios::before {
-    top: -80px;
-    left: -80px;
-  }
-
-  .servicios::after {
-    bottom: -80px;
-    right: -80px;
+  .servicios-overlay {
+    position: relative;
+    z-index: 2;
   }
 
   .servicios h2 {
@@ -269,30 +267,14 @@ import Header from "../components/Header.astro";
     font-size: 3.2rem;
     margin-bottom: 12px;
     font-weight: 600;
+    text-shadow: 2px 2px #fff;
     position: relative;
     animation: fadeInDown 1s ease-in-out;
   }
 
-  .servicios h2::after {
-    content: "";
-    width: 80px;
-    height: 4px;
-    background: var(--dorado);
-    position: absolute;
-    bottom: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-  }
-
-  .intro {
-    color: #6a6a6a;
-    font-size: 1.2rem;
-    margin-bottom: 48px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeIn 1.2s ease-in-out;
+  .accordion {
+    position: relative;
+    z-index: 2;
   }
 
   .accordion details {
@@ -304,56 +286,65 @@ import Header from "../components/Header.astro";
     overflow: hidden;
     transition: all 0.4s ease;
     position: relative;
-  }
-
-  .accordion details[open] {
-    transform: scale(1.01);
-    border-color: var(--lila);
+    animation: fadeIn 0.6s ease-in-out;
   }
 
   .accordion summary {
-    background: linear-gradient(90deg, var(--dorado), var(--lila));
+    background: linear-gradient(90deg, #f1d6ff, #c58aff);
     color: var(--blanco);
     font-size: 1.6rem;
-    padding: 22px 30px;
+    padding: 24px 32px;
     cursor: pointer;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: background 0.3s;
+    border-radius: 18px 18px 0 0;
+    transition:
+      background 0.3s,
+      transform 0.3s ease;
   }
 
   .accordion summary:hover {
     filter: brightness(1.08);
-  }
-
-  .accordion ul {
-    list-style: none;
-    margin: 0;
-    padding: 32px 20px;
-    animation: fadeIn 0.6s ease-in-out;
+    transform: scale(1.01);
   }
 
   .accordion li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
-    padding: 18px 24px;
+    margin-bottom: 20px;
+    padding: 20px 26px;
     background: var(--blanco);
     border-left: 6px solid var(--lila);
     border-radius: 14px;
     font-size: 1.1rem;
     color: #333;
     box-shadow: 0 2px 10px rgba(162, 92, 207, 0.08);
-    transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease;
+    transition: all 0.3s ease;
   }
 
   .accordion li:hover {
-    transform: translateY(-4px);
+    transform: scale(1.02);
     box-shadow: 0 6px 16px rgba(162, 92, 207, 0.15);
+  }
+
+  .accordion li a {
+    background: linear-gradient(90deg, #f1d6ff, #c58aff);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 12px 26px;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .accordion li a:hover {
+    background: linear-gradient(90deg, #c58aff, #a25ccf);
+    transform: scale(1.05);
   }
 
   .accordion li span {
@@ -364,62 +355,6 @@ import Header from "../components/Header.astro";
     color: #4a4a4a;
   }
 
-  .accordion li .precio {
-    color: var(--dorado);
-    font-size: 1rem;
-    font-weight: 600;
-    display: block;
-    margin-top: 4px;
-  }
-
-  .accordion li a {
-    background: var(--lila);
-    color: var(--blanco);
-    text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 30px;
-    font-size: 0.95rem;
-    transition: all 0.3s;
-    font-weight: 500;
-    box-shadow: 0 4px 10px rgba(162, 92, 207, 0.12);
-    font-family: "Montserrat", sans-serif;
-  }
-
-  .accordion li a:hover {
-    background: var(--lila-dark);
-    transform: scale(1.05);
-  }
-
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes flotar {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
   @media (max-width: 600px) {
     .accordion li {
       flex-direction: column;
@@ -427,15 +362,17 @@ import Header from "../components/Header.astro";
       text-align: center;
     }
   }
+
   html,
   body {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Opera */
+    display: none;
   }
+
   @media (max-width: 768px) {
     .nav-toggle {
       margin-right: 16px;

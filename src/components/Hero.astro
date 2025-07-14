@@ -8,9 +8,39 @@
     <div class="hero-content">
       <h1>Valquirias Estética</h1>
       <p>Realzá tu belleza con manos profesionales.</p>
-      <a href="/servicios" class="boton-cta">Ver servicios</a>
+      <div class="buttons">
+        <button class="blob-btn">
+          Ver servicios
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"
+        ></feGaussianBlur>
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  
+                  0 1 0 0 0  
+                  0 0 1 0 0  
+                  0 0 0 21 -7"
+          result="goo"></feColorMatrix>
+        <feBlend in="SourceGraphic" in2="goo"></feBlend>
+      </filter>
+    </defs>
+  </svg>
 </section>
 
 <style>
@@ -90,22 +120,98 @@
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   }
 
-  .boton-cta {
-    background-color: #d4af37;
-    color: white;
-    padding: 14px 32px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    display: inline-block;
+  /* BLOB BUTTON */
+  .buttons {
+    text-align: center;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
   }
 
-  .boton-cta:hover {
-    background-color: #b8922c;
-    transform: scale(1.05);
+  .blob-btn {
+    position: relative;
+    padding: 16px 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: transparent;
+    color: #d4af37;
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+    z-index: 1;
+  }
+
+  .blob-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid #d4af37;
+    border-radius: inherit;
+    z-index: 1;
+  }
+
+  .blob-btn::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: white;
+    border-radius: inherit;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+
+  .blob-btn:hover {
+    color: white;
+  }
+
+  .blob-btn:hover::after {
+    background: #d4af37;
+  }
+
+  .blob-btn__inner {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+
+  .blob-btn__blobs {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: url("#goo");
+  }
+
+  .blob-btn__blob {
+    position: absolute;
+    top: 2px;
+    width: 25%;
+    height: 100%;
+    background: #d4af37;
+    border-radius: 50%;
+    transform: translateY(150%) scale(1.4);
+    transition: transform 0.45s;
+  }
+
+  .blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+  }
+  .blob-btn__blob:nth-child(2) {
+    left: 30%;
+    transition-delay: 0.08s;
+  }
+  .blob-btn__blob:nth-child(3) {
+    left: 60%;
+    transition-delay: 0.16s;
+  }
+  .blob-btn__blob:nth-child(4) {
+    left: 90%;
+    transition-delay: 0.24s;
+  }
+
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateY(0%) scale(1.4);
   }
 
   @keyframes fadeInUp {
@@ -119,51 +225,36 @@
     }
   }
 
-  /* Responsive – celulares */
   @media (max-width: 768px) {
     .hero h1 {
+      font-size: 10rem;
+    }
+
+    .hero p {
       font-size: 4rem;
     }
 
-    .hero p {
-      font-size: 2rem;
-    }
-
-    .boton-cta {
-      padding: 16px 32px;
-      font-size: 3rem;
+    .blob-btn {
+      padding: 18px 36px;
+      font-size: 2.4rem;
     }
   }
 
   @media (max-width: 480px) {
     .hero h1 {
-      font-size: 2.4rem; /* antes 1.6rem */
+      font-size: 2.8rem;
     }
 
     .hero p {
-      font-size: 1.15rem; /* antes 0.95rem */
+      font-size: 1.5rem;
     }
 
-    .boton-cta {
-      padding: 14px 28px; /* más grande y cómodo */
-      font-size: 1rem; /* más legible */
+    .blob-btn {
+      font-size: 1.2rem;
+      padding: 16px 30px;
     }
   }
 
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: 2.8rem !important;
-    }
-
-    .hero p {
-      font-size: 1.5rem !important;
-    }
-
-    .boton-cta {
-      font-size: 1.2rem !important;
-      padding: 16px 30px !important;
-    }
-  }
   @media (max-width: 768px) {
     .hero {
       max-height: 100dvh;
@@ -172,3 +263,9 @@
     }
   }
 </style>
+
+<script>
+  document.querySelector(".blob-btn")?.addEventListener("click", () => {
+    window.location.href = "/servicios";
+  });
+</script>
