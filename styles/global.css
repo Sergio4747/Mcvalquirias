@@ -27,13 +27,13 @@ html, body {
 body {
   position: relative;
 }
-/* Ocultar scrollbar en todos los navegadores modernos */
+/* Oculta el scrollbar pero mantiene el scroll funcional */
 html, body {
-  overflow: hidden;
-  scrollbar-width: none;      /* Firefox */
-  -ms-overflow-style: none;   /* Internet Explorer 10+ */
+  overflow: auto;
+  -ms-overflow-style: none;  /* IE y Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 
 body::-webkit-scrollbar {
-  display: none;              /* Chrome, Safari y Edge */
+  display: none;             /* Chrome, Safari y Edge (Webkit) */
 }
