@@ -420,4 +420,13 @@ import Header from "../components/Header.astro";
       text-align: center;
     }
   }
+  html,
+  body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+  }
 </style>
