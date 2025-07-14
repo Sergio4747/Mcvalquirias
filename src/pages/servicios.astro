@@ -244,6 +244,14 @@ import Header from "../components/Header.astro";
     padding: 100px 24px 80px;
     text-align: center;
     overflow: hidden;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+
+  .servicios.fade-out {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
   }
 
   .background-video {
@@ -255,11 +263,6 @@ import Header from "../components/Header.astro";
     object-fit: cover;
     z-index: 1;
     filter: brightness(0.5);
-  }
-
-  .servicios-overlay {
-    position: relative;
-    z-index: 2;
   }
 
   .servicios h2 {
@@ -286,7 +289,16 @@ import Header from "../components/Header.astro";
     overflow: hidden;
     transition: all 0.4s ease;
     position: relative;
-    animation: fadeIn 0.6s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .accordion details.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
   }
 
   .accordion summary {
@@ -302,6 +314,7 @@ import Header from "../components/Header.astro";
     transition:
       background 0.3s,
       transform 0.3s ease;
+    animation: pulse 3s infinite;
   }
 
   .accordion summary:hover {
@@ -363,52 +376,35 @@ import Header from "../components/Header.astro";
     }
   }
 
-  html,
-  body {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  body::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    .nav-toggle {
-      margin-right: 16px;
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
     }
   }
-  #bloque-servicios {
-    transition:
-      opacity 0.4s ease,
-      transform 0.4s ease;
-    will-change: opacity, transform;
-  }
-
-  #bloque-servicios.oculto {
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
+  .fade-out {
+    opacity: 0.2;
+    transition: opacity 0.6s ease;
   }
 </style>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const servicios = document.getElementById(
-      "bloque-servicios"
-    ) as HTMLElement | null;
-    let lastScroll = window.scrollY;
+    const bloqueServicios = document.querySelector("#bloque-servicios");
+    if (!bloqueServicios) return;
 
-    if (!servicios) return;
+    let lastScroll = window.scrollY;
 
     window.addEventListener("scroll", () => {
       const currentScroll = window.scrollY;
 
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        // Scroll hacia abajo: ocultar
-        servicios.classList.add("oculto");
+      if (currentScroll > lastScroll) {
+        bloqueServicios.classList.add("fade-out");
       } else {
-        // Scroll hacia arriba: mostrar
-        servicios.classList.remove("oculto");
+        bloqueServicios.classList.remove("fade-out");
       }
 
       lastScroll = currentScroll;
