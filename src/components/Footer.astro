@@ -3,6 +3,7 @@
     <div class="footer-logo">
       <img src="/img/logoimg.png" alt="Valquirias Logo" />
     </div>
+
     <div class="footer-social">
       <a
         href="https://www.instagram.com"
@@ -18,55 +19,79 @@
         <img src="/icons/tiktok.svg" alt="TikTok" />
       </a>
     </div>
+
     <div class="footer-copy">
-      <p>&copy; 2025 Valquirias Estética. Todos los derechos reservados.</p>
+      <p>
+        &copy; 2025 <strong>Valquirias Estética</strong>. Todos los derechos
+        reservados.
+      </p>
     </div>
   </div>
 </footer>
 
 <style>
   .footer {
-    background: linear-gradient(90deg, #f9f5fc, #fff1f9);
-    padding: 13px 10px;
-    text-align: center;
-    font-family: sans-serif;
+    background: linear-gradient(135deg, #f6e9ff, #fef4ff);
+    padding: 30px 20px;
+    box-shadow: 0 -4px 20px rgba(162, 92, 207, 0.1);
+    font-family: "Poppins", sans-serif;
   }
 
   .footer-container {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
   }
 
   .footer-logo img {
-    max-height: 64px;
+    max-height: 70px;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-logo img:hover {
+    transform: scale(1.05);
   }
 
   .footer-social {
     display: flex;
-    gap: 18px;
+    gap: 22px;
     justify-content: center;
   }
 
-  .footer-social img {
-    height: 32px;
-    transition:
-      transform 0.3s ease,
-      filter 0.3s ease;
-    filter: grayscale(20%) brightness(0.9);
+  .footer-social a img {
+    height: 34px;
+    transition: all 0.3s ease;
+    filter: grayscale(40%) brightness(0.9);
   }
 
-  .footer-social img:hover {
+  .footer-social a:hover img {
+    filter: none;
     transform: scale(1.2);
-    filter: grayscale(0%) brightness(1.2);
   }
 
   .footer-copy p {
-    color: #888;
-    font-size: 0.9rem;
-    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  @media (max-width: 600px) {
+    .footer {
+      padding: 20px 10px;
+    }
+
+    .footer-logo img {
+      max-height: 60px;
+    }
+
+    .footer-social {
+      gap: 18px;
+    }
+
+    .footer-copy p {
+      font-size: 0.85rem;
+    }
   }
 </style>
