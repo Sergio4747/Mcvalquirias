@@ -385,29 +385,4 @@ import Header from "../components/Header.astro";
       transform: scale(1.02);
     }
   }
-  .fade-out {
-    opacity: 0.2;
-    transition: opacity 0.6s ease;
-  }
 </style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const bloqueServicios = document.querySelector("#bloque-servicios");
-    if (!bloqueServicios) return;
-
-    let lastScroll = window.scrollY;
-
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.scrollY;
-
-      if (currentScroll > lastScroll) {
-        bloqueServicios.classList.add("fade-out");
-      } else {
-        bloqueServicios.classList.remove("fade-out");
-      }
-
-      lastScroll = currentScroll;
-    });
-  });
-</script>
