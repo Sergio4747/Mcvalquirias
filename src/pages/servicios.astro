@@ -217,8 +217,9 @@ import Header from "../components/Header.astro";
     --dorado: #d4af37;
     --blanco: #ffffff;
     --fuente: "Poppins", sans-serif;
-    --suave: #f4edfb;
+    --suave: #fdf9ff;
     --linea: #e8d9f6;
+    --sombra: 0 4px 30px rgba(162, 92, 207, 0.1);
   }
 
   body {
@@ -228,22 +229,47 @@ import Header from "../components/Header.astro";
   }
 
   .servicios {
-    background: linear-gradient(to bottom, #f9f5fc, #fefefe);
-    padding: 80px 24px;
+    background: radial-gradient(circle at top left, #fff1ff, #fdfbff);
+    padding: 100px 24px 80px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .servicios::before,
+  .servicios::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(var(--dorado), transparent);
+    opacity: 0.06;
+    animation: flotar 10s infinite ease-in-out;
+  }
+
+  .servicios::before {
+    top: -80px;
+    left: -80px;
+  }
+
+  .servicios::after {
+    bottom: -80px;
+    right: -80px;
   }
 
   .servicios h2 {
     color: var(--lila);
     font-size: 3.2rem;
-    margin-bottom: 48px;
+    margin-bottom: 12px;
     font-weight: 600;
     position: relative;
+    animation: fadeInDown 1s ease-in-out;
   }
 
   .servicios h2::after {
     content: "";
-    width: 60px;
+    width: 80px;
     height: 4px;
     background: var(--dorado);
     position: absolute;
@@ -253,36 +279,53 @@ import Header from "../components/Header.astro";
     border-radius: 2px;
   }
 
+  .intro {
+    color: #6a6a6a;
+    font-size: 1.2rem;
+    margin-bottom: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+
   .accordion details {
-    background: var(--blanco);
+    background: #fff;
     border: 1px solid var(--linea);
-    border-radius: 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
     margin-bottom: 28px;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+
+  .accordion details[open] {
+    transform: scale(1.01);
+    border-color: var(--lila);
   }
 
   .accordion summary {
     background: linear-gradient(90deg, var(--dorado), var(--lila));
     color: var(--blanco);
     font-size: 1.6rem;
-    padding: 20px 30px;
+    padding: 22px 30px;
     cursor: pointer;
-    user-select: none;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: background 0.3s;
   }
 
   .accordion summary:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.08);
   }
 
   .accordion ul {
     list-style: none;
     margin: 0;
-    padding: 28px 20px;
+    padding: 32px 20px;
+    animation: fadeIn 0.6s ease-in-out;
   }
 
   .accordion li {
@@ -303,15 +346,16 @@ import Header from "../components/Header.astro";
   }
 
   .accordion li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(162, 92, 207, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(162, 92, 207, 0.15);
   }
 
   .accordion li span {
     text-align: left;
     flex: 1;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.6;
+    color: #4a4a4a;
   }
 
   .accordion li .precio {
@@ -326,16 +370,47 @@ import Header from "../components/Header.astro";
     background: var(--lila);
     color: var(--blanco);
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 30px;
     font-size: 0.95rem;
-    transition: background 0.3s;
+    transition: all 0.3s;
     font-weight: 500;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 10px rgba(162, 92, 207, 0.12);
   }
 
   .accordion li a:hover {
     background: var(--lila-dark);
+    transform: scale(1.05);
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes flotar {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   @media (max-width: 600px) {
