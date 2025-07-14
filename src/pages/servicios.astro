@@ -14,7 +14,7 @@ import Header from "../components/Header.astro";
   />
 </head>
 
-<section class="servicios">
+<section id="bloque-servicios" class="servicios">
   <video autoplay muted loop playsinline class="background-video">
     <source src="/video/fondo.mp4" type="video/mp4" />
     Tu navegador no soporta video HTML5.
@@ -378,4 +378,40 @@ import Header from "../components/Header.astro";
       margin-right: 16px;
     }
   }
+  #bloque-servicios {
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+    will-change: opacity, transform;
+  }
+
+  #bloque-servicios.oculto {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const servicios = document.getElementById(
+      "bloque-servicios"
+    ) as HTMLElement | null;
+    let lastScroll = window.scrollY;
+
+    if (!servicios) return;
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        // Scroll hacia abajo: ocultar
+        servicios.classList.add("oculto");
+      } else {
+        // Scroll hacia arriba: mostrar
+        servicios.classList.remove("oculto");
+      }
+
+      lastScroll = currentScroll;
+    });
+  });
+</script>
