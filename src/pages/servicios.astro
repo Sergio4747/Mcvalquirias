@@ -244,14 +244,6 @@ import Header from "../components/Header.astro";
     padding: 100px 24px 80px;
     text-align: center;
     overflow: hidden;
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
-  }
-
-  .servicios.fade-out {
-    opacity: 0;
-    transform: translateY(40px) scale(0.98);
   }
 
   .background-video {
@@ -262,7 +254,11 @@ import Header from "../components/Header.astro";
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    filter: brightness(0.5);
+  }
+
+  .servicios-overlay {
+    position: relative;
+    z-index: 2;
   }
 
   .servicios h2 {
@@ -289,16 +285,7 @@ import Header from "../components/Header.astro";
     overflow: hidden;
     transition: all 0.4s ease;
     position: relative;
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  .accordion details.visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
+    animation: fadeIn 0.6s ease-in-out;
   }
 
   .accordion summary {
@@ -314,7 +301,6 @@ import Header from "../components/Header.astro";
     transition:
       background 0.3s,
       transform 0.3s ease;
-    animation: pulse 3s infinite;
   }
 
   .accordion summary:hover {
@@ -376,13 +362,112 @@ import Header from "../components/Header.astro";
     }
   }
 
-  @keyframes pulse {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.02);
+  html,
+  body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle {
+      margin-right: 16px;
     }
   }
+  #bloque-servicios {
+    transition: opacity 0.6s ease;
+  }
+
+  .fade-out {
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  /* Animaciones */
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes tiltIn {
+    from {
+      transform: rotateX(5deg) translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: rotateX(0) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideLeft {
+    from {
+      transform: translateX(-40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .slide-up {
+    animation: slideUp 0.8s ease forwards;
+  }
+
+  .zoom-in {
+    animation: zoomIn 0.8s ease forwards;
+  }
+
+  .tilt {
+    animation: tiltIn 0.8s ease forwards;
+  }
+
+  .slide-left {
+    animation: slideLeft 0.8s ease forwards;
+  }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(
+              "slide-up",
+              "zoom-in",
+              "tilt",
+              "slide-left"
+            );
+            observer.unobserve(entry.target); // solo una vez
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    const servicios = document.querySelectorAll(".accordion details");
+    servicios.forEach((item) => observer.observe(item));
+  });
+</script>

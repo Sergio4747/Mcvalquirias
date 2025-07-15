@@ -1,132 +1,139 @@
----
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
----
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto - Valquirias Estética</title>
 </head>
 
-<section class="contacto">
-  <h2>Reservá tu turno personalizado</h2>
-  <p class="intro">
-    Completá el formulario y nos pondremos en contacto a la brevedad.
-  </p>
+<section class="formulario-section">
+  <video autoplay muted loop playsinline class="form-background">
+    <source src="/video/fondoform.mp4" type="video/mp4" />
+    Tu navegador no soporta video HTML5.
+  </video>
 
-  <form class="formulario" action="#" method="POST">
-    <label for="nombre">Nombre completo</label>
-    <input type="text" id="nombre" name="nombre" required />
+  <form class="formulario" onsubmit="enviarWhatsApp(event)">
+    <h2>Reservá tu turno</h2>
 
-    <label for="telefono">Teléfono</label>
-    <input type="tel" id="telefono" name="telefono" required />
+    <input type="text" id="nombre" placeholder="Tu nombre" required />
+    <input type="tel" id="telefono" placeholder="Tu teléfono" required />
 
-    <label for="servicio">Servicio</label>
-    <select
-      id="servicio"
-      name="servicio"
-      required
-      onchange="redirigirLocal(this.value)"
-    >
-      <option value="">Seleccioná un servicio</option>
-      <option value="peluqueria">Peluquería</option>
-      <option value="lashista">Lashista</option>
-      <option value="cejas">Cejas</option>
-      <option value="spa">Spa</option>
-      <option value="facial">Facial</option>
-      <option value="depilacion">Depilación</option>
+    <select id="servicio" required>
+      <option value="">Elegí un servicio</option>
+      <option value="Peluquería">Peluquería</option>
+      <option value="Lashista">Lashista</option>
+      <option value="Cejas">Cejas</option>
+      <option value="Manicura">Manicura</option>
+      <option value="Facial">Facial</option>
     </select>
 
-    <label for="mensaje">Mensaje adicional</label>
-    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+    <textarea id="mensaje" placeholder="Mensaje adicional (opcional)"
+    ></textarea>
 
-    <button type="submit">Enviar</button>
+    <button type="submit" class="bubble-button">
+      <span>Enviar por WhatsApp</span>
+    </button>
   </form>
 </section>
 
 <style>
-  .contacto {
-    background: linear-gradient(to bottom, #f9f5fc, #fefefe);
-    padding: 100px 24px;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    animation: fadeInUp 0.8s ease-in-out both;
+  .formulario-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 16px;
+    background: black;
+    overflow: hidden;
   }
 
-  .contacto h2 {
-    color: #a25ccf;
-    font-size: 3rem;
-    margin-bottom: 16px;
-    animation: fadeIn 1s ease-in-out both;
-  }
-
-  .contacto .intro {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    color: #555;
-    animation: fadeIn 1.2s ease-in-out both;
+  .form-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5) blur(1.5px);
+    z-index: -1;
+    pointer-events: none;
   }
 
   .formulario {
-    max-width: 500px;
-    margin: auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 36px;
+    border-radius: 20px;
+    max-width: 480px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    background: #fff;
-    padding: 32px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    animation: fadeInUp 1.3s ease-in-out both;
+    gap: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    animation: fadeInUp 0.7s ease;
+    z-index: 1;
   }
 
-  .formulario label {
+  .formulario h2 {
+    text-align: center;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: #333;
-    text-align: left;
-    transition: color 0.3s;
+    color: #a25ccf;
   }
 
   .formulario input,
   .formulario select,
   .formulario textarea {
-    padding: 12px 16px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
     font-size: 1rem;
-    font-family: inherit;
-    transition: all 0.3s ease;
+    background: #f9f9f9;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
   }
 
-  .formulario input:focus,
-  .formulario select:focus,
-  .formulario textarea:focus {
-    border-color: #a25ccf;
-    box-shadow: 0 0 0 3px rgba(162, 92, 207, 0.2);
-    outline: none;
+  .formulario textarea {
+    min-height: 100px;
+    resize: vertical;
   }
 
-  .formulario button {
-    background: #a25ccf;
+  .bubble-button {
+    background: linear-gradient(90deg, #f1d6ff, #c58aff);
     color: white;
     border: none;
-    padding: 14px;
-    border-radius: 30px;
-    font-size: 1rem;
+    padding: 14px 24px;
+    font-size: 1.1rem;
     font-weight: 600;
+    border-radius: 30px;
     cursor: pointer;
-    transition:
-      transform 0.3s,
-      background 0.3s,
-      box-shadow 0.3s;
-    box-shadow: 0 4px 10px rgba(162, 92, 207, 0.25);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    animation: bubblePulse 2s infinite ease-in-out;
   }
 
-  .formulario button:hover {
-    background: #8b49ba;
+  .bubble-button::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.3) 10%,
+      transparent 10.01%
+    );
+    background-size: 20% 20%;
+    animation: bubbleBackground 6s linear infinite;
+    z-index: 0;
+    top: -50%;
+    left: -50%;
+  }
+
+  .bubble-button span {
+    position: relative;
+    z-index: 2;
+  }
+
+  .bubble-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 14px rgba(139, 73, 186, 0.3);
+    background: linear-gradient(90deg, #c58aff, #a25ccf);
   }
 
   @keyframes fadeInUp {
@@ -140,12 +147,96 @@ import Footer from "../components/Footer.astro";
     }
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
+  @keyframes bubbleBackground {
+    0% {
+      background-position: 0 0;
     }
-    to {
-      opacity: 1;
+    100% {
+      background-position: 100% 100%;
     }
   }
+
+  @keyframes bubblePulse {
+    0%,
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(195, 138, 255, 0.4);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 12px 4px rgba(195, 138, 255, 0.3);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .formulario {
+      padding: 24px;
+    }
+
+    .formulario h2 {
+      font-size: 1.25rem;
+    }
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    background: transparent;
+    overflow-x: hidden;
+  }
+
+  .formulario-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 16px;
+    overflow: hidden;
+  }
+
+  .form-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5) blur(1.5px);
+    pointer-events: none;
+  }
 </style>
+
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("form")?.addEventListener("submit", enviarWhatsApp);
+  });
+
+  function enviarWhatsApp(event) {
+    event.preventDefault();
+
+    const nombreEl = document.getElementById("nombre");
+    const telefonoEl = document.getElementById("telefono");
+    const servicioEl = document.getElementById("servicio");
+    const mensajeEl = document.getElementById("mensaje");
+
+    const nombre = nombreEl?.value.trim() || "";
+    const telefono = telefonoEl?.value.trim() || "";
+    const servicio = servicioEl?.value.trim() || "";
+    const mensaje = mensajeEl?.value.trim() || "";
+
+    if (!nombre || !telefono || !servicio) {
+      alert("Por favor completá todos los campos obligatorios.");
+      return;
+    }
+
+    const texto = `Hola! Soy ${nombre}, mi número es ${telefono}. Quiero reservar un turno para: ${servicio}. ${mensaje}`;
+    const url = `https://api.whatsapp.com/send?phone=5491161050055&text=${encodeURIComponent(texto)}`;
+
+    window.open(url, "_blank");
+  }
+</script>
