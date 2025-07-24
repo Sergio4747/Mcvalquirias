@@ -177,26 +177,16 @@
   }
 
   @media (max-width: 768px) {
-    .nav-menu {
-      position: absolute;
-      top: 100px;
-      left: 0;
-      width: 100%;
-      border-radius: 0 0 20px 20px;
-    }
-
     .nav-toggle {
-      font-size: 2.4rem;
-      padding: 12px 20px;
-      border-radius: 16px;
+      display: block;
     }
 
-    .nav-right {
-      gap: 10px;
+    .nav-menu {
+      display: none;
     }
 
-    body.menu-open .contenido {
-      padding-top: 250px;
+    .nav-menu.active {
+      display: flex;
     }
   }
 
