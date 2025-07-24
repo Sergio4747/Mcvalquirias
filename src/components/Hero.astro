@@ -23,249 +23,271 @@
       </div>
     </div>
   </div>
-
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
     <defs>
       <filter id="goo">
-        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"
         ></feGaussianBlur>
         <feColorMatrix
           in="blur"
           mode="matrix"
-          values="1 0 0 0 0  
-                  0 1 0 0 0  
-                  0 0 1 0 0  
-                  0 0 0 21 -7"
+          values="
+            1 0 0 0 0
+            0 1 0 0 0
+            0 0 1 0 0
+            0 0 0 20 -10"
           result="goo"></feColorMatrix>
         <feBlend in="SourceGraphic" in2="goo"></feBlend>
       </filter>
     </defs>
   </svg>
-</section>
 
-<style>
-  :global(*) {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :global(html),
-  :global(body) {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    font-family: "Poppins", sans-serif;
-    background-color: #000;
-  }
-
-  .hero {
-    position: relative;
-    width: 100vw;
-    height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .background-video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    filter: brightness(0.75);
-    pointer-events: none;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    background: linear-gradient(
-      to bottom,
-      rgba(162, 92, 207, 0.4),
-      rgba(0, 0, 0, 0.6)
-    );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  .hero-content {
-    z-index: 3;
-    max-width: 720px;
-    padding: 1rem;
-    color: #ffffff;
-    animation: fadeInUp 1.2s ease both;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
-    color: #e96ee3;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  }
-
-  .hero p {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: #f0f0f0;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  /* BLOB BUTTON */
-  .buttons {
-    text-align: center;
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-  }
-
-  .blob-btn {
-    position: relative;
-    padding: 16px 40px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.1rem;
-    background-color: transparent;
-    color: #d4af37;
-    border: none;
-    cursor: pointer;
-    border-radius: 40px;
-    z-index: 1;
-  }
-
-  .blob-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 2px solid #d4af37;
-    border-radius: inherit;
-    z-index: 1;
-  }
-
-  .blob-btn::after {
-    content: "";
-    position: absolute;
-    inset: 2px;
-    background: white;
-    border-radius: inherit;
-    z-index: -1;
-    transition: all 0.3s ease;
-  }
-
-  .blob-btn:hover {
-    color: white;
-  }
-
-  .blob-btn:hover::after {
-    background: #d4af37;
-  }
-
-  .blob-btn__inner {
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    overflow: hidden;
-    border-radius: inherit;
-  }
-
-  .blob-btn__blobs {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    filter: url("#goo");
-  }
-
-  .blob-btn__blob {
-    position: absolute;
-    top: 2px;
-    width: 25%;
-    height: 100%;
-    background: #d4af37;
-    border-radius: 50%;
-    transform: translateY(150%) scale(1.4);
-    transition: transform 0.45s;
-  }
-
-  .blob-btn__blob:nth-child(1) {
-    left: 0%;
-    transition-delay: 0s;
-  }
-  .blob-btn__blob:nth-child(2) {
-    left: 30%;
-    transition-delay: 0.08s;
-  }
-  .blob-btn__blob:nth-child(3) {
-    left: 60%;
-    transition-delay: 0.16s;
-  }
-  .blob-btn__blob:nth-child(4) {
-    left: 90%;
-    transition-delay: 0.24s;
-  }
-
-  .blob-btn:hover .blob-btn__blob {
-    transform: translateY(0%) scale(1.4);
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 10rem;
+  <style>
+    :global(*) {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .hero p {
-      font-size: 4rem;
+    :global(html),
+    :global(body) {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: "Poppins", sans-serif;
+      background-color: #000;
     }
 
-    .blob-btn {
-      padding: 18px 36px;
-      font-size: 2.4rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero h1 {
-      font-size: 2.8rem;
-    }
-
-    .hero p {
-      font-size: 1.5rem;
-    }
-
-    .blob-btn {
-      font-size: 1.2rem;
-      padding: 16px 30px;
-    }
-  }
-
-  @media (max-width: 768px) {
     .hero {
-      max-height: 100dvh;
+      position: relative;
+      width: 100vw;
+      height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
-      overscroll-behavior: contain;
     }
-  }
-</style>
 
-<script>
-  document.querySelector(".blob-btn")?.addEventListener("click", () => {
-    window.location.href = "/servicios";
-  });
-</script>
+    .background-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      filter: brightness(0.75);
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(
+        to bottom,
+        rgba(162, 92, 207, 0.4),
+        rgba(0, 0, 0, 0.6)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      z-index: 3;
+      max-width: 720px;
+      padding: 1rem;
+      color: #ffffff;
+      animation: fadeInUp 1.2s ease both;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      color: #e96ee3;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: #f0f0f0;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .buttons {
+      text-align: center;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .blob-btn {
+      position: relative;
+      padding: 16px 40px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.1rem;
+      background-color: transparent;
+      color: #d4af37;
+      border: none;
+      cursor: pointer;
+      border-radius: 40px;
+      z-index: 1;
+      overflow: hidden; /* Asegura que las burbujas no se salgan del botón */
+    }
+
+    .blob-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 2px solid #d4af37;
+      border-radius: inherit;
+      z-index: 1;
+    }
+
+    .blob-btn::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background: white;
+      border-radius: inherit;
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+
+    .blob-btn:hover {
+      color: white;
+    }
+
+    .blob-btn:hover::after {
+      background: #d4af37;
+    }
+
+    .blob-btn__inner {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      border-radius: inherit;
+    }
+
+    .blob-btn__blobs {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      filter: url("#goo");
+    }
+
+    .blob-btn__blob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 25%;
+      height: 25%;
+      background: #d4af37;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(1.4);
+      transition: transform 0.45s;
+    }
+
+    .blob-btn__blob:nth-child(1) {
+      top: 0%;
+      left: 0%;
+      transition-delay: 0s;
+    }
+    .blob-btn__blob:nth-child(2) {
+      top: 0%;
+      left: 100%;
+      transition-delay: 0.08s;
+    }
+    .blob-btn__blob:nth-child(3) {
+      top: 100%;
+      left: 0%;
+      transition-delay: 0.16s;
+    }
+    .blob-btn__blob:nth-child(4) {
+      top: 100%;
+      left: 100%;
+      transition-delay: 0.24s;
+    }
+
+    .blob-btn:hover .blob-btn__blob {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+      }
+
+      .hero p {
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
+      }
+
+      .blob-btn {
+        padding: 14px 32px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+      }
+
+      .hero p {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+      }
+
+      .blob-btn {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 0.5rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+      }
+
+      .hero p {
+        font-size: clamp(0.8rem, 1.8vw, 1rem);
+      }
+
+      .blob-btn {
+        padding: 10px 24px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+
+  <script>
+    document.querySelector(".blob-btn")?.addEventListener("click", () => {
+      window.location.href = "/servicios";
+    });
+  </script>
+</section>

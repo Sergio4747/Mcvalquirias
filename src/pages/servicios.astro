@@ -286,7 +286,7 @@ import Header from "../components/Header.astro";
         </li>
         <li>
           <span>5 Zonas a Elección - $25.000</span><a
-            href="https://mcvalquirias.site.agendapro.com/ar">Reservar</a
+            href="https://mcvalquirias.site.agendapro.com/ar  ">Reservar</a
           >
         </li>
       </ul>
@@ -337,13 +337,15 @@ import Header from "../components/Header.astro";
   }
 
   .servicios h2 {
-    color: var(--lila);
+    color: var(--blanco);
+    shadow: 2px 2px #fff;
+    font-family: var(--fuente);
     font-size: 3.2rem;
     margin-bottom: 12px;
     font-weight: 600;
-    text-shadow: 2px 2px #fff;
     position: relative;
     animation: fadeInDown 1s ease-in-out;
+    z-index: 2;
   }
 
   .accordion {
