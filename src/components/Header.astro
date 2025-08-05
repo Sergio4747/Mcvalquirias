@@ -1,273 +1,688 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<header class="header">
-  <nav class="nav">
-    <div class="nav-top">
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 100%);
+      min-height: 200vh;
+    }
+
+    .header {
+      background: linear-gradient(90deg, #f9f5fc, #fff1f9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(162, 92, 207, 0.15);
+      padding: 0 24px;
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(0);
+      opacity: 1;
+      border-bottom: 1px solid rgba(162, 92, 207, 0.1);
+    }
+
+    .header.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    .header.scrolled {
+      height: 70px;
+      background: linear-gradient(
+        90deg,
+        rgba(249, 245, 252, 0.95),
+        rgba(255, 241, 249, 0.95)
+      );
+      box-shadow: 0 8px 32px rgba(162, 92, 207, 0.2);
+    }
+
+    .nav {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      z-index: 1001;
+    }
+
+    .logo-placeholder {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #a25ccf, #8b49ba);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: logoFadeIn 0.8s ease-out;
+    }
+
+    .logo-placeholder:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 8px 25px rgba(162, 92, 207, 0.3);
+    }
+
+    .header.scrolled .logo-placeholder {
+      width: 45px;
+      height: 45px;
+      font-size: 1.1rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: navItemsFadeIn 0.6s ease-out forwards;
+    }
+
+    .nav-link:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .nav-link:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .nav-link:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .nav-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #a25ccf, #8b49ba);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover {
+      color: #a25ccf;
+      background: rgba(162, 92, 207, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .nav-link:hover::before {
+      width: 80%;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, #a25ccf, #8b49ba);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 15px rgba(162, 92, 207, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: btnFadeIn 0.8s ease-out 0.4s forwards;
+    }
+
+    .nav-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      transition: left 0.5s;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(162, 92, 207, 0.4);
+    }
+
+    .nav-btn:hover::before {
+      left: 100%;
+    }
+
+    .nav-social {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(162, 92, 207, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a25ccf;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: scale(0.8) translateY(-20px);
+      animation: socialFadeIn 0.6s ease-out forwards;
+    }
+
+    .social-icon:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    .social-icon:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+    .social-icon:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+
+    .social-icon:hover {
+      background: #a25ccf;
+      color: white;
+      transform: translateY(-3px) rotate(10deg) scale(1.1);
+      box-shadow: 0 8px 20px rgba(162, 92, 207, 0.3);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: linear-gradient(135deg, #a25ccf, #8b49ba);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1001;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-toggle::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      transform: translate(-50%, -50%);
+    }
+
+    .nav-toggle:hover::before {
+      width: 100%;
+      height: 100%;
+    }
+
+    .nav-toggle:hover {
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 8px 20px rgba(162, 92, 207, 0.3);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(
+        135deg,
+        rgba(249, 245, 252, 0.98),
+        rgba(255, 241, 249, 0.98)
+      );
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      transform: translateX(-100%);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .mobile-nav-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.5rem;
+      padding: 16px 32px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+
+    .mobile-menu.active .mobile-nav-link {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .mobile-nav-link:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+    .mobile-nav-link:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+    .mobile-nav-link:nth-child(3) {
+      transition-delay: 0.3s;
+    }
+
+    .mobile-nav-link:hover {
+      background: rgba(162, 92, 207, 0.1);
+      color: #a25ccf;
+      transform: translateX(10px);
+    }
+
+    .content {
+      padding: 120px 24px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header {
+        padding: 0 16px;
+        height: 70px;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content {
+        padding: 100px 16px 40px;
+      }
+
+      .demo-section {
+        padding: 40px 20px;
+      }
+
+      .demo-section h2 {
+        font-size: 2rem;
+      }
+
+      .demo-section p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        height: 65px;
+      }
+
+      .logo-placeholder {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+      }
+
+      .nav-toggle {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    /* Animations */
+    @keyframes logoFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-10deg);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes navItemsFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes btnFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes socialFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.5) translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav">
       <div class="nav-logo">
-        <img src="/img/logoimg.png" alt="Valquirias Logo" />
+        <div class="logo-placeholder"></div>
       </div>
-      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
-    </div>
-    <div class="nav-menu">
-      <div class="nav-right">
-        <a href="/" class="nav-btn">Inicio</a>
+
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#" class="nav-link">Inicio</a></li>
+          <li><a href="#" class="nav-link">Servicios</a></li>
+          <li><a href="#" class="nav-link">Contacto</a></li>
+        </ul>
+
+        <a href="#" class="nav-btn">Cotizar</a>
+
         <div class="nav-social">
           <a
             href="https://www.instagram.com"
             target="_blank"
+            class="social-icon"
             aria-label="Instagram"
           >
-            <img src="/icons/instagram.svg" alt="Instagram" />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              ></path>
+            </svg>
           </a>
           <a
             href="https://www.facebook.com"
             target="_blank"
+            class="social-icon"
             aria-label="Facebook"
           >
-            <img src="/icons/facebook.svg" alt="Facebook" />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              ></path>
+            </svg>
           </a>
-          <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
-            <img src="/icons/tiktok.svg" alt="TikTok" />
+          <a
+            href="https://www.tiktok.com"
+            target="_blank"
+            class="social-icon"
+            aria-label="TikTok"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+              ></path>
+            </svg>
           </a>
         </div>
       </div>
+
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" class="mobile-nav-link">Inicio</a>
+    <a href="#" class="mobile-nav-link">Servicios</a>
+    <a href="#" class="mobile-nav-link">Contacto</a>
+    <div class="nav-social" style="margin-top: 20px;">
+      <a
+        href="https://www.instagram.com/mcvalquirias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+        target="_blank"
+        class="social-icon"
+        aria-label="Instagram"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+          ></path>
+        </svg>
+      </a>
+      <a
+        href="https://www.facebook.com"
+        target="_blank"
+        class="social-icon"
+        aria-label="Facebook"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+          ></path>
+        </svg>
+      </a>
+      <a
+        href="https://www.tiktok.com"
+        target="_blank"
+        class="social-icon"
+        aria-label="TikTok"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+          ></path>
+        </svg>
+      </a>
     </div>
-  </nav>
-</header>
+  </div>
 
-<style>
-  body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background-color: #f4f4f4;
-    transition: padding-top 0.3s ease;
-  }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Definimos las variables.
+      const header = document.getElementById("header");
+      const navToggle = document.getElementById("navToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-  .header {
-    background: linear-gradient(90deg, #f9f5fc, #fff1f9);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 0 24px;
-    height: 100px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .nav-logo {
-    height: 100px;
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-logo img {
-    height: 80%;
-    max-height: 80px;
-    margin-left: 20px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-  }
-
-  .nav-logo img:hover {
-    transform: scale(1.05) rotate(-1deg);
-  }
-
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    background: #fff1f9;
-    padding: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    border-radius: 0 0 16px 16px;
-    animation: fadeDown 0.4s ease forwards;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .nav-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .nav-btn {
-    background-color: #a25ccf;
-    color: white;
-    padding: 12px 26px;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    box-shadow: 0 4px 10px rgba(162, 92, 207, 0.2);
-    transition: all 0.3s ease;
-  }
-
-  .nav-btn:hover {
-    background-color: #8b49ba;
-    transform: translateY(-2px);
-  }
-
-  .nav-social {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-  }
-
-  .nav-social img {
-    height: 30px;
-    width: 30px;
-    transition:
-      transform 0.3s ease,
-      filter 0.3s ease;
-    filter: grayscale(30%) brightness(0.9);
-  }
-
-  .nav-social img:hover {
-    transform: scale(1.2) rotate(4deg);
-    filter: none;
-  }
-
-  .nav-toggle {
-    display: none;
-    background: #a25ccf;
-    color: white;
-    border: none;
-    font-size: 2.2rem;
-    padding: 8px 12px;
-    margin-right: 12px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .nav-toggle:hover {
-    background-color: #8b49ba;
-    transform: scale(1.1);
-  }
-
-  .contenido {
-    padding-top: 130px;
-    transition: padding-top 0.3s ease;
-  }
-
-  @media (max-width: 768px) {
-    .nav-toggle {
-      display: block;
-      overflow: hidden;
-    }
-
-    .nav-menu {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      background: #fff1f9;
-      padding: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-      border-radius: 0 0 16px 16px;
-    }
-
-    .nav-menu.active {
-      display: flex;
-    }
-  }
-
-  @media (min-width: 769px) {
-    .nav {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      overflow: hidden;
-    }
-
-    .nav-menu {
-      display: flex !important;
-      flex-direction: row;
-      background: transparent;
-      box-shadow: none;
-      padding: 0;
-      border-radius: 0;
-    }
-
-    .nav-right {
-      flex-direction: row;
-      gap: 24px;
-    }
-
-    .nav-toggle {
-      display: none !important;
-    }
-  }
-
-  @keyframes fadeDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".nav-toggle");
-    const menu = document.querySelector(".nav-menu");
-
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("active");
-        document.body.classList.toggle("menu-open");
-      });
-    }
-  });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const header = document.querySelector(".header") as HTMLElement | null;
-    let lastScroll = window.scrollY;
-
-    if (!header) return;
-
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.scrollY;
-
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        header.style.transform = "translateY(-100%)";
-        header.style.transition = "transform 0.4s ease";
-      } else {
-        header.style.transform = "translateY(0)";
-        header.style.transition = "transform 0.4s ease";
+      // Verificación inicial. Si algún elemento falta, detenemos el script.
+      if (!header || !navToggle || !mobileMenu) {
+        console.error(
+          "No se encontraron todos los elementos necesarios (header, navToggle, mobileMenu)."
+        );
+        return;
       }
 
-      lastScroll = currentScroll;
+      let lastScroll = 0;
+
+      // Función para manejar el scroll.
+      function handleScroll() {
+        const currentScroll = window.pageYOffset;
+
+        // SOLUCIÓN: Usamos el operador de aserción de no nulo `!` para indicarle a TypeScript
+        // que sabemos que `header` no es nulo aquí, gracias a la verificación inicial.
+        // Esto resuelve el error 'header' is possibly 'null'.
+        if (currentScroll > 50) {
+          header!.classList.add("scrolled");
+        } else {
+          header!.classList.remove("scrolled");
+        }
+
+        if (currentScroll > 100) {
+          if (currentScroll > lastScroll) {
+            header!.classList.add("hidden");
+          } else if (currentScroll < lastScroll) {
+            header!.classList.remove("hidden");
+          }
+        } else {
+          header!.classList.remove("hidden");
+        }
+
+        lastScroll = currentScroll;
+      }
+
+      // Aclaración: En el script anterior te sugerí quitar los "!", pero en este
+      // caso, ya que `handleScroll` es una función separada, TypeScript necesita
+      // esa aserción para estar seguro de que la variable no es nula.
+      // Esto es común con funciones que se pasan como callbacks o handlers.
+
+      // Corrección para el problema de 'Timeout'
+      let scrollTimeout: number | null = null;
+
+      window.addEventListener("scroll", function () {
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = window.setTimeout(handleScroll, 10);
+      });
+
+      navToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        mobileMenu!.classList.toggle("active");
+        const isActive = mobileMenu!.classList.contains("active");
+
+        document.body.style.overflow = isActive ? "hidden" : "";
+
+        navToggle!.style.transform = isActive
+          ? "rotate(90deg) scale(1.1)"
+          : "rotate(0deg) scale(1)";
+      });
+
+      const mobileLinks = mobileMenu!.querySelectorAll(".mobile-nav-link");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          mobileMenu!.classList.remove("active");
+          document.body.style.overflow = "";
+          navToggle!.style.transform = "rotate(0deg) scale(1)";
+        });
+      });
+
+      mobileMenu!.addEventListener("click", function (e) {
+        if (e.target === mobileMenu) {
+          mobileMenu!.classList.remove("active");
+          document.body.style.overflow = "";
+          navToggle!.style.transform = "rotate(0deg) scale(1)";
+        }
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = anchor.getAttribute("href");
+
+          if (href) {
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }
+        });
+      });
+
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).style.animation =
+              "fadeInUp 0.6s ease-out forwards";
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".demo-section").forEach((section) => {
+        observer.observe(section);
+      });
     });
-  });
-</script>
+
+    const style = document.createElement("style");
+    style.textContent = `
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `;
+    document.head.appendChild(style);
+  </script>
+</body>
