@@ -82,6 +82,7 @@
       font-size: 1.2rem;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       animation: logoFadeIn 0.8s ease-out;
+      font-family: "Cal Sans", sans-serif;
     }
 
     .logo-placeholder:hover {
@@ -346,7 +347,6 @@
       margin: 0 auto;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .header {
         padding: 0 16px;
@@ -397,7 +397,6 @@
       }
     }
 
-    /* Animations */
     @keyframes logoFadeIn {
       from {
         opacity: 0;
@@ -447,21 +446,16 @@
   <header class="header" id="header">
     <nav class="nav">
       <div class="nav-logo">
-        <div class="logo-placeholder"></div>
+        <div class="logo-placeholder">V</div>
       </div>
-
       <div class="nav-menu">
         <ul class="nav-links">
-          <li><a href="#" class="nav-link">Inicio</a></li>
-          <li><a href="#" class="nav-link">Servicios</a></li>
-          <li><a href="#" class="nav-link">Contacto</a></li>
+          <li><a href="/servicios" class="nav-link">Inicio</a></li>
+          <li><a href="/contacto" class="nav-link">Contacto</a></li>
         </ul>
-
-        <a href="#" class="nav-btn">Cotizar</a>
-
         <div class="nav-social">
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/mcvalquirias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             class="social-icon"
             aria-label="Instagram"
@@ -498,11 +492,9 @@
           </a>
         </div>
       </div>
-
       <button class="nav-toggle" id="navToggle">☰</button>
     </nav>
   </header>
-
   <div class="mobile-menu" id="mobileMenu">
     <a href="#" class="mobile-nav-link">Inicio</a>
     <a href="#" class="mobile-nav-link">Servicios</a>
@@ -546,7 +538,6 @@
       </a>
     </div>
   </div>
-
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Definimos las variables.
@@ -554,29 +545,20 @@
       const navToggle = document.getElementById("navToggle");
       const mobileMenu = document.getElementById("mobileMenu");
 
-      // Verificación inicial. Si algún elemento falta, detenemos el script.
       if (!header || !navToggle || !mobileMenu) {
         console.error(
           "No se encontraron todos los elementos necesarios (header, navToggle, mobileMenu)."
         );
         return;
       }
-
       let lastScroll = 0;
-
-      // Función para manejar el scroll.
       function handleScroll() {
         const currentScroll = window.pageYOffset;
-
-        // SOLUCIÓN: Usamos el operador de aserción de no nulo `!` para indicarle a TypeScript
-        // que sabemos que `header` no es nulo aquí, gracias a la verificación inicial.
-        // Esto resuelve el error 'header' is possibly 'null'.
         if (currentScroll > 50) {
           header!.classList.add("scrolled");
         } else {
           header!.classList.remove("scrolled");
         }
-
         if (currentScroll > 100) {
           if (currentScroll > lastScroll) {
             header!.classList.add("hidden");
@@ -586,37 +568,24 @@
         } else {
           header!.classList.remove("hidden");
         }
-
         lastScroll = currentScroll;
       }
-
-      // Aclaración: En el script anterior te sugerí quitar los "!", pero en este
-      // caso, ya que `handleScroll` es una función separada, TypeScript necesita
-      // esa aserción para estar seguro de que la variable no es nula.
-      // Esto es común con funciones que se pasan como callbacks o handlers.
-
-      // Corrección para el problema de 'Timeout'
       let scrollTimeout: number | null = null;
-
       window.addEventListener("scroll", function () {
         if (scrollTimeout) {
           clearTimeout(scrollTimeout);
         }
         scrollTimeout = window.setTimeout(handleScroll, 10);
       });
-
       navToggle.addEventListener("click", function (e) {
         e.preventDefault();
         mobileMenu!.classList.toggle("active");
         const isActive = mobileMenu!.classList.contains("active");
-
         document.body.style.overflow = isActive ? "hidden" : "";
-
         navToggle!.style.transform = isActive
           ? "rotate(90deg) scale(1.1)"
           : "rotate(0deg) scale(1)";
       });
-
       const mobileLinks = mobileMenu!.querySelectorAll(".mobile-nav-link");
       mobileLinks.forEach((link) => {
         link.addEventListener("click", function () {
@@ -625,7 +594,6 @@
           navToggle!.style.transform = "rotate(0deg) scale(1)";
         });
       });
-
       mobileMenu!.addEventListener("click", function (e) {
         if (e.target === mobileMenu) {
           mobileMenu!.classList.remove("active");
@@ -633,12 +601,10 @@
           navToggle!.style.transform = "rotate(0deg) scale(1)";
         }
       });
-
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
           const href = anchor.getAttribute("href");
-
           if (href) {
             const target = document.querySelector(href);
             if (target) {
@@ -650,12 +616,10 @@
           }
         });
       });
-
       const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px",
       };
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -669,7 +633,6 @@
         observer.observe(section);
       });
     });
-
     const style = document.createElement("style");
     style.textContent = `
         @keyframes fadeInUp {
