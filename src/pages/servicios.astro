@@ -5,6 +5,8 @@ import Footer from "../components/Footer.astro";
 
 <Header />
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Servicios - Valquirias Estética</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&display=swap"
@@ -32,6 +34,7 @@ import Footer from "../components/Footer.astro";
     <div class="divider"></div>
   </div>
   <div class="services-grid">
+    <!-- PELUQUERÍA -->
     <div class="service-card" data-category="hair">
       <div class="card-header">
         <div class="icon-wrapper">
@@ -57,7 +60,7 @@ import Footer from "../components/Footer.astro";
           </div>
           <div class="service-item">
             <div class="service-info">
-              <span class="service-name">Nutrición</span>
+              <span class="service-name">Nutrición Capilar</span>
               <span class="service-price">$30.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
@@ -87,8 +90,38 @@ import Footer from "../components/Footer.astro";
           </div>
           <div class="service-item">
             <div class="service-info">
-              <span class="service-name">Color S/ Deco</span>
+              <span class="service-name">Colors o Decoloración</span>
               <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Brushing</span>
+              <span class="service-price">$25.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Planchado</span>
+              <span class="service-price">$25.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Ondas con calor</span>
+              <span class="service-price">$25.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -98,6 +131,7 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
     </div>
+
     <div class="service-card" data-category="lashes">
       <div class="card-header">
         <div class="icon-wrapper">
@@ -113,7 +147,7 @@ import Footer from "../components/Footer.astro";
         <div class="services-list">
           <div class="service-item">
             <div class="service-info">
-              <span class="service-name">Clásicas PXP</span>
+              <span class="service-name">Clásicas</span>
               <span class="service-price">$21.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
@@ -174,7 +208,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Volumen Egipcio</span>
-              <span class="service-price">$40.000</span>
+              <span class="service-price">$38.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -213,7 +247,7 @@ import Footer from "../components/Footer.astro";
           </div>
           <div class="service-item">
             <div class="service-info">
-              <span class="service-name">Kim K</span>
+              <span class="service-name">KimK</span>
               <span class="service-price">$32.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
@@ -224,7 +258,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Retiro</span>
-              <span class="service-price">$7.000</span>
+              <span class="service-price">$10.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -254,6 +288,7 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
     </div>
+
     <div class="service-card" data-category="brows">
       <div class="card-header">
         <div class="icon-wrapper">
@@ -270,7 +305,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Perfilado c/ Hilo</span>
-              <span class="service-price">$6.000</span>
+              <span class="service-price">$15.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -280,7 +315,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Con Navaja</span>
-              <span class="service-price">$6.000</span>
+              <span class="service-price">$10.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -320,6 +355,7 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
     </div>
+
     <div class="service-card" data-category="nails">
       <div class="card-header">
         <div class="icon-wrapper">
@@ -425,28 +461,28 @@ import Footer from "../components/Footer.astro";
           </div>
           <div class="service-item">
             <div class="service-info">
-              <span class="service-name">Remoción (s/ Ap)</span>
-              <span class="service-price">$6.000</span>
-            </div>
-            <a href="/contacto" class="reserve-btn">
-              <span>Reservar</span>
-              <div class="btn-glow"></div>
-            </a>
-          </div>
-          <div class="service-item">
-            <div class="service-info">
-              <span class="service-name">Retiro (Nueva Ap)</span>
-              <span class="service-price">$5.000</span>
-            </div>
-            <a href="/contacto" class="reserve-btn">
-              <span>Reservar</span>
-              <div class="btn-glow"></div>
-            </a>
-          </div>
-          <div class="service-item">
-            <div class="service-info">
-              <span class="service-name">Retiro Otro Salón</span>
+              <span class="service-name">Remoción (a/ Ap)</span>
               <span class="service-price">$8.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Remocion Nueva</span>
+              <span class="service-price">$8.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Remocion Otro Salón</span>
+              <span class="service-price">$10.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -466,7 +502,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Service Esc. Polygel</span>
-              <span class="service-price">$25.000</span>
+              <span class="service-price">$32.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -476,7 +512,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Service Esc. Acrílico</span>
-              <span class="service-price">$27.000</span>
+              <span class="service-price">$35.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -486,7 +522,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Service Esc. Gel</span>
-              <span class="service-price">$25.000</span>
+              <span class="service-price">$30.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -506,6 +542,7 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
     </div>
+
     <div class="service-card" data-category="spa">
       <div class="card-header">
         <div class="icon-wrapper">
@@ -522,7 +559,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Manos</span>
-              <span class="service-price">$12.000</span>
+              <span class="service-price">$15.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -532,7 +569,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Pies s/ Esmaltado</span>
-              <span class="service-price">$12.000</span>
+              <span class="service-price">$16.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -542,7 +579,7 @@ import Footer from "../components/Footer.astro";
           <div class="service-item">
             <div class="service-info">
               <span class="service-name">Pies c/ Esmaltado</span>
-              <span class="service-price">$25.000</span>
+              <span class="service-price">$18.000</span>
             </div>
             <a href="/contacto" class="reserve-btn">
               <span>Reservar</span>
@@ -552,6 +589,7 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
     </div>
+
     <div class="service-card" data-category="facial">
       <div class="card-header">
         <div class="icon-wrapper">
@@ -638,6 +676,153 @@ import Footer from "../components/Footer.astro";
         </div>
       </div>
     </div>
+
+    <div class="service-card" data-category="dermapen">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">⚡</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Dermapen</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Dermapen Facial</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Dermapen + Vitamina C</span>
+              <span class="service-price">$45.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Dermapen + Ácido Hialurónico</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Dermapen Anti-Age</span>
+              <span class="service-price">$55.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Dermapen para Cicatrices</span>
+              <span class="service-price">$60.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Dermapen + PRP (Plasma Rico)</span>
+              <span class="service-price">$75.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MASAJES -->
+    <div class="service-card" data-category="massage">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">💆‍♀️</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Masajes</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Descontracturante</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Deportivo</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Reductor</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Relajante</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Drenaje Linfático</span>
+              <span class="service-price">$40.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEPILACIÓN -->
     <div class="service-card" data-category="laser">
       <div class="card-header">
         <div class="icon-wrapper">
@@ -671,12 +856,43 @@ import Footer from "../components/Footer.astro";
               <div class="btn-glow"></div>
             </a>
           </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Axilas</span>
+              <span class="service-price">$8.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Piernas Completas</span>
+              <span class="service-price">$15.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Bikini</span>
+              <span class="service-price">$12.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 <Footer />
+
 <style>
   :root {
     --lila: #a855f7;
@@ -898,6 +1114,12 @@ import Footer from "../components/Footer.astro";
   }
   .service-card:nth-child(8) {
     animation-delay: 0.8s;
+  }
+  .service-card:nth-child(9) {
+    animation-delay: 0.9s;
+  }
+  .service-card:nth-child(10) {
+    animation-delay: 1s;
   }
 
   .service-card:hover {
@@ -1313,13 +1535,13 @@ import Footer from "../components/Footer.astro";
 
     window.addEventListener("scroll", function () {
       const scrolled = window.pageYOffset;
-      const particles = document.querySelectorAll(".particle");
+
+      const particles = document.querySelectorAll<HTMLElement>(".particle");
 
       particles.forEach((particle, index) => {
         const speed = 0.5 + index * 0.1;
 
-        (particle as HTMLElement).style.transform =
-          `translateY(${scrolled * speed}px)`;
+        particle.style.transform = `translateY(${scrolled * speed}px)`;
       });
     });
 
@@ -1330,8 +1552,8 @@ import Footer from "../components/Footer.astro";
 
     const observer = new IntersectionObserver(function (entries) {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          (entry.target as HTMLElement).style.animationPlayState = "running";
+        if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+          entry.target.style.animationPlayState = "running";
         }
       });
     }, observerOptions);

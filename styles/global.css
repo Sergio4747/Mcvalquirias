@@ -21,19 +21,19 @@ html, body {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background-color: #000; /* Opcional: para que si algo queda fuera, se vea negro */
+  background-color: #000;
 }
 
 body {
   position: relative;
 }
-/* Oculta el scrollbar pero mantiene el scroll funcional */
+
 html, body {
   overflow: auto;
-  -ms-overflow-style: none;  /* IE y Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
 }
 
 body::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari y Edge (Webkit) */
+  display: none;           
 }
