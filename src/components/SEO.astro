@@ -1,0 +1,41 @@
+---
+// src/components/SEO.astro
+
+// Definimos las propiedades que aceptará el componente
+export interface Props {
+  title: string;
+  description: string;
+  image?: string; // La imagen es opcional
+}
+
+const {
+  title,
+  description,
+  image = "/imagen-social-por-defecto.png", // ¡IMPORTANTE! Crea y sube una imagen por defecto a tu carpeta /public
+} = Astro.props;
+
+// Personaliza esto con el nombre de tu sitio web
+const siteName = "MC VALQUIRIAS";
+const fullTitle = `${title} | ${siteName}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(image, Astro.site);
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:image" content={socialImageURL} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={socialImageURL} />
