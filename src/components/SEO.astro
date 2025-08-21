@@ -1,20 +1,11 @@
 ---
-// src/components/SEO.astro
-
-// Definimos las propiedades que aceptará el componente
 export interface Props {
   title: string;
   description: string;
-  image?: string; // La imagen es opcional
+  image?: string;
 }
 
-const {
-  title,
-  description,
-  image = "/imagen-social-por-defecto.png", // ¡IMPORTANTE! Crea y sube una imagen por defecto a tu carpeta /public
-} = Astro.props;
-
-// Personaliza esto con el nombre de tu sitio web
+const { title, description, image = "/img/pagina-inicio.png" } = Astro.props;
 const siteName = "MC VALQUIRIAS";
 const fullTitle = `${title} | ${siteName}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
