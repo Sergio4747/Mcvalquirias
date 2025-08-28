@@ -1,0 +1,8 @@
+# public/robots.txt
+
+User-agent: *
+Allow: /
+
+# Aquí le dices a Google dónde encontrar tu sitemap.
+# Reemplaza 'https://www.tusitio.com' con tu dominio real cuando lo tengas.
+Sitemap: https://www.tusitio.com/sitemap-index.xml
