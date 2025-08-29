@@ -1,13 +1,124 @@
 ---
 import Header from "../components/Header.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  name: "Scalabrini Beauty Salon",
+  description:
+    "Centro de estética y belleza especializado en tratamientos faciales, corporales y cuidado de uñas en Palermo, Buenos Aires",
+  url: "https://www.mcvalquirias.com/contacto",
+  telephone: "+541138247547",
+  priceRange: "$$",
+  address: [
+    {
+      "@type": "PostalAddress",
+      streetAddress: "Av. Raúl Scalabrini Ortiz 932",
+      addressLocality: "Palermo",
+      addressRegion: "CABA",
+      postalCode: "C1414",
+      addressCountry: "AR",
+    },
+    {
+      "@type": "PostalAddress",
+      streetAddress: "Av. Gral. Las Heras 2480",
+      addressLocality: "Palermo",
+      addressRegion: "CABA",
+      postalCode: "C1425",
+      addressCountry: "AR",
+    },
+  ],
+  openingHours: "Mo-Sa 10:00-20:00",
+  sameAs: [
+    "https://instagram.com/scalabrini-beauty",
+    "https://facebook.com/scalabrini-beauty",
+  ],
+  areaServed: {
+    "@type": "City",
+    name: "Buenos Aires",
+  },
+  serviceType: [
+    "Tratamientos faciales",
+    "Cuidado de uñas",
+    "Estética corporal",
+    "Manicura",
+    "Pedicura",
+  ],
+};
 ---
 
 <Header />
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto - Recoleta</title>
+  <title>Contacto - Scalabrini</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+  />
+  <title>
+    Contacto - Reserva tu Cita en Scalabrini Beauty Salon | Palermo, Buenos
+    Aires
+  </title>
+  <meta
+    name="description"
+    content="Agenda tu cita online en Scalabrini Beauty Salon. Centro de estética en Palermo con profesionales certificadas. Tratamientos faciales, uñas y belleza integral. ✨ Reserva ahora"
+  />
+  <meta
+    name="keywords"
+    content="centro estetica palermo, salon belleza buenos aires, tratamientos faciales palermo, manicura pedicura, agenda cita online, scalabrini ortiz, las heras, estetica profesional"
+  />
+  <meta name="author" content="Scalabrini Beauty Salon" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content="Contacto - Reserva tu Cita en Scalabrini Beauty Salon"
+  />
+  <meta
+    property="og:description"
+    content="Centro de estética en Palermo con profesionales certificadas. Agenda tu cita online para tratamientos de belleza y cuidado personal."
+  />
+  <meta property="og:url" content="https://www.mcvalquirias.com/contacto" />
+  <meta property="og:site_name" content="Scalabrini Beauty Salon" />
+  <meta property="og:locale" content="es_AR" />
+  <meta
+    property="og:image"
+    content="https://www.mcvalquirias.com/images/salon-preview.jpg"
+  />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="Contacto - Reserva tu Cita en Scalabrini Beauty Salon"
+  />
+  <meta
+    name="twitter:description"
+    content="Centro de estética en Palermo. Agenda online tratamientos de belleza con profesionales certificadas."
+  />
+  <meta
+    name="twitter:image"
+    content="https://www.mcvalquirias.com/images/salon-preview.jpg"
+  />
+
+  <meta name="geo.region" content="AR-C" />
+  <meta name="geo.placename" content="Palermo, Buenos Aires" />
+  <meta name="geo.position" content="-34.5878;-58.4270" />
+  <meta name="ICBM" content="-34.5878, -58.4270" />
+
+  <link rel="canonical" href="https://www.mcvalquirias.com/contacto" />
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="//wa.me" />
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -151,7 +262,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="info-text">
               <h3>Ubicaciónes</h3>
+              <h4><b>Local-Estetica</b></h4>
+              <p>Av. Raúl Scalabrini Ortiz 932 <br />Palermo, CABA</p>
+              <br />
               <h4><b>Local-Uñas</b></h4>
+
               <p>Av. Gral. Las Heras 2480 <br /> Palermo, CABA</p>
             </div>
           </div>
@@ -173,7 +288,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="info-text">
               <h3>Teléfono</h3>
-              <p>+54 11 3824-7547</p>
+              <p>+54 11 1234-5678</p>
             </div>
           </div>
 
@@ -193,7 +308,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="info-text">
               <h3>Horarios</h3>
-              <p>Lun a Sáb: 9:00Hs - 20:00Hs</p>
+              <p>Lun a Sáb: 10:00Hs - 20:00Hs</p>
             </div>
           </div>
 
@@ -243,7 +358,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <span>Llamar</span>
           </a>
           <a
-            href="https://wa.me/541138247547"
+            href="https://wa.me/541138247547?text=Hola%21%20Me%20gustar%C3%ADa%20reservar%20un%20turno!!%20Muchas%20gracias."
             class="action-btn whatsapp-btn"
             target="_blank"
             rel="noopener noreferrer"
