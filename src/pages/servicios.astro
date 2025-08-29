@@ -6,6 +6,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <Header />
 <head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="/img/logoimg.png" type="image/x-icon" />
   <meta charset="UTF-8" />
   <meta
     name="viewport"
@@ -178,1630 +183,1209 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
   </script>
 </head>
-
-<main>
-  <section class="servicios">
-    <div class="particles" aria-hidden="true">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
+<section class="servicios">
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="hero-section">
+    <h1 class="main-title">
+      <span class="title-word">Nuestros</span>
+      <span class="title-word highlight">Servicios</span>
+    </h1>
+    <p class="subtitle">
+      Descubre la belleza que llevas dentro con nuestros tratamientos de lujo
+    </p>
+    <div class="divider"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card" data-category="hair">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">💇‍♀️</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Peluquería</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Corte</span>
+              <span class="service-price">$20.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Nutrición Capilar</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Alisado</span>
+              <span class="service-price">$40.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Peinados</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Colors o Decoloración</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Brushing</span>
+              <span class="service-price">$25.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Planchado</span>
+              <span class="service-price">$25.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Ondas con calor</span>
+              <span class="service-price">$25.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <header class="hero-section">
-      <h1 class="main-title">
-        <span class="title-word">Nuestros</span>
-        <span class="title-word highlight">Servicios</span>
-      </h1>
-      <p class="subtitle">
-        Descubre la belleza que llevas dentro con nuestros tratamientos de lujo
-      </p>
-      <div class="divider" aria-hidden="true"></div>
-    </header>
-
-    <div class="services-grid">
-      <article class="service-card" data-category="hair">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Peluquería"
-              >💇‍♀️</span
-            >
-            <div class="icon-glow" aria-hidden="true"></div>
+    <div class="service-card" data-category="lashes">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">👁️</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Pestañas</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Clásicas</span>
+              <span class="service-price">$21.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
           </div>
-          <h2 class="service-title">Peluquería</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios de peluquería"
-          >
-            <span class="plus">+</span>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">2D Clásicas</span>
+              <span class="service-price">$23.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
           </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Corte</span>
-                <span class="service-price">$20.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar corte de cabello"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">2D Rímel</span>
+              <span class="service-price">$24.000</span>
             </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Nutrición Capilar</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar nutrición capilar"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Volumen Mojado</span>
+              <span class="service-price">$45.000</span>
             </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Alisado</span>
-                <span class="service-price">$40.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar alisado"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Volumen Brasileño</span>
+              <span class="service-price">$22.000</span>
             </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Peinados</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar peinado"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Volumen Híbrido</span>
+              <span class="service-price">$38.000</span>
             </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Colors o Decoloración</span>
-                <span class="service-price">$35.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar coloración o decoloración"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Volumen Egipcio</span>
+              <span class="service-price">$38.000</span>
             </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Brushing</span>
-                <span class="service-price">$25.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar brushing"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Volumen Ruso</span>
+              <span class="service-price">$40.000</span>
             </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Planchado</span>
-                <span class="service-price">$25.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar planchado"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Foxy</span>
+              <span class="service-price">$30.000</span>
             </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Ondas con calor</span>
-                <span class="service-price">$25.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar ondas con calor"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Wispy</span>
+              <span class="service-price">$32.000</span>
             </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">KimK</span>
+              <span class="service-price">$32.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Retiro</span>
+              <span class="service-price">$10.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Lifting</span>
+              <span class="service-price">$20.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Nutrición + Color</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
           </div>
         </div>
-      </article>
-
-      <article class="service-card" data-category="lashes">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Pestañas">👁️</span
-            >
-            <div class="icon-glow" aria-hidden="true"></div>
-          </div>
-          <h2 class="service-title">Pestañas</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios de pestañas"
-          >
-            <span class="plus">+</span>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Clásicas</span>
-                <span class="service-price">$21.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar pestañas clásicas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">2D Clásicas</span>
-                <span class="service-price">$23.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar pestañas 2D clásicas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">2D Rímel</span>
-                <span class="service-price">$24.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar pestañas 2D rímel"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Volumen Mojado</span>
-                <span class="service-price">$45.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar volumen mojado"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Volumen Brasileño</span>
-                <span class="service-price">$22.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar volumen brasileño"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Volumen Híbrido</span>
-                <span class="service-price">$38.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar volumen híbrido"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Volumen Egipcio</span>
-                <span class="service-price">$38.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar volumen egipcio"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Volumen Ruso</span>
-                <span class="service-price">$40.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar volumen ruso"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Foxy</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar pestañas foxy"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Wispy</span>
-                <span class="service-price">$32.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar pestañas wispy"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">KimK</span>
-                <span class="service-price">$32.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar pestañas KimK"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Retiro</span>
-                <span class="service-price">$10.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar retiro de pestañas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Lifting</span>
-                <span class="service-price">$20.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar lifting de pestañas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Nutrición + Color</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar nutrición y color de pestañas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-category="brows">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Cejas">🪞</span>
-            <div class="icon-glow" aria-hidden="true"></div>
-          </div>
-          <h2 class="service-title">Cejas</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios de cejas"
-          >
-            <span class="plus">+</span>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Perfilado c/ Hilo</span>
-                <span class="service-price">$15.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar perfilado con hilo"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Con Navaja</span>
-                <span class="service-price">$10.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar perfilado con navaja"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Laminado</span>
-                <span class="service-price">$20.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar laminado de cejas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Henna</span>
-                <span class="service-price">$15.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar henna para cejas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Nutrición Cejas</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar nutrición de cejas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Cejas C/Cera</span>
-                <span class="service-price">$15.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar cejas con cera"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-category="nails">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Manicura">💅</span
-            >
-            <div class="icon-glow" aria-hidden="true"></div>
-          </div>
-          <h2 class="service-title">Manicura</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios de manicura"
-          >
-            <span class="plus">+</span>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Semipermanente</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar manicura semipermanente"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Capping/Rubber</span>
-                <span class="service-price">$40.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar capping rubber"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Capping Polygel</span>
-                <span class="service-price">$40.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar capping polygel"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Capping Acrilicas</span>
-                <span class="service-price">$40.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar capping acrílico"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Dipping</span>
-                <span class="service-price">$40.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar dipping"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Soft Gel</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar soft gel"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Esculpidas Acrilicas</span>
-                <span class="service-price">$27.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar uñas esculpidas acrílicas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Polygel</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar polygel"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Esculpidas Gel</span>
-                <span class="service-price">$48.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar uñas esculpidas en gel"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Acrílicas</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar uñas acrílicas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Nail Art simple</span>
-                <span class="service-price">$6.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar nail art simple"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Nail Art Complejo</span>
-                <span class="service-price">$6.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar nail art complejo"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Nail Art C/Uña</span>
-                <span class="service-price">$3.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar nail art por uña"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Remoción (a/ Ap)</span>
-                <span class="service-price">$20.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar remoción"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Manicuria Simple</span>
-                <span class="service-price">$20.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar manicura simple"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Remocion Nueva</span>
-                <span class="service-price">$10.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar remoción nueva"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Remocion Otro Salón</span>
-                <span class="service-price">$12.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar remoción de otro salón"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Baby boomer</span>
-                <span class="service-price">$12.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar baby boomer"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Cat eye</span>
-                <span class="service-price">$12.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar cat eye"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Efecto Cromer</span>
-                <span class="service-price">$12.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar efecto cromer"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Service Soft Gel</span>
-                <span class="service-price">$45.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar service soft gel"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Service Esc. Polygel</span>
-                <span class="service-price">$45.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar service esculpidas polygel"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Service Esc. Acrílico</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar service esculpidas acrílico"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Service Esc. Gel</span>
-                <span class="service-price">$45.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar service esculpidas gel"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Esmaltado Tradicional</span>
-                <span class="service-price">$22.000</span>
-              </div>
-              <a
-                href="/contactoRecoleta"
-                class="reserve-btn"
-                aria-label="Reservar esmaltado tradicional"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-category="Pedicuria">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Pedicura">🦶</span
-            >
-            <div class="icon-glow" aria-hidden="true"></div>
-          </div>
-          <h2 class="service-title">Pedicuria</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios de pedicura"
-          >
-            <span class="plus">+</span>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Pedicura sin Esmalte</span>
-                <span class="service-price">$23.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar pedicura sin esmalte"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Pedicura Tradicional</span>
-                <span class="service-price">$25.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar pedicura tradicional"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Pedicura Semipermanente</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar pedicura semipermanente"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-category="spa">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Spa">🧖‍♀️</span>
-            <div class="icon-glow" aria-hidden="true"></div>
-          </div>
-          <h2 class="service-title">Spa</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios de spa"
-          >
-            <span class="plus">+</span>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Manos</span>
-                <span class="service-price">$25.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar spa de manos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Pies c/ Esmaltado</span>
-                <span class="service-price">$23.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar spa de pies con esmaltado"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Pies c/ Semipermanente</span>
-                <span class="service-price">$40.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar spa de pies con semipermanente"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-category="facial">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Facial">🧴</span>
-            <div class="icon-glow" aria-hidden="true"></div>
-          </div>
-          <h2 class="service-title">Facial</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios faciales"
-          >
-            <span class="plus">+</span>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Higiene de Rostro Básico</span>
-                <span class="service-price">$25.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar higiene facial básica"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Limpieza e Hidratación</span>
-                <span class="service-price">$35.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar limpieza e hidratación facial"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Revitalización Cutánea</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar revitalización cutánea"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Humectación</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar humectación facial"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Peelings</span>
-                <span class="service-price">$45.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar peeling facial"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Máscara Desestresante</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar máscara desestresante"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Radiofrecuencia</span>
-                <span class="service-price">$35.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar radiofrecuencia facial"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-category="dermapen">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Dermo">⚡</span>
-            <div class="icon-glow" aria-hidden="true"></div>
-          </div>
-          <h2 class="service-title">Dermo</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios dermatológicos"
-          >
-            <span class="plus">+</span>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Tratamiento Para Manchas</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento para manchas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Limpieza profunda</span>
-                <span class="service-price">$35.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar limpieza profunda"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name"
-                  >Dermoplaning y punta de diamante</span
-                >
-                <span class="service-price">$40.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar dermoplaning y punta de diamante"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name"
-                  >Tratamiento Profundo Con Melasma</span
-                >
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento para melasma"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Flacidez Con Radiofrecuencia</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento de flacidez con radiofrecuencia"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name"
-                  >Tratamiento Para Celulitis y Adiposidad Localizada 4 SESIONES</span
-                >
-                <span class="service-price">$200.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento celulitis 4 sesiones"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name"
-                  >Tratamiento Para Celulitis y Adiposidad Localizada 1 SESION</span
-                >
-                <span class="service-price">$60.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento celulitis 1 sesión"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Tratamiento Para Estrias</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento para estrías"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Dermapen</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar dermapen"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Tratamiento para acné</span>
-                <span class="service-price">$45.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento para acné"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name"
-                  >Tratamiento para flacidez en lineas de expresión</span
-                >
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento líneas de expresión"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Tratamiento para piel oleosa</span>
-                <span class="service-price">$55.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento piel oleosa"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Tratamiento para piel alipica</span>
-                <span class="service-price">$60.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento piel atípica"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Tratamiento para rosácea</span>
-                <span class="service-price">$75.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar tratamiento para rosácea"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-category="massage">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Masajes">💆‍♀️</span>
-            <div class="icon-glow" aria-hidden="true"></div>
-          </div>
-          <h2 class="service-title">Masajes</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios de masajes"
-          >
-            <span class="plus">+</span>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Descontracturante 40MIN</span>
-                <span class="service-price">$35.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje descontracturante 40 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Descontracturante 60MIN</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje descontracturante 60 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Descontracturante 90MIN</span>
-                <span class="service-price">$70.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje descontracturante 90 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Relajante 40MIN</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje relajante 40 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Relajante 60MIN</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje relajante 60 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Relajante 90MIN</span>
-                <span class="service-price">$70.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje relajante 90 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Deportivo 30MIN</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje deportivo 30 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Deportivo 60MIN</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje deportivo 60 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Deportivo 90MIN</span>
-                <span class="service-price">$70.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje deportivo 90 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Reductor</span>
-                <span class="service-price">$30.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje reductor"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Reductor 60MIN</span>
-                <span class="service-price">$50.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje reductor 60 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Reductor 90MIN</span>
-                <span class="service-price">$70.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar masaje reductor 90 minutos"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="service-card" data-category="laser">
-        <header class="card-header">
-          <div class="icon-wrapper">
-            <span class="service-icon" role="img" aria-label="Depilación Láser"
-              >🪒</span
-            >
-            <div class="icon-glow" aria-hidden="true"></div>
-          </div>
-          <h2 class="service-title">Depilación Laser</h2>
-          <div
-            class="expand-btn"
-            role="button"
-            tabindex="0"
-            aria-label="Expandir servicios de depilación láser"
-          >
-            <span class="plus">+</span>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="services-list">
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Cuerpo Completo</span>
-                <span class="service-price">$35.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar depilación láser cuerpo completo"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">5 Zonas a Elección</span>
-                <span class="service-price">$25.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar depilación láser 5 zonas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Axilas</span>
-                <span class="service-price">$12.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar depilación láser axilas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Piernas Completas</span>
-                <span class="service-price">$17.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar depilación láser piernas completas"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-            <div class="service-item">
-              <div class="service-info">
-                <span class="service-name">Bikini</span>
-                <span class="service-price">$12.000</span>
-              </div>
-              <a
-                href="/contacto"
-                class="reserve-btn"
-                aria-label="Reservar depilación láser bikini"
-              >
-                <span>Reservar</span>
-                <div class="btn-glow" aria-hidden="true"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
+      </div>
     </div>
-  </section>
-</main>
 
+    <div class="service-card" data-category="brows">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">🪞</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Cejas</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Perfilado c/ Hilo</span>
+              <span class="service-price">$15.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Con Navaja</span>
+              <span class="service-price">$10.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Laminado</span>
+              <span class="service-price">$20.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Henna</span>
+              <span class="service-price">$15.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Nutrición Cejas</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Nutrición Cejas</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Nutrición Cejas</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Cejas C/Cera</span>
+              <span class="service-price">$15.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="nails">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">💅</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Manicura</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Semipermanente</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Capping/Rubber</span>
+              <span class="service-price">$40.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Capping Polygel</span>
+              <span class="service-price">$40.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Capping Acrilicas</span>
+              <span class="service-price">$40.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Dipping</span>
+              <span class="service-price">$40.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Soft Gel</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Esculpidas Acrilicas</span>
+              <span class="service-price">$27.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Polygel</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Esculpidas Gel</span>
+              <span class="service-price">$48.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Acrílicas</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Nail Art simple</span>
+              <span class="service-price">$6.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Nail Art Complejo</span>
+              <span class="service-price">$6.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Nail Art C/Uña</span>
+              <span class="service-price">$3.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Remoción (a/ Ap)</span>
+              <span class="service-price">$20.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Manicuria Simple</span>
+              <span class="service-price">$20.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Remocion Nueva</span>
+              <span class="service-price">$10.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Remocion Otro Salón</span>
+              <span class="service-price">$12.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Baby boomer</span>
+              <span class="service-price">$12.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Cat eye</span>
+              <span class="service-price">$12.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Efecto Cromer</span>
+              <span class="service-price">$12.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Service Soft Gel</span>
+              <span class="service-price">$45.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Service Esc. Polygel</span>
+              <span class="service-price">$45.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Service Esc. Acrílico</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Service Esc. Gel</span>
+              <span class="service-price">$45.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Esmaltado Tradicional</span>
+              <span class="service-price">$22.000</span>
+            </div>
+            <a href="/contactoRecoleta" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-card" data-category="Pedicuria">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">🦶</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Pedicuria</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Pedicura sin Esmalte</span>
+              <span class="service-price">$23.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Pedicura Tradicional</span>
+              <span class="service-price">$25.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Pedicura Semipermanente</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" data-category="spa">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">🧖‍♀️</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Spa</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Manos</span>
+              <span class="service-price">$25.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Pies c/ Esmaltado</span>
+              <span class="service-price">$23.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Pies c/ Esmaltado</span>
+              <span class="service-price">$40.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Pies c/ Semipermanente</span>
+              <span class="service-price">$40.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-card" data-category="facial">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">🧴</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Facial</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Higiene de Rostro Básico</span>
+              <span class="service-price">$25.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Limpieza e Hidratación</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Revitalización Cutánea</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Humectación</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Peelings</span>
+              <span class="service-price">$45.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Máscara Desestresante</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Radiofrecuencia</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-card" data-category="dermapen">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">⚡</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Dermo</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Tratamiento Para Manchas</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Limpieza profunda </span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Dermoplaning y punta de diamante</span>
+              <span class="service-price">$40.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Tratamiento Profundo Con Melasma</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Flacidez Con Radiofrecuencia</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name"
+                >Tratamiento Para Celulitis y Adiposidad Localizada 4 SESIONES</span
+              >
+              <span class="service-price">$200.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name"
+                >Tratamiento Para Celulitis y Adiposidad Localizada 1 SESION</span
+              >
+              <span class="service-price">$60.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Tratamiento Para Estrias</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Dermapen</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Tratamiento para acné</span>
+              <span class="service-price">$45.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name"
+                >Tratamiento para flacidez en lineas de expresión</span
+              >
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Tratamiento para piel oleosa</span>
+              <span class="service-price">$55.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Tratamiento para piel alipica</span>
+              <span class="service-price">$60.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Tratamiento para rosácea</span>
+              <span class="service-price">$75.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-card" data-category="massage">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">💆‍♀️</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Masajes</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Descontracturante 40MIN</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Descontracturante 60MIN</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Descontracturante 90MIN</span>
+              <span class="service-price">$70.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Descontracturante 40MIN</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Relajante 40MIN</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Relajante 60MIN</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Relajante 90MIN</span>
+              <span class="service-price">$70.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Deportivo 30MIN</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Deportivo 60MIN</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Deportivo 90MIN</span>
+              <span class="service-price">$70.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Reductor</span>
+              <span class="service-price">$30.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Reductor 60MIN</span>
+              <span class="service-price">$50.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Reductor 90MIN</span>
+              <span class="service-price">$70.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-card" data-category="laser">
+      <div class="card-header">
+        <div class="icon-wrapper">
+          <span class="service-icon">🪒</span>
+          <div class="icon-glow"></div>
+        </div>
+        <h3 class="service-title">Depilación Laser</h3>
+        <div class="expand-btn">
+          <span class="plus">+</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Cuerpo Completo</span>
+              <span class="service-price">$35.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">5 Zonas a Elección</span>
+              <span class="service-price">$25.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Axilas</span>
+              <span class="service-price">$12.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Piernas Completas</span>
+              <span class="service-price">$17.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+          <div class="service-item">
+            <div class="service-info">
+              <span class="service-name">Bikini</span>
+              <span class="service-price">$12.000</span>
+            </div>
+            <a href="/contacto" class="reserve-btn">
+              <span>Reservar</span>
+              <div class="btn-glow"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <Footer />
-
 <style>
   :root {
     --lila: #a855f7;
@@ -2317,9 +1901,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     .services-grid {
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: 1fr;
       gap: 20px;
       padding: 0 10px;
     }
@@ -2330,57 +1914,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .card-header {
       padding: 25px 20px;
-    }
-
-    .icon-wrapper {
-      width: 60px;
-      height: 60px;
-    }
-
-    .service-icon {
-      font-size: 25px;
-    }
-
-    .service-title {
-      font-size: 1.6rem;
-    }
-
-    .services-list {
-      padding: 15px 20px 25px;
-    }
-
-    .service-item {
-      padding: 18px 20px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .servicios {
-      padding: 100px 15px 60px;
-    }
-
-    .services-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding: 0;
-    }
-
-    .service-card {
-      border-radius: 20px;
-      margin: 0 5px;
-    }
-
-    .card-header {
-      padding: 25px 20px;
-      flex-direction: row;
-      text-align: left;
+      flex-direction: column;
+      text-align: center;
       gap: 15px;
     }
 
     .icon-wrapper {
       width: 60px;
       height: 60px;
-      flex-shrink: 0;
     }
 
     .service-icon {
@@ -2389,7 +1930,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .service-title {
       font-size: 1.5rem;
-      flex: 1;
     }
 
     .services-list {
@@ -2409,62 +1949,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .reserve-btn {
       width: 100%;
-      max-width: 200px;
     }
   }
 
   @media (max-width: 480px) {
     .servicios {
-      padding: 80px 10px 40px;
+      padding: 100px 15px 60px;
     }
 
     .hero-section {
-      margin-bottom: 40px;
-      padding: 0 5px;
+      margin-bottom: 60px;
     }
 
     .main-title {
-      font-size: clamp(2.2rem, 10vw, 3.5rem);
-      margin-bottom: 15px;
+      font-size: 2.5rem;
     }
 
     .subtitle {
-      font-size: clamp(1rem, 4vw, 1.4rem);
-      margin-bottom: 30px;
-    }
-
-    .service-card {
-      border-radius: 15px;
-      margin: 0;
+      font-size: 1.2rem;
     }
 
     .card-header {
       padding: 20px 15px;
-      flex-direction: column;
-      text-align: center;
-      gap: 12px;
-    }
-
-    .icon-wrapper {
-      width: 50px;
-      height: 50px;
-    }
-
-    .service-icon {
-      font-size: 22px;
-    }
-
-    .service-title {
-      font-size: 1.3rem;
-    }
-
-    .expand-btn {
-      width: 35px;
-      height: 35px;
-    }
-
-    .plus {
-      font-size: 20px;
     }
 
     .services-list {
@@ -2473,159 +1979,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .service-item {
       padding: 15px;
-      margin-bottom: 10px;
-    }
-
-    .service-name {
-      font-size: 1rem;
-    }
-
-    .service-price {
-      font-size: 1.1rem;
-    }
-
-    .reserve-btn {
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      max-width: 180px;
-    }
-  }
-
-  @media (max-width: 360px) {
-    .servicios {
-      padding: 70px 8px 30px;
-    }
-
-    .main-title {
-      font-size: 2rem;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-    }
-
-    .card-header {
-      padding: 18px 12px;
-    }
-
-    .service-title {
-      font-size: 1.2rem;
-    }
-
-    .services-list {
-      padding: 8px 12px 15px;
-    }
-
-    .service-item {
-      padding: 12px;
-      margin-bottom: 8px;
-    }
-
-    .reserve-btn {
-      max-width: 160px;
-      padding: 8px 16px;
-      font-size: 0.85rem;
-    }
-  }
-
-  .expand-btn:focus-visible {
-    outline: 2px solid var(--lila);
-    outline-offset: 2px;
-  }
-
-  .reserve-btn:focus-visible {
-    outline: 2px solid var(--dorado);
-    outline-offset: 2px;
-  }
-
-  @media (hover: none) and (pointer: coarse) {
-    .service-card:hover {
-      transform: none;
-    }
-
-    .service-card:active {
-      transform: scale(0.98);
-    }
-
-    .reserve-btn:hover {
-      transform: none;
-    }
-
-    .reserve-btn:active {
-      transform: scale(0.95);
-    }
-
-    .expand-btn:hover {
-      transform: none;
-    }
-
-    .expand-btn:active {
-      transform: scale(0.9);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .particle,
-    .service-card,
-    .title-word,
-    .subtitle,
-    .divider,
-    .service-item {
-      animation: none !important;
-    }
-
-    .card-header,
-    .service-card,
-    .service-item,
-    .reserve-btn,
-    .expand-btn,
-    .icon-glow,
-    .btn-glow,
-    .plus {
-      transition: none !important;
-    }
-
-    .service-card {
-      opacity: 1;
-      transform: none;
-    }
-
-    .service-item {
-      opacity: 1;
-      transform: none;
-    }
-
-    .title-word,
-    .subtitle,
-    .divider {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  @media (prefers-contrast: high) {
-    .service-card {
-      border: 2px solid var(--negro);
-      background: var(--blanco);
-    }
-
-    .card-header {
-      background: var(--gris-claro);
-    }
-
-    .title-word.highlight {
-      -webkit-text-fill-color: var(--negro);
-      color: var(--negro);
-    }
-
-    .reserve-btn {
-      background: var(--negro);
-      color: var(--blanco);
-      border: 2px solid var(--negro);
-    }
-
-    .expand-btn {
-      background: var(--negro);
     }
   }
 
@@ -2655,72 +2008,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const cards: NodeListOf<Element> =
-      document.querySelectorAll(".service-card");
-    let particleObserver: IntersectionObserver | undefined;
+    const cards = document.querySelectorAll(".service-card");
 
     cards.forEach((card) => {
-      const header = card.querySelector<HTMLElement>(".card-header");
-      const expandBtn = card.querySelector<HTMLElement>(".expand-btn");
+      const header = card.querySelector(".card-header");
 
       if (header) {
-        header.addEventListener("click", function (e) {
-          e.preventDefault();
-          toggleCard(card, cards);
-        });
-
-        if (expandBtn) {
-          expandBtn.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              toggleCard(card, cards);
+        header.addEventListener("click", function () {
+          cards.forEach((otherCard) => {
+            if (otherCard !== card) {
+              otherCard.classList.remove("expanded");
             }
           });
-        }
+
+          card.classList.toggle("expanded");
+        });
       }
     });
 
-    function toggleCard(targetCard: Element, allCards: NodeListOf<Element>) {
-      allCards.forEach((otherCard) => {
-        if (otherCard !== targetCard) {
-          otherCard.classList.remove("expanded");
-        }
+    window.addEventListener("scroll", function () {
+      const scrolled = window.pageYOffset;
+
+      const particles = document.querySelectorAll<HTMLElement>(".particle");
+
+      particles.forEach((particle, index) => {
+        const speed = 0.5 + index * 0.1;
+
+        particle.style.transform = `translateY(${scrolled * speed}px)`;
       });
+    });
 
-      targetCard.classList.toggle("expanded");
-
-      const isExpanded = targetCard.classList.contains("expanded");
-      const expandBtn = targetCard.querySelector(".expand-btn");
-      if (expandBtn) {
-        expandBtn.setAttribute("aria-expanded", isExpanded.toString());
-      }
-    }
-
-    let ticking = false;
-
-    window.addEventListener(
-      "scroll",
-      function () {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            const scrolled = window.pageYOffset;
-            const particles = document.querySelectorAll(".particle");
-
-            particles.forEach((particle, index) => {
-              if (particle instanceof HTMLElement) {
-                const speed = 0.3 + index * 0.05;
-                particle.style.transform = `translateY(${scrolled * speed}px)`;
-              }
-            });
-            ticking = false;
-          });
-          ticking = true;
-        }
-      },
-      { passive: true }
-    );
-
-    const observerOptions: IntersectionObserverInit = {
+    const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -50px 0px",
     };
@@ -2735,133 +2053,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     cards.forEach((card) => {
       observer.observe(card);
-    });
-
-    const expandBtns = document.querySelectorAll(".expand-btn");
-    expandBtns.forEach((btn) => {
-      btn.setAttribute("aria-expanded", "false");
-    });
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
-    if (!prefersReducedMotion.matches) {
-      particleObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const particles = entry.target.querySelectorAll(".particle");
-          particles.forEach((particle) => {
-            if (particle instanceof HTMLElement) {
-              particle.style.animationPlayState = entry.isIntersecting
-                ? "running"
-                : "paused";
-            }
-          });
-        });
-      });
-
-      const particlesContainer = document.querySelector(".particles");
-      if (particlesContainer) {
-        particleObserver.observe(particlesContainer);
-      }
-    }
-
-    const reserveButtons: NodeListOf<HTMLButtonElement> =
-      document.querySelectorAll(".reserve-btn");
-    reserveButtons.forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const span = btn.querySelector("span");
-        if (span) {
-          const originalText = span.textContent;
-          span.textContent = "Cargando...";
-
-          setTimeout(() => {
-            span.textContent = originalText;
-          }, 1000);
-        }
-      });
-    });
-
-    let resizeTimeout: number;
-    window.addEventListener(
-      "resize",
-      function () {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = window.setTimeout(() => {
-          const expandedCards = document.querySelectorAll(
-            ".service-card.expanded"
-          );
-          expandedCards.forEach((card) => {
-            const content = card.querySelector(".card-content");
-            if (content instanceof HTMLElement) {
-              content.style.maxHeight = "none";
-              const height = content.scrollHeight;
-              content.style.maxHeight = "0";
-              requestAnimationFrame(() => {
-                content.style.maxHeight = `${height}px`;
-              });
-            }
-          });
-        }, 250);
-      },
-      { passive: true }
-    );
-
-    if ("ontouchstart" in window) {
-      const touchElements: NodeListOf<HTMLElement> = document.querySelectorAll(
-        ".reserve-btn, .expand-btn, .card-header"
-      );
-
-      touchElements.forEach((element) => {
-        if (element instanceof HTMLElement) {
-          element.addEventListener(
-            "touchstart",
-            () => {
-              element.style.transform = "scale(0.95)";
-            },
-            { passive: true }
-          );
-
-          element.addEventListener(
-            "touchend",
-            () => {
-              setTimeout(() => {
-                element.style.transform = "";
-              }, 150);
-            },
-            { passive: true }
-          );
-        }
-      });
-    }
-
-    const preloadImages = () => {
-      const imageUrls = ["/img/logoimg.png"];
-      imageUrls.forEach((url) => {
-        const link = document.createElement("link");
-        link.rel = "preload";
-        link.as = "image";
-        link.href = url;
-        document.head.appendChild(link);
-      });
-    };
-
-    if (document.readyState === "complete") {
-      preloadImages();
-    } else {
-      window.addEventListener("load", preloadImages);
-    }
-
-    window.addEventListener("error", function (e: Event) {
-      if (e.target instanceof HTMLImageElement) {
-        console.warn("Failed to load image:", e.target.src);
-      }
-    });
-
-    window.addEventListener("beforeunload", function () {
-      observer.disconnect();
-      if (particleObserver) {
-        particleObserver.disconnect();
-      }
     });
   });
 </script>
