@@ -3,6 +3,12 @@ import HeroLayout from "../layouts/HeroLayout.astro";
 import Servicios from "../pages/servicios.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+const { title, description, canonical } = Astro.props;
+const siteName = "Valquirias Estética";
+const siteURL = "https://www.mcvalquirias.com";
+const logoURL = `${siteURL}/img/og-image.jpg`;
+const twitterHandle = "@valquiriasestetica";
 ---
 
 <HeroLayout
@@ -16,13 +22,11 @@ import Footer from "../components/Footer.astro";
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
     />
 
-    <!-- Favicon -->
     <link rel="icon" href="/img/logoimg.png" type="image/png" />
     <link rel="apple-touch-icon" href="/img/logoimg.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/img/logoimg.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/img/logoimg.png" />
 
-    <!-- SEO Meta Tags -->
     <title>
       Valquirias Estética - Centro de Belleza en Recoleta | Lifting Pestañas,
       Manicura
@@ -42,7 +46,6 @@ import Footer from "../components/Footer.astro";
     />
     <meta name="googlebot" content="index, follow" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.mcvalquirias.com/" />
     <meta
@@ -62,7 +65,6 @@ import Footer from "../components/Footer.astro";
     <meta property="og:locale" content="es_AR" />
     <meta property="og:site_name" content="Valquirias Estética" />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.mcvalquirias.com/" />
     <meta
@@ -78,13 +80,11 @@ import Footer from "../components/Footer.astro";
       content="https://www.mcvalquirias.com/img/logoimg.png"
     />
 
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.mcvalquirias.com/" />
 
-    <!-- Preload critical resources -->
+    >
     <link rel="preload" href="/video/herovid.mp4" as="video" type="video/mp4" />
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
