@@ -22,11 +22,9 @@ const twitterHandle = "@valquiriasestetica";
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
 
-    <!-- Preconnect para mejorar performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Favicons optimizados -->
     <link rel="icon" href="/img/logoimg.png" type="image/png" />
     <link rel="apple-touch-icon" href="/img/logoimg.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/img/logoimg.png" />
@@ -51,7 +49,6 @@ const twitterHandle = "@valquiriasestetica";
     />
     <meta name="googlebot" content="index, follow" />
 
-    <!-- Open Graph optimizado -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.mcvalquirias.com/" />
     <meta
@@ -71,7 +68,6 @@ const twitterHandle = "@valquiriasestetica";
     <meta property="og:locale" content="es_AR" />
     <meta property="og:site_name" content="Valquirias Estética" />
 
-    <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.mcvalquirias.com/" />
     <meta
@@ -89,16 +85,13 @@ const twitterHandle = "@valquiriasestetica";
 
     <link rel="canonical" href="https://www.mcvalquirias.com/" />
 
-    <!-- Preload crítico del video -->
     <link rel="preload" href="/video/herovid.mp4" as="video" type="video/mp4" />
 
-    <!-- Preload de fuentes -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -194,10 +187,8 @@ const twitterHandle = "@valquiriasestetica";
           <div class="title-underline" aria-hidden="true"></div>
         </div>
 
-        <!-- Subtítulo -->
         <p class="hero-subtitle">Realzá tu belleza con manos profesionales</p>
 
-        <!-- Botones CTA -->
         <div class="buttons-container">
           <button
             class="cta-button primary"
@@ -219,7 +210,6 @@ const twitterHandle = "@valquiriasestetica";
           </button>
         </div>
 
-        <!-- Elementos decorativos -->
         <div class="decorative-elements" aria-hidden="true" role="presentation">
           <div class="floating-gem gem-1"></div>
           <div class="floating-gem gem-2"></div>
@@ -234,7 +224,6 @@ const twitterHandle = "@valquiriasestetica";
   </section>
 
   <style>
-    /* Variables CSS para mejor mantenimiento */
     :root {
       --primary-gradient: linear-gradient(135deg, #e96ee3 0%, #d4af37 100%);
       --text-gradient: linear-gradient(
@@ -251,7 +240,6 @@ const twitterHandle = "@valquiriasestetica";
         sans-serif;
     }
 
-    /* Reset y base styles */
     * {
       margin: 0;
       padding: 0;
@@ -277,20 +265,28 @@ const twitterHandle = "@valquiriasestetica";
       display: none;
     }
 
-    /* Hero Section */
     .hero {
       position: relative;
       width: 100vw;
       height: 100vh;
+      height: 100dvh;
+      min-height: 100vh;
       min-height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       contain: layout style paint;
+      background: linear-gradient(
+        135deg,
+        #1a1a2e 0%,
+        #16213e 25%,
+        #0f3460 50%,
+        #533483 75%,
+        #16213e 100%
+      );
     }
 
-    /* Video Background Optimizado */
     .background-video {
       position: absolute;
       inset: 0;
@@ -305,7 +301,6 @@ const twitterHandle = "@valquiriasestetica";
       transform: translate3d(0, 0, 0);
     }
 
-    /* Loading Spinner */
     .loading-spinner {
       position: absolute;
       top: 50%;
@@ -339,7 +334,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     }
 
-    /* Partículas Optimizadas */
     .particles {
       position: absolute;
       inset: 0;
@@ -414,7 +408,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     }
 
-    /* Hero Overlay */
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -434,7 +427,6 @@ const twitterHandle = "@valquiriasestetica";
       backface-visibility: hidden;
     }
 
-    /* Hero Content */
     .hero-content {
       position: relative;
       z-index: 4;
@@ -447,13 +439,11 @@ const twitterHandle = "@valquiriasestetica";
       animation: heroEntrance 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
     }
 
-    /* Logo Container */
     .logo-container {
       margin-bottom: 2rem;
       position: relative;
     }
 
-    /* Título Principal */
     .main-title {
       font-size: clamp(2.5rem, 8vw, 5rem);
       font-weight: 700;
@@ -499,7 +489,6 @@ const twitterHandle = "@valquiriasestetica";
       opacity: 1;
     }
 
-    /* Línea decorativa */
     .title-underline {
       width: 0;
       height: 4px;
@@ -537,7 +526,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     }
 
-    /* Subtítulo */
     .hero-subtitle {
       font-size: clamp(1.1rem, 3vw, 1.8rem);
       color: rgba(255, 255, 255, 0.9);
@@ -553,7 +541,6 @@ const twitterHandle = "@valquiriasestetica";
       margin-right: auto;
     }
 
-    /* Contenedor de botones */
     .buttons-container {
       display: flex;
       gap: 1.5rem;
@@ -565,7 +552,6 @@ const twitterHandle = "@valquiriasestetica";
       animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1.6s forwards;
     }
 
-    /* Botones CTA Optimizados */
     .cta-button {
       position: relative;
       padding: 16px 32px;
@@ -628,7 +614,6 @@ const twitterHandle = "@valquiriasestetica";
       transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Efectos hover mejorados */
     .cta-button:hover {
       transform: translate3d(0, -3px, 0) scale(1.05);
       box-shadow: 0 15px 40px rgba(233, 110, 227, 0.6);
@@ -652,7 +637,6 @@ const twitterHandle = "@valquiriasestetica";
       opacity: 1;
     }
 
-    /* Elementos decorativos */
     .decorative-elements {
       position: absolute;
       inset: 0;
@@ -701,7 +685,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     }
 
-    /* Animaciones principales */
     @keyframes heroEntrance {
       0% {
         opacity: 0;
@@ -724,7 +707,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     }
 
-    /* Responsive Design Mejorado */
     @media (max-width: 1024px) {
       .buttons-container {
         gap: 1rem;
@@ -832,7 +814,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     }
 
-    /* Optimizaciones para dispositivos táctiles */
     @media (hover: none) and (pointer: coarse) {
       .cta-button:active {
         transform: translate3d(0, 0, 0) scale(0.98);
@@ -849,7 +830,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     }
 
-    /* Mejoras para accesibilidad */
     @media (prefers-reduced-motion: reduce) {
       .particle,
       .floating-gem,
@@ -918,7 +898,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     }
 
-    /* Performance optimizations */
     .hero * {
       backface-visibility: hidden;
       perspective: 1000px;
@@ -926,7 +905,6 @@ const twitterHandle = "@valquiriasestetica";
   </style>
 
   <script>
-    // Definimos interfaces para las APIs no estándar del navegador para evitar errores de TS
     interface NavigatorWithConnection extends Navigator {
       connection?: {
         effectiveType: string;
@@ -941,7 +919,6 @@ const twitterHandle = "@valquiriasestetica";
     }
 
     class HeroController {
-      // 1. Declaración de propiedades de la clase con sus tipos
       isScrolling: boolean;
       resizeTimer: number | null;
 
@@ -957,10 +934,9 @@ const twitterHandle = "@valquiriasestetica";
         this.optimizeVideo();
         this.setupViewportHeight();
         this.hideLoadingSpinner();
-        this.optimizePerformance(); // Llamada a la optimización de rendimiento
+        this.optimizePerformance();
       }
 
-      // Configurar event listeners optimizados
       setupEventListeners(): void {
         document.addEventListener("click", this.handleNavigation.bind(this), {
           passive: true,
@@ -979,9 +955,7 @@ const twitterHandle = "@valquiriasestetica";
         this.setupTouchEvents();
       }
 
-      // 2. Tipado del parámetro del evento (e: MouseEvent)
       handleNavigation(e: MouseEvent): void {
-        // 3. Aseguramos que e.target es un Elemento antes de usar 'closest'
         const target = e.target as Element;
         const button = target.closest<HTMLButtonElement>(".cta-button");
         if (!button) return;
@@ -1014,7 +988,7 @@ const twitterHandle = "@valquiriasestetica";
 
       handleScroll(): void {
         const scrolled = window.pageYOffset;
-        // 4. Usamos querySelector con genéricos para obtener el tipo correcto
+
         const video =
           document.querySelector<HTMLVideoElement>(".background-video");
         const overlay = document.querySelector<HTMLElement>(".hero-overlay");
@@ -1197,11 +1171,6 @@ const twitterHandle = "@valquiriasestetica";
       }
 
       destroy(): void {
-        // Para removeEventListener es importante pasar la misma referencia de función
-        // que se usó en addEventListener, por eso el .bind(this) es crucial
-        // y debe ser manejado con cuidado. Una mejor práctica sería guardar las
-        // funciones bindeadaas en propiedades de la clase.
-        // Sin embargo, para este caso, lo dejamos así por simplicidad.
         window.removeEventListener("scroll", this.throttledScroll.bind(this));
         window.removeEventListener("resize", this.debouncedResize.bind(this));
         window.removeEventListener(
@@ -1216,8 +1185,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     }
 
-    // Inicialización
-    // 5. Tipado de la variable del controlador
     let heroController: HeroController | undefined;
 
     if (document.readyState === "loading") {
@@ -1234,7 +1201,6 @@ const twitterHandle = "@valquiriasestetica";
       }
     });
 
-    // Lazy loading para imágenes
     if ("IntersectionObserver" in window) {
       const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -1256,7 +1222,6 @@ const twitterHandle = "@valquiriasestetica";
         });
     }
 
-    // Manejo de errores de video
     document.addEventListener(
       "error",
       (e) => {
@@ -1274,9 +1239,7 @@ const twitterHandle = "@valquiriasestetica";
     );
   </script>
 
-  <!-- CSS adicional para optimizaciones -->
   <style>
-    /* Optimizaciones para dispositivos de bajo rendimiento */
     .low-performance .particle,
     .low-performance .floating-gem,
     .low-performance .title-word {
@@ -1288,7 +1251,6 @@ const twitterHandle = "@valquiriasestetica";
       animation: none !important;
     }
 
-    /* Lazy loading para imágenes */
     img.lazy {
       opacity: 0;
       transition: opacity 0.3s;
@@ -1298,7 +1260,6 @@ const twitterHandle = "@valquiriasestetica";
       opacity: 1;
     }
 
-    /* Mejoras adicionales de rendimiento */
     .hero *,
     .hero *::before,
     .hero *::after {
@@ -1315,12 +1276,10 @@ const twitterHandle = "@valquiriasestetica";
       will-change: transform, box-shadow;
     }
 
-    /* Contenido crítico above the fold */
     .hero-content {
       contain: layout style paint;
     }
 
-    /* GPU acceleration para elementos animados */
     .background-video,
     .particle,
     .floating-gem,
@@ -1331,12 +1290,10 @@ const twitterHandle = "@valquiriasestetica";
       perspective: 1000px;
     }
 
-    /* Optimización de repaint */
     .hero-overlay {
       isolation: isolate;
     }
 
-    /* Contenedor para optimizar composite layers */
     .hero {
       isolation: isolate;
       contain: layout style paint;
