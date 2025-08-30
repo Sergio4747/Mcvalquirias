@@ -1,14 +1,20 @@
 ---
-// src/pages/index.astro
 import HeroLayout from "../layouts/HeroLayout.astro";
+import Servicios from "../pages/servicios.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const { title, description, canonical } = Astro.props;
 const siteName = "Valquirias Estética";
 const siteURL = "https://www.mcvalquirias.com";
-const logoURL = `${siteURL}/img/logoimg.png`;
+const logoURL = `${siteURL}/img/og-image.jpg`;
+const twitterHandle = "@valquiriasestetica";
 ---
 
-<HeroLayout>
+<HeroLayout
+  title="Valquirias Estética - Centro de Belleza en Recoleta | Lifting Pestañas, Manicura"
+  description="Descubre nuestros servicios de belleza en Valquirias Estética. Expertas en lifting de pestañas, manicura semipermanente y perfilado de cejas en Recoleta. ¡Reserva tu turno!"
+>
   <head>
     <meta charset="utf-8" />
     <meta
@@ -16,13 +22,16 @@ const logoURL = `${siteURL}/img/logoimg.png`;
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
 
-    <!-- Favicons -->
+    <!-- Preconnect para mejorar performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Favicons optimizados -->
     <link rel="icon" href="/img/logoimg.png" type="image/png" />
     <link rel="apple-touch-icon" href="/img/logoimg.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/img/logoimg.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/img/logoimg.png" />
 
-    <!-- SEO Meta Tags -->
     <title>
       Valquirias Estética - Centro de Belleza en Recoleta | Lifting Pestañas,
       Manicura
@@ -42,7 +51,7 @@ const logoURL = `${siteURL}/img/logoimg.png`;
     />
     <meta name="googlebot" content="index, follow" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph optimizado -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.mcvalquirias.com/" />
     <meta
@@ -78,19 +87,18 @@ const logoURL = `${siteURL}/img/logoimg.png`;
       content="https://www.mcvalquirias.com/img/logoimg.png"
     />
 
-    <!-- Canonical -->
     <link rel="canonical" href="https://www.mcvalquirias.com/" />
 
-    <!-- Preload critical resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload crítico del video -->
+    <link rel="preload" href="/video/herovid.mp4" as="video" type="video/mp4" />
+
+    <!-- Preload de fuentes -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" href="/video/herovid.mp4" as="video" type="video/mp4" />
 
-    <!-- Schema.org structured data -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -153,1198 +161,1185 @@ const logoURL = `${siteURL}/img/logoimg.png`;
     </script>
   </head>
 
-  <!-- Hero Section -->
   <section class="hero" id="hero">
-    <!-- Background Video -->
-    <div class="video-container">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        class="background-video"
-        preload="metadata"
-        poster="/img/hero-poster.jpg"
-      >
-        <source src="/video/herovid.mp4" type="video/mp4" />
-        <source src="/video/herovid.webm" type="video/webm" />
-        <!-- Fallback background -->
-        <div class="video-fallback"></div>
-      </video>
-      <div class="video-overlay"></div>
+    <video
+      class="background-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/img/hero-poster.jpg"
+    >
+      <source src="/video/herovid.mp4" type="video/mp4" />
+      <source src="/video/herovid.webm" type="video/webm" />
+      Tu navegador no soporta video HTML5.
+    </video>
+
+    <div class="particles" aria-hidden="true" role="presentation">
+      {
+        Array.from({ length: 6 }).map((_, i) => (
+          <div class={`particle particle-${i + 1}`} />
+        ))
+      }
     </div>
 
-    <!-- Animated Particles -->
-    <div class="particles" aria-hidden="true">
-      <div class="particle particle-1"></div>
-      <div class="particle particle-2"></div>
-      <div class="particle particle-3"></div>
-      <div class="particle particle-4"></div>
-      <div class="particle particle-5"></div>
-      <div class="particle particle-6"></div>
-    </div>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <div class="logo-container">
+          <h1 class="main-title">
+            <span class="title-word" data-text="Valquirias">Valquirias</span>
+            <span class="title-word" data-text="Estética">Estética</span>
+          </h1>
+          <div class="title-underline" aria-hidden="true"></div>
+        </div>
 
-    <!-- Hero Content -->
-    <div class="hero-content">
-      <div class="logo-container">
-        <h1 class="main-title">
-          <span class="title-word word-1">Valquirias</span>
-          <span class="title-word word-2">Estética</span>
-        </h1>
-        <div class="title-underline" aria-hidden="true"></div>
-      </div>
+        <!-- Subtítulo -->
+        <p class="hero-subtitle">Realzá tu belleza con manos profesionales</p>
 
-      <p class="hero-subtitle">Realzá tu belleza con manos profesionales</p>
+        <!-- Botones CTA -->
+        <div class="buttons-container">
+          <button
+            class="cta-button primary"
+            data-nav="/servicios"
+            aria-label="Ver todos nuestros servicios de belleza"
+          >
+            <span class="button-text">Ver Servicios</span>
+            <div class="button-bg" aria-hidden="true"></div>
+            <div class="button-shine" aria-hidden="true"></div>
+          </button>
+          <button
+            class="cta-button secondary"
+            data-nav="/contacto"
+            aria-label="Contactar con Valquirias Estética"
+          >
+            <span class="button-text">Contactar</span>
+            <div class="button-bg" aria-hidden="true"></div>
+            <div class="button-shine" aria-hidden="true"></div>
+          </button>
+        </div>
 
-      <div class="buttons-container">
-        <button
-          class="cta-button primary"
-          data-action="services"
-          aria-label="Ver todos nuestros servicios de belleza"
-        >
-          <span class="button-text">Ver Servicios</span>
-          <div class="button-bg" aria-hidden="true"></div>
-          <div class="button-shine" aria-hidden="true"></div>
-        </button>
-        <button
-          class="cta-button secondary"
-          data-action="contact"
-          aria-label="Contactar con Valquirias Estética"
-        >
-          <span class="button-text">Contactar</span>
-          <div class="button-bg" aria-hidden="true"></div>
-          <div class="button-shine" aria-hidden="true"></div>
-        </button>
-      </div>
-
-      <!-- Floating Decorative Elements -->
-      <div class="decorative-elements" aria-hidden="true">
-        <div class="floating-gem gem-1"></div>
-        <div class="floating-gem gem-2"></div>
-        <div class="floating-gem gem-3"></div>
-        <div class="floating-star star-1">✨</div>
-        <div class="floating-star star-2">✨</div>
+        <!-- Elementos decorativos -->
+        <div class="decorative-elements" aria-hidden="true" role="presentation">
+          <div class="floating-gem gem-1"></div>
+          <div class="floating-gem gem-2"></div>
+          <div class="floating-gem gem-3"></div>
+        </div>
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" aria-hidden="true">
-      <div class="scroll-arrow"></div>
-      <span class="scroll-text">Deslizar</span>
+    <div class="loading-spinner" aria-hidden="true">
+      <div class="spinner"></div>
     </div>
   </section>
-</HeroLayout>
 
-<style>
-  /* CSS Reset & Custom Properties */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :root {
-    --primary-pink: #e96ee3;
-    --primary-gold: #d4af37;
-    --dark-overlay: rgba(0, 0, 0, 0.4);
-    --light-overlay: rgba(255, 255, 255, 0.1);
-    --text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    --vh: 1vh;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-
-  body {
-    font-family:
-      "Poppins",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      sans-serif;
-    background: #000;
-    color: #fff;
-    overflow-x: hidden;
-    line-height: 1.6;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Hide scrollbar but keep functionality */
-  body::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-  }
-
-  body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  /* Hero Section */
-  .hero {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    min-height: calc(var(--vh, 1vh) * 100);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: linear-gradient(135deg, #1a0033, #000000);
-  }
-
-  /* Video Container */
-  .video-container {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-  }
-
-  .background-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.7) contrast(1.1) saturate(1.3);
-    pointer-events: none;
-    transform: scale(1.05);
-    will-change: transform;
-    transition: opacity 0.8s ease;
-    opacity: 0;
-  }
-
-  .background-video.loaded {
-    opacity: 1;
-  }
-
-  .video-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(162, 92, 207, 0.25) 0%,
-      rgba(233, 110, 227, 0.15) 30%,
-      rgba(0, 0, 0, 0.3) 70%,
-      rgba(0, 0, 0, 0.6) 100%
-    );
-    z-index: 2;
-  }
-
-  .video-fallback {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      var(--primary-pink),
-      var(--primary-gold)
-    );
-    opacity: 0.8;
-    display: none;
-  }
-
-  /* Floating Particles */
-  .particles {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .particle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: linear-gradient(
-      45deg,
-      var(--primary-pink),
-      var(--primary-gold)
-    );
-    border-radius: 50%;
-    opacity: 0;
-    filter: blur(0.5px);
-    animation: particleFloat 8s infinite ease-in-out;
-    will-change: transform, opacity;
-  }
-
-  .particle-1 {
-    top: 15%;
-    left: 10%;
-    animation-delay: 0s;
-  }
-  .particle-2 {
-    top: 60%;
-    left: 85%;
-    animation-delay: 1.5s;
-  }
-  .particle-3 {
-    top: 25%;
-    left: 75%;
-    animation-delay: 3s;
-  }
-  .particle-4 {
-    top: 80%;
-    left: 15%;
-    animation-delay: 4.5s;
-  }
-  .particle-5 {
-    top: 40%;
-    left: 90%;
-    animation-delay: 6s;
-  }
-  .particle-6 {
-    top: 70%;
-    left: 5%;
-    animation-delay: 7.5s;
-  }
-
-  @keyframes particleFloat {
-    0%,
-    100% {
-      transform: translate3d(0, 0, 0) scale(0.8);
-      opacity: 0;
-    }
-    20% {
-      opacity: 0.7;
-    }
-    50% {
-      transform: translate3d(15px, -30px, 0) scale(1.2);
-      opacity: 1;
-    }
-    80% {
-      opacity: 0.7;
-    }
-  }
-
-  /* Hero Content */
-  .hero-content {
-    position: relative;
-    z-index: 4;
-    max-width: 900px;
-    width: 100%;
-    text-align: center;
-    padding: 0 2rem;
-    animation: heroEntrance 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
-    will-change: transform, opacity;
-  }
-
-  /* Logo and Title */
-  .logo-container {
-    margin-bottom: 2.5rem;
-    position: relative;
-  }
-
-  .main-title {
-    font-size: clamp(2.8rem, 8.5vw, 6rem);
-    font-weight: 700;
-    line-height: 0.85;
-    margin-bottom: 1.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .title-word {
-    display: inline-block;
-    background: linear-gradient(
-      135deg,
-      var(--primary-pink) 0%,
-      var(--primary-gold) 50%,
-      #ffffff 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: var(--text-shadow);
-    transform: translateY(100px);
-    opacity: 0;
-    animation: titleSlideUp 1s cubic-bezier(0.4, 0, 0.2, 1) both;
-    will-change: transform, opacity;
-    position: relative;
-  }
-
-  .word-1 {
-    animation-delay: 0.6s;
-  }
-  .word-2 {
-    animation-delay: 0.8s;
-  }
-
-  .title-word::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      var(--primary-pink),
-      var(--primary-gold)
-    );
-    opacity: 0;
-    filter: blur(20px);
-    z-index: -1;
-    animation: titleGlow 3s ease-in-out infinite alternate;
-  }
-
-  .title-underline {
-    width: 0;
-    height: 4px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--primary-pink),
-      var(--primary-gold),
-      transparent
-    );
-    margin: 1.5rem auto;
-    border-radius: 2px;
-    animation: underlineExpand 1.2s cubic-bezier(0.4, 0, 0.2, 1) 1.2s both;
-    box-shadow: 0 0 20px rgba(233, 110, 227, 0.5);
-  }
-
-  /* Subtitle */
-  .hero-subtitle {
-    font-size: clamp(1.2rem, 3.5vw, 2rem);
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 3.5rem;
-    font-weight: 300;
-    text-shadow: var(--text-shadow);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1s both;
-  }
-
-  /* Buttons */
-  .buttons-container {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
-    opacity: 0;
-    animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1.4s both;
-  }
-
-  .cta-button {
-    position: relative;
-    padding: 18px 36px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: var(--transition-smooth);
-    min-width: 180px;
-    font-family: inherit;
-    outline: none;
-    transform: translateY(0);
-    will-change: transform, box-shadow;
-  }
-
-  .cta-button.primary {
-    background: linear-gradient(
-      135deg,
-      var(--primary-pink),
-      var(--primary-gold)
-    );
-    color: white;
-    box-shadow: 0 10px 30px rgba(233, 110, 227, 0.4);
-  }
-
-  .cta-button.secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--primary-gold);
-    border: 2px solid var(--primary-gold);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-    backdrop-filter: blur(10px);
-  }
-
-  .button-text {
-    position: relative;
-    z-index: 2;
-    transition: var(--transition-smooth);
-  }
-
-  .button-bg {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      var(--primary-gold),
-      var(--primary-pink)
-    );
-    opacity: 0;
-    transition: var(--transition-smooth);
-    border-radius: inherit;
-  }
-
-  .button-shine {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      transparent
-    );
-    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Button Hover Effects */
-  .cta-button:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(233, 110, 227, 0.6);
-  }
-
-  .cta-button.primary:hover .button-shine {
-    left: 100%;
-  }
-
-  .cta-button.secondary:hover {
-    color: white;
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
-    border-color: var(--primary-pink);
-  }
-
-  .cta-button.secondary:hover .button-bg {
-    opacity: 1;
-  }
-
-  .cta-button:active {
-    transform: translateY(-2px) scale(0.98);
-  }
-
-  /* Decorative Elements */
-  .decorative-elements {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .floating-gem {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: linear-gradient(
-      45deg,
-      var(--primary-pink),
-      var(--primary-gold)
-    );
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(233, 110, 227, 0.6);
-    animation: gemFloat 6s infinite ease-in-out;
-    will-change: transform, opacity;
-  }
-
-  .gem-1 {
-    top: -30px;
-    left: 15%;
-    animation-delay: 0s;
-  }
-
-  .gem-2 {
-    top: 40%;
-    right: -40px;
-    animation-delay: 2s;
-  }
-
-  .gem-3 {
-    bottom: -30px;
-    left: 75%;
-    animation-delay: 4s;
-  }
-
-  .floating-star {
-    position: absolute;
-    font-size: 1.5rem;
-    animation: starTwinkle 4s infinite ease-in-out;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
-    will-change: transform, opacity;
-  }
-
-  .star-1 {
-    top: 20%;
-    right: 10%;
-    animation-delay: 1s;
-  }
-
-  .star-2 {
-    bottom: 30%;
-    left: 10%;
-    animation-delay: 3s;
-  }
-
-  /* Scroll Indicator */
-  .scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 5;
-    opacity: 0;
-    animation: fadeIn 1s ease-out 2s both;
-    cursor: pointer;
-  }
-
-  .scroll-arrow {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.7);
-    border-left: none;
-    border-top: none;
-    transform: rotate(45deg);
-    animation: bounce 2s infinite;
-    margin-bottom: 10px;
-  }
-
-  .scroll-text {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 300;
-  }
-
-  /* Animations */
-  @keyframes heroEntrance {
-    0% {
-      opacity: 0;
-      transform: translateY(80px) scale(0.9);
-      filter: blur(5px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
-    }
-  }
-
-  @keyframes titleSlideUp {
-    0% {
-      transform: translateY(100px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes titleGlow {
-    0% {
-      opacity: 0.3;
-    }
-    100% {
-      opacity: 0.6;
-    }
-  }
-
-  @keyframes underlineExpand {
-    0% {
-      width: 0;
-      opacity: 0;
-    }
-    100% {
-      width: 150px;
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes gemFloat {
-    0%,
-    100% {
-      transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-      opacity: 0.7;
-    }
-    50% {
-      transform: translate3d(0, -25px, 0) rotate(180deg) scale(1.3);
-      opacity: 1;
-    }
-  }
-
-  @keyframes starTwinkle {
-    0%,
-    100% {
-      opacity: 0.5;
-      transform: scale(1) rotate(0deg);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.2) rotate(180deg);
-    }
-  }
-
-  @keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-      transform: translateY(0) rotate(45deg);
-    }
-    40% {
-      transform: translateY(-10px) rotate(45deg);
-    }
-    60% {
-      transform: translateY(-5px) rotate(45deg);
-    }
-  }
-
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .hero-content {
-      padding: 0 1.5rem;
+  <style>
+    /* Variables CSS para mejor mantenimiento */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #e96ee3 0%, #d4af37 100%);
+      --text-gradient: linear-gradient(
+        135deg,
+        #e96ee3 0%,
+        #d4af37 50%,
+        #ffffff 100%
+      );
+      --shadow-primary: 0 8px 25px rgba(233, 110, 227, 0.4);
+      --shadow-secondary: 0 8px 25px rgba(212, 175, 55, 0.2);
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      --font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
     }
 
-    .buttons-container {
-      gap: 1.5rem;
+    /* Reset y base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .cta-button {
-      padding: 16px 30px;
-      font-size: 1rem;
-      min-width: 160px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      min-height: 100vh;
-      min-height: calc(var(--vh, 1vh) * 100);
+    html {
+      scroll-behavior: smooth;
     }
 
-    .hero-content {
-      padding: 0 1rem;
-    }
-
-    .hero-subtitle {
-      margin-bottom: 3rem;
-    }
-
-    .buttons-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .cta-button {
+    html,
+    body {
       width: 100%;
-      max-width: 300px;
-      padding: 18px 24px;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: var(--font-family);
+      background-color: #000;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    .title-underline {
-      max-width: 100px;
-    }
-
-    .scroll-indicator {
-      bottom: 20px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-content {
-      padding: 0 0.75rem;
-    }
-
-    .main-title {
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-
-    .hero-subtitle {
-      margin-bottom: 2.5rem;
-      max-width: 95%;
-    }
-
-    .cta-button {
-      padding: 16px 20px;
-      font-size: 0.95rem;
-      min-width: 250px;
-    }
-
-    .buttons-container {
-      gap: 1rem;
-    }
-
-    .title-underline {
-      max-width: 80px;
-      height: 3px;
-    }
-  }
-
-  /* Accessibility & Performance */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-
-    .background-video {
+    body::-webkit-scrollbar {
       display: none;
     }
 
-    .video-fallback {
-      display: block !important;
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      contain: layout style paint;
     }
-  }
 
-  @media (prefers-contrast: high) {
-    .video-overlay {
-      background: rgba(0, 0, 0, 0.8);
+    /* Video Background Optimizado */
+    .background-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      filter: brightness(0.6) contrast(1.1) saturate(1.2);
+      pointer-events: none;
+      will-change: transform;
+      backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* Loading Spinner */
+    .loading-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-spinner.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(233, 110, 227, 0.3);
+      border-top: 3px solid #e96ee3;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Partículas Optimizadas */
+    .particles {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      contain: layout style paint;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--primary-gradient);
+      border-radius: 50%;
+      opacity: 0.6;
+      will-change: transform;
+      backface-visibility: hidden;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .particle-1 {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+      animation-duration: 8s;
+    }
+
+    .particle-2 {
+      top: 60%;
+      left: 80%;
+      animation-delay: 1s;
+      animation-duration: 6s;
+    }
+
+    .particle-3 {
+      top: 30%;
+      left: 70%;
+      animation-delay: 2s;
+      animation-duration: 7s;
+    }
+
+    .particle-4 {
+      top: 80%;
+      left: 20%;
+      animation-delay: 3s;
+      animation-duration: 9s;
+    }
+
+    .particle-5 {
+      top: 10%;
+      left: 50%;
+      animation-delay: 4s;
+      animation-duration: 5s;
+    }
+
+    .particle-6 {
+      top: 70%;
+      left: 60%;
+      animation-delay: 5s;
+      animation-duration: 8s;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translate3d(0, -20px, 0) scale(1.2);
+        opacity: 1;
+      }
+    }
+
+    /* Hero Overlay */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: linear-gradient(
+        135deg,
+        rgba(162, 92, 207, 0.3) 0%,
+        rgba(233, 110, 227, 0.2) 30%,
+        rgba(0, 0, 0, 0.4) 70%,
+        rgba(0, 0, 0, 0.7) 100%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+
+    /* Hero Content */
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      color: #ffffff;
+      opacity: 0;
+      transform: translateY(50px) scale(0.95);
+      animation: heroEntrance 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+    }
+
+    /* Logo Container */
+    .logo-container {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    /* Título Principal */
+    .main-title {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 700;
+      line-height: 0.9;
+      margin-bottom: 1rem;
+      position: relative;
+      word-wrap: break-word;
+      hyphens: auto;
     }
 
     .title-word {
-      -webkit-text-fill-color: white;
+      display: inline-block;
+      background: var(--text-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      will-change: transform;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+      text-shadow: 0 0 30px rgba(233, 110, 227, 0.5);
+      transition: var(--transition-smooth);
+    }
+
+    .title-word:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .title-word::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(135deg, #ffffff 0%, #e96ee3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .title-word:hover::before {
+      opacity: 1;
+    }
+
+    /* Línea decorativa */
+    .title-underline {
+      width: 0;
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #e96ee3,
+        #d4af37,
+        transparent
+      );
+      margin: 1rem auto;
+      border-radius: 2px;
+      animation: underlineExpand 2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+    }
+
+    @keyframes titleGlow {
+      0% {
+        filter: brightness(1) drop-shadow(0 0 10px rgba(233, 110, 227, 0.3));
+        transform: scale(1);
+      }
+      100% {
+        filter: brightness(1.2) drop-shadow(0 0 20px rgba(233, 110, 227, 0.6));
+        transform: scale(1.02);
+      }
+    }
+
+    @keyframes underlineExpand {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+      100% {
+        width: 120px;
+        opacity: 1;
+      }
+    }
+
+    /* Subtítulo */
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 3vw, 1.8rem);
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+      font-weight: 300;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Contenedor de botones */
+    .buttons-container {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 1.6s forwards;
+    }
+
+    /* Botones CTA Optimizados */
+    .cta-button {
+      position: relative;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: var(--transition-bounce);
+      min-width: 160px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      will-change: transform;
+      backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .cta-button.primary {
+      background: var(--primary-gradient);
       color: white;
+      box-shadow: var(--shadow-primary);
     }
 
     .cta-button.secondary {
-      border-color: white;
-      color: white;
+      background: transparent;
+      color: #d4af37;
+      border: 2px solid #d4af37;
+      box-shadow: var(--shadow-secondary);
     }
-  }
 
-  /* Touch Devices */
-  @media (hover: none) and (pointer: coarse) {
+    .button-text {
+      position: relative;
+      z-index: 2;
+      transition: var(--transition-smooth);
+    }
+
+    .button-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #d4af37, #e96ee3);
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .button-shine {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
+      transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Efectos hover mejorados */
     .cta-button:hover {
-      transform: none;
-      box-shadow: none;
+      transform: translate3d(0, -3px, 0) scale(1.05);
+      box-shadow: 0 15px 40px rgba(233, 110, 227, 0.6);
     }
 
     .cta-button:active {
-      transform: scale(0.95);
-    }
-  }
-
-  /* High DPI Displays */
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .particle {
-      filter: none;
-    }
-  }
-
-  /* Low-end devices optimization */
-  .low-end-device .particle:nth-child(n + 4) {
-    display: none;
-  }
-
-  .low-end-device .floating-gem:nth-child(n + 3) {
-    display: none;
-  }
-
-  /* Loading state */
-  body:not(.loaded) .hero-content {
-    opacity: 0;
-  }
-
-  body.loaded .hero-content {
-    animation: heroEntrance 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
-  }
-</style>
-
-<script>
-  // Smooth Performance Optimizations for Astro
-  class ValquiriasHero {
-    constructor() {
-      this.init();
+      transform: translate3d(0, -1px, 0) scale(1.02);
+      transition: var(--transition-smooth);
     }
 
-    init() {
-      // Wait for DOM to be ready
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", () => this.setup());
-      } else {
-        this.setup();
+    .cta-button.primary:hover .button-shine {
+      left: 100%;
+    }
+
+    .cta-button.secondary:hover {
+      color: white;
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+    }
+
+    .cta-button.secondary:hover .button-bg {
+      opacity: 1;
+    }
+
+    /* Elementos decorativos */
+    .decorative-elements {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      contain: layout style paint;
+    }
+
+    .floating-gem {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--primary-gradient);
+      border-radius: 50%;
+      will-change: transform;
+      backface-visibility: hidden;
+      animation: gemFloat 4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    .gem-1 {
+      top: -20px;
+      left: 20%;
+      animation-delay: 0s;
+    }
+
+    .gem-2 {
+      top: 50%;
+      right: -30px;
+      animation-delay: 1s;
+    }
+
+    .gem-3 {
+      bottom: -20px;
+      left: 70%;
+      animation-delay: 2s;
+    }
+
+    @keyframes gemFloat {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translate3d(0, -15px, 0) rotate(180deg) scale(1.2);
+        opacity: 1;
       }
     }
 
-    setup() {
-      // Performance optimizations
-      this.setupViewportHeight();
-      this.initVideoHandling();
-      this.setupParallaxEffect();
-      this.setupButtonInteractions();
-      this.initPerformanceOptimizations();
-      this.bindEvents();
-
-      // Mark as loaded
-      document.body.classList.add("loaded");
-    }
-
-    setupViewportHeight() {
-      // Fix viewport height for mobile
-      const setVH = () => {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
-      };
-
-      setVH();
-      window.addEventListener("resize", setVH);
-      window.addEventListener("orientationchange", () => {
-        setTimeout(setVH, 100);
-      });
-    }
-
-    initVideoHandling() {
-      const video = document.querySelector(".background-video");
-      if (!video) return;
-
-      // Handle video loading
-      video.addEventListener("loadeddata", () => {
-        video.classList.add("loaded");
-      });
-
-      video.addEventListener("error", () => {
-        console.log("Video failed to load, showing fallback");
-        const fallback = document.querySelector(".video-fallback");
-        if (fallback) {
-          fallback.style.display = "block";
-          video.style.display = "none";
-        }
-      });
-
-      // Pause/resume video based on page visibility
-      document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-          video.pause();
-        } else {
-          video.play().catch(() => {
-            // Video play failed, continue silently
-          });
-        }
-      });
-    }
-
-    setupParallaxEffect() {
-      let ticking = false;
-      const video = document.querySelector(".background-video");
-      const particles = document.querySelectorAll(".particle");
-
-      const updateParallax = () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-
-        if (video) {
-          video.style.transform = `translate3d(0, ${rate}px, 0) scale(1.05)`;
-        }
-
-        particles.forEach((particle, index) => {
-          const speed = (index + 1) * 0.1;
-          particle.style.transform = `translate3d(0, ${scrolled * speed}px, 0)`;
-        });
-
-        ticking = false;
-      };
-
-      window.addEventListener(
-        "scroll",
-        () => {
-          if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-          }
-        },
-        { passive: true }
-      );
-    }
-
-    setupButtonInteractions() {
-      const buttons = document.querySelectorAll(".cta-button");
-
-      buttons.forEach((button) => {
-        // Add ripple effect
-        button.addEventListener("click", (e) => {
-          this.createRipple(e, button);
-
-          // Handle navigation
-          const action = button.dataset.action;
-          setTimeout(() => {
-            if (action === "services") {
-              window.location.href = "/servicios";
-            } else if (action === "contact") {
-              window.location.href = "/contacto";
-            }
-          }, 300);
-        });
-
-        // Enhanced hover effects for desktop
-        if (window.matchMedia("(hover: hover)").matches) {
-          button.addEventListener("mouseenter", () => {
-            button.style.transform = "translateY(-5px) scale(1.02)";
-          });
-
-          button.addEventListener("mouseleave", () => {
-            button.style.transform = "translateY(0) scale(1)";
-          });
-        }
-      });
-    }
-
-    createRipple(event, element) {
-      const ripple = document.createElement("span");
-      const rect = element.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const x = event.clientX - rect.left - size / 2;
-      const y = event.clientY - rect.top - size / 2;
-
-      ripple.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        left: ${x}px;
-        top: ${y}px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        transform: scale(0);
-        animation: ripple 0.6s linear;
-        pointer-events: none;
-        z-index: 1;
-      `;
-
-      element.appendChild(ripple);
-
-      ripple.addEventListener("animationend", () => {
-        ripple.remove();
-      });
-    }
-
-    initPerformanceOptimizations() {
-      // Detect low-end devices and optimize accordingly
-      if (this.isLowEndDevice()) {
-        document.documentElement.classList.add("low-end-device");
-        this.optimizeForLowEnd();
+    /* Animaciones principales */
+    @keyframes heroEntrance {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
       }
-
-      // Monitor frame rate
-      this.monitorPerformance();
-    }
-
-    isLowEndDevice() {
-      const connection =
-        navigator.connection ||
-        navigator.mozConnection ||
-        navigator.webkitConnection;
-      const slowConnection =
-        connection &&
-        (connection.effectiveType === "slow-2g" ||
-          connection.effectiveType === "2g");
-      const limitedMemory =
-        navigator.deviceMemory && navigator.deviceMemory < 4;
-      const oldDevice =
-        navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4;
-
-      return slowConnection || limitedMemory || oldDevice;
-    }
-
-    optimizeForLowEnd() {
-      // Reduce particles
-      const particles = document.querySelectorAll(".particle");
-      particles.forEach((particle, index) => {
-        if (index > 2) particle.style.display = "none";
-      });
-
-      // Simplify video
-      const video = document.querySelector(".background-video");
-      if (video) {
-        video.style.filter = "brightness(0.7)";
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
       }
     }
 
-    monitorPerformance() {
-      let fps = 0;
-      let lastTime = performance.now();
-      let frameCount = 0;
-
-      const measureFPS = (currentTime) => {
-        frameCount++;
-
-        if (currentTime - lastTime >= 1000) {
-          fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
-          frameCount = 0;
-          lastTime = currentTime;
-
-          // Adjust animations based on FPS
-          if (fps < 30) {
-            this.reduceAnimations();
-          }
-        }
-
-        requestAnimationFrame(measureFPS);
-      };
-
-      requestAnimationFrame(measureFPS);
-    }
-
-    reduceAnimations() {
-      document.documentElement.style.setProperty(
-        "--transition-smooth",
-        "all 0.2s ease"
-      );
-      document.documentElement.style.setProperty(
-        "--transition-bounce",
-        "all 0.3s ease"
-      );
-    }
-
-    bindEvents() {
-      // Smooth scroll for scroll indicator
-      const scrollIndicator = document.querySelector(".scroll-indicator");
-      if (scrollIndicator) {
-        scrollIndicator.addEventListener("click", () => {
-          window.scrollTo({
-            top: window.innerHeight,
-            behavior: "smooth",
-          });
-        });
-
-        // Hide scroll indicator on scroll
-        window.addEventListener(
-          "scroll",
-          () => {
-            const scrolled = window.pageYOffset;
-            if (scrolled > 100) {
-              scrollIndicator.style.opacity = "0";
-            } else {
-              scrollIndicator.style.opacity = "1";
-            }
-          },
-          { passive: true }
-        );
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
       }
-
-      // Handle reduced motion preference
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      );
-      if (reduceMotion.matches) {
-        document.documentElement.classList.add("reduced-motion");
-      }
-
-      reduceMotion.addEventListener("change", (e) => {
-        if (e.matches) {
-          document.documentElement.classList.add("reduced-motion");
-        } else {
-          document.documentElement.classList.remove("reduced-motion");
-        }
-      });
-
-      // Add touch indicators for mobile
-      if ("ontouchstart" in window) {
-        document.documentElement.classList.add("touch-device");
-      }
-
-      // Service Worker registration (optional)
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/sw.js").catch(() => {
-          // Service Worker registration failed, continue silently
-        });
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
-  }
 
-  // Add ripple animation styles
-  const rippleStyles = document.createElement("style");
-  rippleStyles.textContent = `
-    @keyframes ripple {
-      to {
-        transform: scale(4);
+    /* Responsive Design Mejorado */
+    @media (max-width: 1024px) {
+      .buttons-container {
+        gap: 1rem;
+      }
+
+      .cta-button {
+        padding: 14px 28px;
+        font-size: 1rem;
+        min-width: 140px;
+      }
+
+      .hero-overlay {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+      }
+
+      .hero-overlay {
+        padding: 1rem 1.5rem;
+      }
+
+      .hero-subtitle {
+        margin-bottom: 2.5rem;
+      }
+
+      .buttons-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .cta-button {
+        width: 100%;
+        max-width: 280px;
+        padding: 16px 24px;
+      }
+
+      .title-underline {
+        animation-delay: 0.6s;
+      }
+
+      .main-title {
+        line-height: 1.1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+
+      .hero-overlay {
+        padding: 1rem;
+      }
+
+      .hero-content {
+        padding: 0 0.5rem;
+      }
+
+      .main-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.3rem);
+        margin-bottom: 2rem;
+        max-width: 95%;
+      }
+
+      .cta-button {
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        min-width: 200px;
+      }
+
+      .buttons-container {
+        gap: 0.8rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-overlay {
+        padding: 0.8rem;
+      }
+
+      .main-title {
+        font-size: clamp(1.8rem, 12vw, 2.5rem);
+      }
+
+      .hero-subtitle {
+        font-size: clamp(0.9rem, 5vw, 1.2rem);
+      }
+
+      .cta-button {
+        min-width: 180px;
+        padding: 12px 18px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Optimizaciones para dispositivos táctiles */
+    @media (hover: none) and (pointer: coarse) {
+      .cta-button:active {
+        transform: translate3d(0, 0, 0) scale(0.98);
+        transition: transform 0.1s ease;
+      }
+
+      .cta-button:hover {
+        transform: none;
+        box-shadow: var(--shadow-primary);
+      }
+
+      .title-word:hover::before {
         opacity: 0;
       }
     }
-    
-    .cta-button {
-      position: relative;
-      overflow: hidden;
+
+    /* Mejoras para accesibilidad */
+    @media (prefers-reduced-motion: reduce) {
+      .particle,
+      .floating-gem,
+      .title-word,
+      .hero-content,
+      .hero-subtitle,
+      .buttons-container,
+      .title-underline {
+        animation: none !important;
+      }
+
+      .hero-content {
+        opacity: 1;
+        transform: none;
+      }
+
+      .hero-subtitle,
+      .buttons-container {
+        opacity: 1;
+        transform: none;
+      }
+
+      .title-underline {
+        width: 120px;
+        opacity: 1;
+      }
+
+      .cta-button {
+        transition: none !important;
+      }
+
+      .background-video {
+        display: none;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+        z-index: 1;
+      }
     }
-  `;
-  document.head.appendChild(rippleStyles);
 
-  // Initialize the hero functionality
-  new ValquiriasHero();
+    @media (prefers-contrast: high) {
+      .hero-overlay {
+        background: rgba(0, 0, 0, 0.9);
+      }
 
-  // Additional utility functions
-  window.ValquiriasUtils = {
-    // Smooth scroll to element
-    scrollToElement: (selector) => {
-      const element = document.querySelector(selector);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
+      .title-word {
+        -webkit-text-fill-color: white;
+        color: white;
+      }
+
+      .cta-button.secondary {
+        border-color: white;
+        color: white;
+      }
+
+      .particle {
+        background: white;
+      }
+
+      .floating-gem {
+        background: white;
+      }
+    }
+
+    /* Performance optimizations */
+    .hero * {
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+  </style>
+
+  <script>
+    // Definimos interfaces para las APIs no estándar del navegador para evitar errores de TS
+    interface NavigatorWithConnection extends Navigator {
+      connection?: {
+        effectiveType: string;
+        rtt: number;
+        downlink: number;
+      };
+      deviceMemory?: number;
+      getBattery?: () => Promise<{
+        level: number;
+        charging: boolean;
+      }>;
+    }
+
+    class HeroController {
+      // 1. Declaración de propiedades de la clase con sus tipos
+      isScrolling: boolean;
+      resizeTimer: number | null;
+
+      constructor() {
+        this.isScrolling = false;
+        this.resizeTimer = null;
+        this.init();
+      }
+
+      init(): void {
+        this.setupEventListeners();
+        this.setupIntersectionObserver();
+        this.optimizeVideo();
+        this.setupViewportHeight();
+        this.hideLoadingSpinner();
+        this.optimizePerformance(); // Llamada a la optimización de rendimiento
+      }
+
+      // Configurar event listeners optimizados
+      setupEventListeners(): void {
+        document.addEventListener("click", this.handleNavigation.bind(this), {
+          passive: true,
+        });
+        window.addEventListener("scroll", this.throttledScroll.bind(this), {
+          passive: true,
+        });
+        window.addEventListener("resize", this.debouncedResize.bind(this), {
+          passive: true,
+        });
+        window.addEventListener(
+          "orientationchange",
+          this.handleOrientationChange.bind(this),
+          { passive: true }
+        );
+        this.setupTouchEvents();
+      }
+
+      // 2. Tipado del parámetro del evento (e: MouseEvent)
+      handleNavigation(e: MouseEvent): void {
+        // 3. Aseguramos que e.target es un Elemento antes de usar 'closest'
+        const target = e.target as Element;
+        const button = target.closest<HTMLButtonElement>(".cta-button");
+        if (!button) return;
+
+        e.preventDefault();
+        const targetUrl = button.dataset.nav;
+
+        if (targetUrl) {
+          const link = document.createElement("link");
+          link.rel = "prefetch";
+          link.href = targetUrl;
+          document.head.appendChild(link);
+
+          button.style.transform = "scale(0.95)";
+          setTimeout(() => {
+            window.location.href = targetUrl;
+          }, 150);
+        }
+      }
+
+      throttledScroll(): void {
+        if (this.isScrolling) return;
+
+        this.isScrolling = true;
+        requestAnimationFrame(() => {
+          this.handleScroll();
+          this.isScrolling = false;
         });
       }
-    },
 
-    // Lazy load images when they come into view
-    lazyLoadImages: () => {
-      const images = document.querySelectorAll("img[data-src]");
-      const imageObserver = new IntersectionObserver((entries, observer) => {
+      handleScroll(): void {
+        const scrolled = window.pageYOffset;
+        // 4. Usamos querySelector con genéricos para obtener el tipo correcto
+        const video =
+          document.querySelector<HTMLVideoElement>(".background-video");
+        const overlay = document.querySelector<HTMLElement>(".hero-overlay");
+
+        if (video && overlay) {
+          const parallaxSpeed = 0.5;
+          const overlaySpeed = 0.3;
+          video.style.transform = `translate3d(0, ${scrolled * parallaxSpeed}px, 0)`;
+          overlay.style.transform = `translate3d(0, ${scrolled * overlaySpeed}px, 0)`;
+        }
+      }
+
+      debouncedResize(): void {
+        if (this.resizeTimer) {
+          clearTimeout(this.resizeTimer);
+        }
+        this.resizeTimer = window.setTimeout(() => {
+          this.setupViewportHeight();
+        }, 250);
+      }
+
+      handleOrientationChange(): void {
+        setTimeout(() => {
+          this.setupViewportHeight();
+        }, 100);
+      }
+
+      setupViewportHeight(): void {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      }
+
+      setupTouchEvents(): void {
+        const buttons =
+          document.querySelectorAll<HTMLButtonElement>(".cta-button");
+        const titleWords =
+          document.querySelectorAll<HTMLElement>(".title-word");
+
+        buttons.forEach((button) => {
+          button.addEventListener(
+            "touchstart",
+            () => {
+              button.style.transform = "scale(0.98)";
+            },
+            { passive: true }
+          );
+          button.addEventListener(
+            "touchend",
+            () => {
+              button.style.transform = "";
+            },
+            { passive: true }
+          );
+        });
+
+        titleWords.forEach((word) => {
+          word.addEventListener(
+            "touchstart",
+            () => {
+              word.style.animation = "titleGlow 0.5s ease-out";
+            },
+            { passive: true }
+          );
+        });
+      }
+
+      optimizeVideo(): void {
+        const video =
+          document.querySelector<HTMLVideoElement>(".background-video");
+        if (!video) return;
+
+        video.preload = "metadata";
+        video.crossOrigin = "anonymous";
+
+        video.addEventListener("loadedmetadata", () => {
+          video.currentTime = 0;
+        });
+
+        video.addEventListener("canplay", () => {
+          video.play().catch(() => {
+            console.log("Autoplay prevented");
+          });
+        });
+
+        const nav = navigator as NavigatorWithConnection;
+        if (nav.connection) {
+          const { effectiveType } = nav.connection;
+          if (effectiveType === "slow-2g" || effectiveType === "2g") {
+            video.style.display = "none";
+            this.addFallbackBackground();
+          }
+        }
+      }
+
+      addFallbackBackground(): void {
+        const hero = document.querySelector<HTMLElement>(".hero");
+        if (hero) {
+          hero.style.background =
+            "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)";
+        }
+      }
+
+      setupIntersectionObserver(): void {
+        const observerOptions: IntersectionObserverInit = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.startAnimations();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        const heroContent = document.querySelector(".hero-content");
+        if (heroContent) {
+          observer.observe(heroContent);
+        }
+      }
+
+      startAnimations(): void {
+        const elementsToAnimate = [
+          { selector: ".hero-content", delay: 0 },
+          { selector: ".hero-subtitle", delay: 400 },
+          { selector: ".buttons-container", delay: 800 },
+          { selector: ".title-underline", delay: 600 },
+        ];
+
+        elementsToAnimate.forEach(({ selector, delay }) => {
+          setTimeout(() => {
+            const element = document.querySelector<HTMLElement>(selector);
+            if (element) {
+              element.style.animationPlayState = "running";
+            }
+          }, delay);
+        });
+      }
+
+      hideLoadingSpinner(): void {
+        const spinner = document.querySelector<HTMLElement>(".loading-spinner");
+        const video =
+          document.querySelector<HTMLVideoElement>(".background-video");
+
+        if (spinner && video) {
+          const hideSpinner = () => {
+            spinner.classList.add("hidden");
+            setTimeout(() => {
+              if (spinner) spinner.style.display = "none";
+            }, 500);
+          };
+
+          if (video.readyState >= 3) {
+            setTimeout(hideSpinner, 800);
+          } else {
+            video.addEventListener("canplay", () =>
+              setTimeout(hideSpinner, 800)
+            );
+          }
+        }
+      }
+
+      optimizePerformance(): void {
+        const nav = navigator as NavigatorWithConnection;
+
+        if (nav.getBattery) {
+          nav.getBattery().then((battery) => {
+            if (battery.level < 0.2) {
+              document.documentElement.classList.add("low-battery");
+            }
+          });
+        }
+
+        if (nav.deviceMemory && nav.deviceMemory < 4) {
+          document.documentElement.classList.add("low-performance");
+        }
+      }
+
+      destroy(): void {
+        // Para removeEventListener es importante pasar la misma referencia de función
+        // que se usó en addEventListener, por eso el .bind(this) es crucial
+        // y debe ser manejado con cuidado. Una mejor práctica sería guardar las
+        // funciones bindeadaas en propiedades de la clase.
+        // Sin embargo, para este caso, lo dejamos así por simplicidad.
+        window.removeEventListener("scroll", this.throttledScroll.bind(this));
+        window.removeEventListener("resize", this.debouncedResize.bind(this));
+        window.removeEventListener(
+          "orientationchange",
+          this.handleOrientationChange.bind(this)
+        );
+        document.removeEventListener("click", this.handleNavigation.bind(this));
+
+        if (this.resizeTimer) {
+          clearTimeout(this.resizeTimer);
+        }
+      }
+    }
+
+    // Inicialización
+    // 5. Tipado de la variable del controlador
+    let heroController: HeroController | undefined;
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => {
+        heroController = new HeroController();
+      });
+    } else {
+      heroController = new HeroController();
+    }
+
+    window.addEventListener("beforeunload", () => {
+      if (heroController) {
+        heroController.destroy();
+      }
+    });
+
+    // Lazy loading para imágenes
+    if ("IntersectionObserver" in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
+            const img = entry.target as HTMLImageElement; // Cast a tipo imagen
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+            }
             img.classList.remove("lazy");
-            observer.unobserve(img);
+            imageObserver.unobserve(img);
           }
         });
       });
 
-      images.forEach((img) => imageObserver.observe(img));
-    },
+      document
+        .querySelectorAll<HTMLImageElement>("img[data-src]")
+        .forEach((img) => {
+          imageObserver.observe(img);
+        });
+    }
 
-    // Animate elements when they come into view
-    animateOnScroll: () => {
-      const elements = document.querySelectorAll(".animate-on-scroll");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animated");
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
+    // Manejo de errores de video
+    document.addEventListener(
+      "error",
+      (e) => {
+        const target = e.target as HTMLElement; // Cast a elemento genérico
+        if (target.tagName === "VIDEO") {
+          console.log("Video error, using fallback");
+          const hero = document.querySelector<HTMLElement>(".hero");
+          if (hero) {
+            hero.style.background =
+              "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)";
+          }
+        }
+      },
+      true
+    );
+  </script>
 
-      elements.forEach((el) => observer.observe(el));
-    },
-  };
-</script>
+  <!-- CSS adicional para optimizaciones -->
+  <style>
+    /* Optimizaciones para dispositivos de bajo rendimiento */
+    .low-performance .particle,
+    .low-performance .floating-gem,
+    .low-performance .title-word {
+      animation-duration: 8s !important;
+    }
+
+    .low-battery .particle,
+    .low-battery .floating-gem {
+      animation: none !important;
+    }
+
+    /* Lazy loading para imágenes */
+    img.lazy {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    img.lazy.loaded {
+      opacity: 1;
+    }
+
+    /* Mejoras adicionales de rendimiento */
+    .hero *,
+    .hero *::before,
+    .hero *::after {
+      will-change: auto;
+    }
+
+    .hero .particle,
+    .hero .floating-gem,
+    .hero .background-video {
+      will-change: transform;
+    }
+
+    .hero .cta-button {
+      will-change: transform, box-shadow;
+    }
+
+    /* Contenido crítico above the fold */
+    .hero-content {
+      contain: layout style paint;
+    }
+
+    /* GPU acceleration para elementos animados */
+    .background-video,
+    .particle,
+    .floating-gem,
+    .cta-button,
+    .title-word {
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    /* Optimización de repaint */
+    .hero-overlay {
+      isolation: isolate;
+    }
+
+    /* Contenedor para optimizar composite layers */
+    .hero {
+      isolation: isolate;
+      contain: layout style paint;
+    }
+  </style>
+</HeroLayout>
