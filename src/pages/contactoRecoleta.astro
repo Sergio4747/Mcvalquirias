@@ -1,6 +1,8 @@
 ---
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
@@ -47,361 +49,422 @@ const structuredData = {
 };
 ---
 
-<Header />
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto - Scalabrini</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-  />
-  <title>
-    Contacto - Reserva tu Cita en Scalabrini Beauty Salon | Palermo, Buenos
-    Aires
-  </title>
-  <meta
-    name="description"
-    content="Agenda tu cita online en Scalabrini Beauty Salon. Centro de estética en Palermo con profesionales certificadas. Tratamientos faciales, uñas y belleza integral. ✨ Reserva ahora"
-  />
-  <meta
-    name="keywords"
-    content="centro estetica palermo, salon belleza buenos aires, tratamientos faciales palermo, manicura pedicura, agenda cita online, scalabrini ortiz, las heras, estetica profesional"
-  />
-  <meta name="author" content="Scalabrini Beauty Salon" />
-  <meta name="robots" content="index, follow" />
+<BaseLayout>
+  <Header />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Contacto - Reserva tu Cita en Scalabrini Beauty Salon | Palermo, Buenos
+      Aires
+    </title>
+    <meta
+      name="description"
+      content="Agenda tu cita online en Scalabrini Beauty Salon. Centro de estética en Palermo con profesionales certificadas. Tratamientos faciales, uñas y belleza integral. ✨ Reserva ahora"
+    />
+    <meta
+      name="keywords"
+      content="centro estetica palermo, salon belleza buenos aires, tratamientos faciales palermo, manicura pedicura, agenda cita online, scalabrini ortiz, las heras, estetica profesional"
+    />
+    <meta name="author" content="Scalabrini Beauty Salon" />
+    <meta name="robots" content="index, follow" />
 
-  <meta property="og:type" content="website" />
-  <meta
-    property="og:title"
-    content="Contacto - Reserva tu Cita en Scalabrini Beauty Salon"
-  />
-  <meta
-    property="og:description"
-    content="Centro de estética en Palermo con profesionales certificadas. Agenda tu cita online para tratamientos de belleza y cuidado personal."
-  />
-  <meta property="og:url" content="https://www.mcvalquirias.com/contacto" />
-  <meta property="og:site_name" content="Scalabrini Beauty Salon" />
-  <meta property="og:locale" content="es_AR" />
-  <meta
-    property="og:image"
-    content="https://www.mcvalquirias.com/images/salon-preview.jpg"
-  />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Contacto - Reserva tu Cita en Scalabrini Beauty Salon"
+    />
+    <meta
+      property="og:description"
+      content="Centro de estética en Palermo con profesionales certificadas. Agenda tu cita online para tratamientos de belleza y cuidado personal."
+    />
+    <meta property="og:url" content="https://www.mcvalquirias.com/contacto" />
+    <meta property="og:site_name" content="Scalabrini Beauty Salon" />
+    <meta property="og:locale" content="es_AR" />
+    <meta
+      property="og:image"
+      content="https://www.mcvalquirias.com/images/salon-preview.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta
-    name="twitter:title"
-    content="Contacto - Reserva tu Cita en Scalabrini Beauty Salon"
-  />
-  <meta
-    name="twitter:description"
-    content="Centro de estética en Palermo. Agenda online tratamientos de belleza con profesionales certificadas."
-  />
-  <meta
-    name="twitter:image"
-    content="https://www.mcvalquirias.com/images/salon-preview.jpg"
-  />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Contacto - Reserva tu Cita en Scalabrini Beauty Salon"
+    />
+    <meta
+      name="twitter:description"
+      content="Centro de estética en Palermo. Agenda online tratamientos de belleza con profesionales certificadas."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.mcvalquirias.com/images/salon-preview.jpg"
+    />
 
-  <meta name="geo.region" content="AR-C" />
-  <meta name="geo.placename" content="Palermo, Buenos Aires" />
-  <meta name="geo.position" content="-34.5878;-58.4270" />
-  <meta name="ICBM" content="-34.5878, -58.4270" />
+    <!-- Geo Meta Tags -->
+    <meta name="geo.region" content="AR-C" />
+    <meta name="geo.placename" content="Palermo, Buenos Aires" />
+    <meta name="geo.position" content="-34.5878;-58.4270" />
+    <meta name="ICBM" content="-34.5878, -58.4270" />
 
-  <link rel="canonical" href="https://www.mcvalquirias.com/contacto" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.mcvalquirias.com/contacto" />
 
-  <script
-    type="application/ld+json"
-    set:html={JSON.stringify(structuredData)}
-  />
+    <!-- Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
 
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="dns-prefetch" href="//wa.me" />
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="//wa.me" />
+    <link rel="dns-prefetch" href="//mcvalquiriasreserva.site.agendapro.com" />
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-  />
-</head>
-<section class="contact-section">
-  <div class="animated-bg">
-    <div class="bg-shape shape-1"></div>
-    <div class="bg-shape shape-2"></div>
-    <div class="bg-shape shape-3"></div>
-    <div class="floating-orbs">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-      <div class="orb orb-4"></div>
-    </div>
-  </div>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-  <div class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="title-word">Agenda</span>
-        <span class="title-word">tu</span>
-        <span class="title-word">Cita</span>
-      </h1>
-      <p class="hero-subtitle">
-        Reserva tu momento de belleza y transformación
-      </p>
-      <div class="hero-divider"></div>
-    </div>
-  </div>
-
-  <div class="content-grid">
-    <div class="booking-card glass-card">
-      <div class="card-header">
-        <div class="header-icon">
-          <div class="icon-wrapper">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-          </div>
-        </div>
-        <h2>Reserva Online</h2>
+  <main class="contact-section">
+    <!-- Animated Background -->
+    <div class="animated-bg" aria-hidden="true">
+      <div class="bg-shape shape-1"></div>
+      <div class="bg-shape shape-2"></div>
+      <div class="bg-shape shape-3"></div>
+      <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
       </div>
+    </div>
 
-      <div class="booking-content">
-        <p class="booking-description">
-          Agenda tu cita de forma rápida y sencilla con nuestro sistema de
-          reservas online
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-word">Agenda</span>
+          <span class="title-word">tu</span>
+          <span class="title-word">Cita</span>
+        </h1>
+        <p class="hero-subtitle">
+          Reserva tu momento de belleza y transformación
         </p>
+        <div class="hero-divider" aria-hidden="true"></div>
+      </div>
+    </header>
 
-        <button class="primary-btn magnetic-btn" id="bookingBtn">
-          <span class="btn-bg"></span>
-          <span class="btn-text">Reservar con Agenda Pro</span>
-          <div class="btn-shine"></div>
-        </button>
-
-        <div class="trust-badges">
-          <div class="trust-badge">
-            <div class="badge-icon">
+    <!-- Content Grid -->
+    <div class="content-grid">
+      <!-- Booking Card -->
+      <section class="booking-card glass-card">
+        <div class="card-header">
+          <div class="header-icon" aria-hidden="true">
+            <div class="icon-wrapper">
               <svg
-                width="16"
-                height="16"
+                width="32"
+                height="32"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
+                aria-hidden="true"
               >
-                <polygon
-                  points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
-                ></polygon>
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
             </div>
-            <span>Sistema seguro</span>
           </div>
-          <div class="trust-badge">
-            <div class="badge-icon">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"></polygon>
-              </svg>
+          <h2>Reserva Online</h2>
+        </div>
+
+        <div class="booking-content">
+          <p class="booking-description">
+            Agenda tu cita de forma rápida y sencilla con nuestro sistema de
+            reservas online
+          </p>
+
+          <button
+            class="primary-btn magnetic-btn"
+            id="bookingBtn"
+            type="button"
+            aria-describedby="booking-help"
+          >
+            <span class="btn-bg" aria-hidden="true"></span>
+            <span class="btn-text">Reservar con Agenda Pro</span>
+            <div class="btn-shine" aria-hidden="true"></div>
+          </button>
+
+          <div class="trust-badges">
+            <div class="trust-badge">
+              <div class="badge-icon" aria-hidden="true">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon
+                    points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                  ></polygon>
+                </svg>
+              </div>
+              <span>Sistema seguro</span>
             </div>
-            <span>Confirmación inmediata</span>
+            <div class="trust-badge">
+              <div class="badge-icon" aria-hidden="true">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"></polygon>
+                </svg>
+              </div>
+              <span>Confirmación inmediata</span>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="info-card glass-card">
-      <div class="card-header">
-        <div class="header-icon">
-          <div class="icon-wrapper">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="6" x2="12" y2="12"></line>
-              <line x1="16" y1="16" x2="12" y2="12"></line>
-            </svg>
-          </div>
-        </div>
-        <h2>Información</h2>
-      </div>
-
-      <div class="info-content">
-        <div class="info-items">
-          <div class="info-item" data-delay="0.1">
-            <div class="info-icon">
+      <!-- Info Card -->
+      <section class="info-card glass-card">
+        <div class="card-header">
+          <div class="header-icon" aria-hidden="true">
+            <div class="icon-wrapper">
               <svg
-                width="20"
-                height="20"
+                width="32"
+                height="32"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-              >
-                <path d="21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-            </div>
-            <div class="info-text">
-              <h3>Ubicaciónes</h3>
-              <h4><b>Local-Estetica</b></h4>
-              <p>Av. Raúl Scalabrini Ortiz 932 <br />Palermo, CABA</p>
-              <br />
-              <h4><b>Local-Uñas</b></h4>
-
-              <p>Av. Gral. Las Heras 2480 <br /> Palermo, CABA</p>
-            </div>
-          </div>
-
-          <div class="info-item" data-delay="0.2">
-            <div class="info-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                ></path>
-              </svg>
-            </div>
-            <div class="info-text">
-              <h3>Teléfono</h3>
-              <p>+54 11 1234-5678</p>
-            </div>
-          </div>
-
-          <div class="info-item" data-delay="0.3">
-            <div class="info-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
+                aria-hidden="true"
               >
                 <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12,6 12,12 16,14"></polyline>
+                <line x1="12" y1="6" x2="12" y2="12"></line>
+                <line x1="16" y1="16" x2="12" y2="12"></line>
               </svg>
             </div>
-            <div class="info-text">
-              <h3>Horarios</h3>
-              <p>Lun a Sáb: 10:00Hs - 20:00Hs</p>
+          </div>
+          <h2>Información</h2>
+        </div>
+
+        <div class="info-content">
+          <div class="info-items">
+            <div class="info-item" data-delay="0.1">
+              <div class="info-icon" aria-hidden="true">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="info-text">
+                <h3>Ubicaciones</h3>
+                <div class="location-item">
+                  <h4><strong>Local Estética</strong></h4>
+                  <address>
+                    Av. Raúl Scalabrini Ortiz 932<br />
+                    Palermo, CABA
+                  </address>
+                </div>
+                <div class="location-item">
+                  <h4><strong>Local Uñas</strong></h4>
+                  <address>
+                    Av. Gral. Las Heras 2480<br />
+                    Palermo, CABA
+                  </address>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-item" data-delay="0.2">
+              <div class="info-icon" aria-hidden="true">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="info-text">
+                <h3>Teléfono</h3>
+                <p>
+                  <a href="tel:+541138247547" class="phone-link">
+                    +54 11 3824-7547
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item" data-delay="0.3">
+              <div class="info-icon" aria-hidden="true">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12,6 12,12 16,14"></polyline>
+                </svg>
+              </div>
+              <div class="info-text">
+                <h3>Horarios</h3>
+                <p>Lun a Sáb: 10:00 - 20:00 hs</p>
+                <p class="closed-info">Domingos: Cerrado</p>
+              </div>
+            </div>
+
+            <div class="info-item highlight-item" data-delay="0.4">
+              <div class="info-icon" aria-hidden="true">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon
+                    points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+                  ></polygon>
+                </svg>
+              </div>
+              <div class="info-text">
+                <h3>¿Por qué elegirnos?</h3>
+                <ul class="features-list">
+                  <li>Profesionales certificadas</li>
+                  <li>Productos de calidad premium</li>
+                  <li>Ambiente relajante</li>
+                  <li>Atención personalizada</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="info-item highlight-item" data-delay="0.4">
-            <div class="info-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polygon
-                  points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
-                ></polygon>
-              </svg>
-            </div>
-            <div class="info-text">
-              <h3>¿Por qué elegirnos?</h3>
-              <ul class="features-list">
-                <li>Profesionales certificadas</li>
-                <li>Productos de calidad premium</li>
-                <li>Ambiente relajante</li>
-                <li>Atención personalizada</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="quick-actions">
-          <a href="tel:+541138247547" class="action-btn call-btn">
-            <div class="btn-icon">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                ></path>
-              </svg>
-            </div>
-            <span>Llamar</span>
-          </a>
-          <a
-            href="https://wa.me/541138247547?text=Hola%21%20Me%20gustar%C3%ADa%20reservar%20un%20turno!!%20Muchas%20gracias."
-            class="action-btn whatsapp-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="btn-icon">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                ></path>
-              </svg>
-            </div>
-            <span>WhatsApp</span>
-          </a>
-        </div>
-
-        <div class="social-section">
-          <h3>Síguenos</h3>
-          <div class="social-links">
-            <a href="#" class="social-link facebook" aria-label="Facebook">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href="#" class="social-link instagram" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
+          <div class="quick-actions">
+            <a
+              href="tel:+541138247547"
+              class="action-btn call-btn"
+              aria-label="Llamar al salón"
+            >
+              <div class="btn-icon" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+              </div>
+              <span>Llamar</span>
             </a>
             <a
-              href="tiktok.com"
-              class="social-link whatsapp"
-              aria-label="WhatsApp"
+              href="https://wa.me/541138247547?text=Hola%21%20Me%20gustar%C3%ADa%20reservar%20un%20turno%20Muchas%20gracias."
+              class="action-btn whatsapp-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contactar por WhatsApp"
             >
-              <i class="fa-brands fa-tiktok"></i>
+              <div class="btn-icon" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                  ></path>
+                </svg>
+              </div>
+              <span>WhatsApp</span>
             </a>
           </div>
+
+          <div class="social-section">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/share/19rnhuKXb7/"
+                class="social-link facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Seguir en Facebook"
+              >
+                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/mcvalquirias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                class="social-link instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Seguir en Instagram"
+              >
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@mc.valquirias"
+                class="social-link tiktok"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Seguir en TikTok"
+              >
+                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
-  </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator" aria-hidden="true">
+      <div class="spinner"></div>
+      <span>Conectando con Agenda Pro...</span>
+    </div>
+  </main>
+
+  <Footer />
 
   <style>
     :root {
@@ -468,14 +531,23 @@ const structuredData = {
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       background-color: #0f0f23;
-      font-family: "Inter", sans-serif;
+      font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
       color: #ffffff;
+      line-height: 1.6;
     }
+
     body::-webkit-scrollbar {
       display: none;
     }
+
     .contact-section {
       position: relative;
       min-height: 100vh;
@@ -490,12 +562,14 @@ const structuredData = {
       overflow-x: hidden;
     }
 
+    /* Animated Background */
     .animated-bg {
       position: absolute;
       inset: 0;
       z-index: var(--z-background);
       overflow: hidden;
     }
+
     .bg-shape {
       position: absolute;
       border-radius: 50%;
@@ -503,6 +577,7 @@ const structuredData = {
       opacity: 0.1;
       filter: blur(80px);
       animation: morphShape 20s ease-in-out infinite;
+      will-change: transform;
     }
 
     .shape-1 {
@@ -542,6 +617,7 @@ const structuredData = {
       background: var(--gradient-secondary);
       opacity: 0.2;
       animation: floatOrb 15s ease-in-out infinite;
+      will-change: transform;
     }
 
     .orb-1 {
@@ -575,6 +651,8 @@ const structuredData = {
       right: 30%;
       animation-delay: 12s;
     }
+
+    /* Animations */
     @keyframes fadeInSlideUp {
       from {
         opacity: 0;
@@ -615,6 +693,7 @@ const structuredData = {
       }
     }
 
+    /* Hero Section */
     .hero-section {
       text-align: center;
       margin-bottom: 4rem;
@@ -648,15 +727,6 @@ const structuredData = {
     }
     .title-word:nth-child(3) {
       animation-delay: 0.6s;
-    }
-
-    .highlight {
-      background: var(--gradient-primary);
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradientShift 3s ease-in-out infinite;
     }
 
     .hero-subtitle {
@@ -716,16 +786,7 @@ const structuredData = {
       }
     }
 
-    @keyframes gradientShift {
-      0%,
-      100% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-    }
-
+    /* Content Grid */
     .content-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -736,6 +797,7 @@ const structuredData = {
       z-index: var(--z-content);
     }
 
+    /* Glass Cards */
     .glass-card {
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(20px);
@@ -747,6 +809,7 @@ const structuredData = {
       overflow: hidden;
       transition: all var(--transition-slow);
       animation: slideInUp 0.8s ease-out;
+      will-change: transform;
     }
 
     .glass-card::before {
@@ -794,6 +857,7 @@ const structuredData = {
       }
     }
 
+    /* Card Headers */
     .card-header {
       text-align: center;
       margin-bottom: 2rem;
@@ -835,6 +899,7 @@ const structuredData = {
       }
     }
 
+    /* Booking Content */
     .booking-content {
       text-align: center;
     }
@@ -864,6 +929,13 @@ const structuredData = {
       overflow: hidden;
       transition: all var(--transition-normal);
       margin-bottom: 1.5rem;
+      will-change: transform;
+    }
+
+    .primary-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none !important;
     }
 
     .btn-bg {
@@ -895,27 +967,24 @@ const structuredData = {
       transition: left 0.8s ease-out;
     }
 
-    .primary-btn:hover .btn-bg {
+    .primary-btn:hover:not(:disabled) .btn-bg {
       opacity: 1;
     }
 
-    .primary-btn:hover .btn-text {
+    .primary-btn:hover:not(:disabled) .btn-text {
       transform: scale(1.05);
     }
 
-    .primary-btn:hover .btn-shine {
+    .primary-btn:hover:not(:disabled) .btn-shine {
       left: 100%;
     }
 
-    .primary-btn:focus {
+    .primary-btn:focus-visible {
       outline: 2px solid var(--primary-purple);
       outline-offset: 2px;
     }
 
-    .magnetic-btn {
-      transition: transform var(--transition-fast);
-    }
-
+    /* Trust Badges */
     .trust-badges {
       display: flex;
       justify-content: center;
@@ -948,18 +1017,9 @@ const structuredData = {
       background: var(--gradient-secondary);
       color: var(--white);
       border-radius: 50%;
-      animation: spin 3s linear infinite;
     }
 
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
+    /* Info Content */
     .info-content {
       display: flex;
       flex-direction: column;
@@ -1034,13 +1094,53 @@ const structuredData = {
       font-size: 1.125rem;
       font-weight: 600;
       color: var(--gray-900);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
     }
 
     .info-text p {
       color: var(--gray-600);
       font-size: 0.875rem;
       line-height: 1.5;
+      margin-bottom: 0.25rem;
+    }
+
+    .location-item {
+      margin-bottom: 1rem;
+    }
+
+    .location-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .location-item h4 {
+      font-size: 0.95rem;
+      color: var(--gray-800);
+      margin-bottom: 0.25rem;
+    }
+
+    .location-item address {
+      font-style: normal;
+      color: var(--gray-600);
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    .phone-link {
+      color: var(--primary-purple);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition-fast);
+    }
+
+    .phone-link:hover {
+      color: var(--dark-purple);
+      text-decoration: underline;
+    }
+
+    .closed-info {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-style: italic;
     }
 
     .features-list {
@@ -1105,6 +1205,7 @@ const structuredData = {
       }
     }
 
+    /* Quick Actions */
     .quick-actions {
       display: flex;
       gap: 1rem;
@@ -1124,6 +1225,7 @@ const structuredData = {
       transition: all var(--transition-normal);
       position: relative;
       overflow: hidden;
+      will-change: transform;
     }
 
     .action-btn::before {
@@ -1142,6 +1244,11 @@ const structuredData = {
     .action-btn:hover {
       transform: translateY(-2px) scale(1.02);
       box-shadow: var(--shadow-lg);
+    }
+
+    .action-btn:focus-visible {
+      outline: 2px solid var(--primary-purple);
+      outline-offset: 2px;
     }
 
     .call-btn {
@@ -1165,6 +1272,7 @@ const structuredData = {
       transform: scale(1.2) rotate(15deg);
     }
 
+    /* Social Section */
     .social-section {
       text-align: center;
     }
@@ -1188,13 +1296,13 @@ const structuredData = {
       justify-content: center;
       width: 3rem;
       height: 3rem;
-      background: var(--gradient-primary);
       color: var(--white);
       border-radius: 50%;
       text-decoration: none;
       transition: all var(--transition-normal);
       position: relative;
       overflow: hidden;
+      will-change: transform;
     }
 
     .social-link::before {
@@ -1221,14 +1329,21 @@ const structuredData = {
       box-shadow: var(--shadow-lg);
     }
 
+    .social-link:focus-visible {
+      outline: 2px solid var(--primary-purple);
+      outline-offset: 2px;
+    }
+
     .facebook {
       background: linear-gradient(135deg, #1877f2, #42a5f5);
     }
+
     .instagram {
       background: linear-gradient(135deg, #e4405f, #fd1d1d, #fcb045);
     }
-    .whatsapp {
-      background: linear-gradient(135deg, #0f7d99, #ff0000);
+
+    .tiktok {
+      background: linear-gradient(135deg, #000000, #ff0050);
     }
 
     @keyframes rotate {
@@ -1240,212 +1355,101 @@ const structuredData = {
       }
     }
 
-    .cta-section {
-      max-width: 1000px;
-      margin: 4rem auto 0;
-      padding: 3rem 2rem;
-      background: rgba(255, 255, 255, 0.4);
+    /* Loading Indicator */
+    .loading-indicator {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: var(--z-modal);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2rem 3rem;
       border-radius: var(--border-radius-xl);
+      box-shadow: var(--shadow-2xl);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .loading-indicator.show {
+      display: flex;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--gray-200);
+      border-top: 3px solid var(--primary-purple);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .loading-indicator span {
+      color: var(--gray-700);
+      font-weight: 600;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      animation: slideInUp 0.8s ease-out 0.6s both;
     }
 
-    .cta-bg-animation {
-      position: absolute;
-      inset: -100%;
-      background: conic-gradient(
-        from 0deg,
-        transparent,
-        rgba(139, 92, 246, 0.1),
-        transparent,
-        rgba(245, 158, 11, 0.1),
-        transparent
-      );
-      animation: rotate 20s linear infinite;
-      opacity: 0.8;
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta-title {
-      font-size: clamp(1.875rem, 4vw, 2.5rem);
-      font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: 1rem;
-      animation: typeWriter 2s steps(30) 1.5s both;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 3px solid var(--primary-purple);
-    }
-
-    .cta-subtitle {
-      color: var(--gray-600);
-      font-size: 1.125rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @keyframes typeWriter {
+    @keyframes spin {
       from {
-        width: 0;
+        transform: rotate(0deg);
       }
       to {
-        width: 100%;
+        transform: rotate(360deg);
       }
     }
 
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-btn {
-      position: relative;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.125rem;
-      min-width: 160px;
-      text-align: center;
-      overflow: hidden;
-      transition: all var(--transition-normal);
-      border: 2px solid transparent;
-    }
-
-    .cta-btn.primary {
+    /* Notification Styles */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: var(--z-modal);
+      max-width: 400px;
+      padding: 1rem 1.5rem;
       background: var(--gradient-primary);
-      color: var(--white);
-    }
-
-    .cta-btn.secondary {
-      background: var(--white);
-      color: var(--primary-purple);
-      border-color: var(--primary-purple);
-    }
-
-    .btn-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .btn-particles {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-    }
-
-    .btn-particles::before,
-    .btn-particles::after {
-      content: "";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: var(--white);
-      border-radius: 50%;
-      opacity: 0;
-      animation: particle 2s ease-in-out infinite;
-    }
-
-    .btn-particles::before {
-      top: 20%;
-      left: 20%;
-      animation-delay: 0s;
-    }
-
-    .btn-particles::after {
-      bottom: 20%;
-      right: 20%;
-      animation-delay: 1s;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-4px) scale(1.05);
+      color: white;
+      border-radius: var(--border-radius);
       box-shadow: var(--shadow-xl);
+      transform: translateX(120%);
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    .cta-btn.secondary:hover {
-      background: var(--gradient-primary);
-      color: var(--white);
-      border-color: transparent;
+    .notification.show {
+      transform: translateX(0);
     }
 
-    @keyframes particle {
-      0%,
-      100% {
-        opacity: 0;
-        transform: scale(0);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .notification-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
-    .floating-elements {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+    .notification-message {
+      font-size: 0.875rem;
+      line-height: 1.4;
     }
 
-    .floating-dot {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: var(--gradient-primary);
+    .notification-close {
+      background: none;
+      border: none;
+      color: inherit;
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 0.25rem;
       border-radius: 50%;
-      opacity: 0.6;
-      animation: floatingDot 6s ease-in-out infinite;
+      transition: background-color 0.2s;
     }
 
-    .floating-dot:nth-child(1) {
-      top: 15%;
-      left: 10%;
-      animation-delay: 0s;
+    .notification-close:hover {
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
-    .floating-dot:nth-child(2) {
-      top: 25%;
-      right: 15%;
-      animation-delay: 1.5s;
-    }
-
-    .floating-dot:nth-child(3) {
-      bottom: 20%;
-      left: 20%;
-      animation-delay: 3s;
-    }
-
-    .floating-dot:nth-child(4) {
-      bottom: 30%;
-      right: 25%;
-      animation-delay: 4.5s;
-    }
-
-    @keyframes floatingDot {
-      0%,
-      100% {
-        transform: translateY(0px);
-        opacity: 0.6;
-      }
-      50% {
-        transform: translateY(-20px);
-        opacity: 1;
-      }
-    }
-
+    /* Responsive Design */
     @media (max-width: 768px) {
       .contact-section {
         padding: 4rem 1rem 2rem;
@@ -1474,30 +1478,15 @@ const structuredData = {
         gap: 1rem;
       }
 
-      .cta-section {
-        margin-top: 2rem;
-        padding: 2rem 1rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .cta-btn {
-        width: 100%;
-        max-width: 280px;
-      }
-
-      .cta-title {
-        white-space: normal;
-        border-right: none;
-        animation: fadeIn 1s ease-out 1.5s both;
-      }
-
       .bg-shape {
         filter: blur(60px);
         opacity: 0.05;
+      }
+
+      .notification {
+        right: 10px;
+        left: 10px;
+        max-width: none;
       }
     }
 
@@ -1510,6 +1499,7 @@ const structuredData = {
         flex-direction: column;
         text-align: center;
         gap: 0.75rem;
+        padding: 1rem;
       }
 
       .social-links {
@@ -1525,8 +1515,14 @@ const structuredData = {
       .floating-elements {
         display: none;
       }
+
+      .loading-indicator {
+        padding: 1.5rem 2rem;
+        margin: 0 1rem;
+      }
     }
 
+    /* Accessibility & Performance */
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1535,8 +1531,18 @@ const structuredData = {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
+
+      .glass-card:hover {
+        transform: none;
+      }
+
+      .action-btn:hover,
+      .social-link:hover {
+        transform: none;
+      }
     }
 
+    /* Dark Mode */
     @media (prefers-color-scheme: dark) {
       .contact-section {
         background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
@@ -1550,16 +1556,18 @@ const structuredData = {
       .hero-title,
       .card-header h2,
       .info-text h3,
-      .social-section h3,
-      .cta-title {
+      .social-section h3 {
         color: var(--gray-100);
       }
 
       .hero-subtitle,
       .booking-description,
-      .info-text p,
-      .cta-subtitle {
+      .info-text p {
         color: var(--gray-300);
+      }
+
+      .location-item h4 {
+        color: var(--gray-200);
       }
 
       .info-item {
@@ -1569,6 +1577,32 @@ const structuredData = {
 
       .info-item:hover {
         background: rgba(255, 255, 255, 0.1);
+      }
+
+      .loading-indicator {
+        background: rgba(15, 15, 35, 0.95);
+        color: var(--gray-100);
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      .animated-bg,
+      .hero-divider,
+      .btn-shine,
+      .floating-orbs {
+        display: none !important;
+      }
+
+      .glass-card {
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: none;
+      }
+
+      .contact-section {
+        background: white;
+        color: black;
       }
     }
   </style>
@@ -1581,10 +1615,7 @@ const structuredData = {
         isMobile: window.innerWidth <= 768,
       };
 
-      const throttle = (
-        func: (...args: any[]) => void,
-        limit: number
-      ): ((...args: any[]) => void) => {
+      const throttle = (func: (...args: any[]) => void, limit: number) => {
         let inThrottle: boolean;
         return function (this: any, ...args: any[]) {
           if (!inThrottle) {
@@ -1595,100 +1626,143 @@ const structuredData = {
         };
       };
 
-      const magneticButtons = document.querySelectorAll(".magnetic-btn");
+      const debounce = (func: (...args: any[]) => void, wait: number) => {
+        let timeout: number | undefined;
+        return function (this: any, ...args: any[]) {
+          clearTimeout(timeout);
+          timeout = window.setTimeout(() => func.apply(this, args), wait);
+        };
+      };
+
+      const magneticButtons =
+        document.querySelectorAll<HTMLElement>(".magnetic-btn");
       magneticButtons.forEach((button) => {
         if (config.reducedMotion || config.isMobile) return;
-        if (!(button instanceof HTMLElement)) return;
 
-        button.addEventListener("mousemove", (e: MouseEvent) => {
+        const handleMouseMove = (e: MouseEvent) => {
           const rect = button.getBoundingClientRect();
           const x = e.clientX - rect.left - rect.width / 2;
           const y = e.clientY - rect.top - rect.height / 2;
-          button.style.transform = `translate(${x * 0.1}px, ${
-            y * 0.1
-          }px) scale(1.02)`;
-        });
+          button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.02)`;
+        };
 
-        button.addEventListener("mouseleave", () => {
+        const handleMouseLeave = () => {
           button.style.transform = "translate(0, 0) scale(1)";
-        });
+        };
+
+        button.addEventListener("mousemove", throttle(handleMouseMove, 16));
+        button.addEventListener("mouseleave", handleMouseLeave);
       });
 
-      const bookingBtn = document.getElementById("bookingBtn");
-      if (bookingBtn && bookingBtn instanceof HTMLElement) {
-        bookingBtn.addEventListener("click", (e: MouseEvent) => {
+      const bookingBtn = document.getElementById(
+        "bookingBtn"
+      ) as HTMLButtonElement | null;
+      const loadingIndicator = document.getElementById("loadingIndicator");
+      const btnText = bookingBtn?.querySelector<HTMLElement>(".btn-text");
+
+      if (bookingBtn && loadingIndicator && btnText) {
+        const originalText = btnText.textContent || "";
+
+        bookingBtn.addEventListener("click", async (e: MouseEvent) => {
           e.preventDefault();
-          const btnText = bookingBtn.querySelector(".btn-text");
-          if (!(btnText instanceof HTMLElement)) return;
 
           btnText.textContent = "Conectando...";
-          bookingBtn.style.pointerEvents = "none";
+          bookingBtn.disabled = true;
+          loadingIndicator.classList.add("show");
 
-          setTimeout(() => {
+          try {
+            await new Promise((resolve) => setTimeout(resolve, 1500));
             showNotification(
               "¡Te redirigiremos a Agenda Pro para completar tu reserva!",
               "success"
             );
-            window.location.href =
-              "https://mcvalquiriasreserva.site.agendapro.com/ar";
-          }, 2000);
+            setTimeout(() => {
+              window.open(
+                "https://mcvalquiriasreserva.site.agendapro.com/ar",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }, 800);
+          } catch (error) {
+            console.error("Error al conectar:", error);
+            showNotification(
+              "Error al conectar. Por favor, intenta nuevamente.",
+              "error"
+            );
+          } finally {
+            setTimeout(() => {
+              btnText.textContent = originalText;
+              bookingBtn.disabled = false;
+              loadingIndicator.classList.remove("show");
+            }, 2000);
+          }
         });
       }
 
-      const cards = document.querySelectorAll(".glass-card");
+      const cards = document.querySelectorAll<HTMLElement>(".glass-card");
       cards.forEach((card) => {
         if (config.reducedMotion || config.isMobile) return;
-        if (!(card instanceof HTMLElement)) return;
 
-        card.addEventListener("mousemove", (e: MouseEvent) => {
+        const handleMouseMove = (e: MouseEvent) => {
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = (y - centerY) / 10;
-          const rotateY = (centerX - x) / 10;
+          const rotateX = (y - rect.height / 2) / 15;
+          const rotateY = (rect.width / 2 - x) / 15;
           card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        });
+        };
 
-        card.addEventListener("mouseleave", () => {
+        const handleMouseLeave = () => {
           card.style.transform =
             "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
-        });
+        };
+
+        card.addEventListener("mousemove", throttle(handleMouseMove, 16));
+        card.addEventListener("mouseleave", handleMouseLeave);
       });
 
-      if (!config.reducedMotion && !config.isMobile) {
-        const handleScroll = throttle(() => {
-          const scrolled = window.pageYOffset;
-          document.querySelectorAll<HTMLElement>(".orb").forEach((orb) => {
-            const speed = parseFloat(orb.dataset.speed || "0.3");
-            orb.style.transform = `translateY(${scrolled * speed}px)`;
-          });
-          document
-            .querySelectorAll<HTMLElement>(".bg-shape")
-            .forEach((shape) => {
-              const speed = parseFloat(shape.dataset.speed || "0.1");
-              shape.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        }, 16);
+      function showNotification(
+        message: string,
+        type: "info" | "success" | "warning" | "error" = "info"
+      ) {
+        document.querySelectorAll(".notification").forEach((n) => n.remove());
 
-        window.addEventListener("scroll", handleScroll, { passive: true });
+        const notification = document.createElement("div");
+        notification.className = `notification notification-${type}`;
+        notification.setAttribute("role", "alert");
+        notification.innerHTML = `
+        <div class="notification-content">
+          <span class="notification-message">${message}</span>
+          <button class="notification-close" aria-label="Cerrar notificación">&times;</button>
+        </div>`;
+
+        document.body.appendChild(notification);
+        requestAnimationFrame(() => notification.classList.add("show"));
+
+        const closeNotification = () => {
+          notification.classList.remove("show");
+          setTimeout(() => notification.remove(), 400);
+        };
+
+        notification
+          .querySelector(".notification-close")
+          ?.addEventListener("click", closeNotification, { once: true });
+        setTimeout(closeNotification, 5000);
       }
 
       if ("IntersectionObserver" in window && !config.reducedMotion) {
-        const observerOptions: IntersectionObserverInit = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.target instanceof HTMLElement) {
-              entry.target.style.animationPlayState = "running";
-              observer.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const target = entry.target as HTMLElement;
+                target.style.animationPlayState = "running";
+                observer.unobserve(target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+        );
 
         document
           .querySelectorAll<HTMLElement>(
@@ -1700,76 +1774,25 @@ const structuredData = {
           });
       }
 
-      function showNotification(
-        message: string,
-        type: "info" | "success" | "error" = "info"
-      ) {
-        const notification = document.createElement("div");
-        notification.className = `notification notification-${type}`;
-        notification.innerHTML = `
-        <div class="notification-content">
-          <span class="notification-message">${message}</span>
-          <button class="notification-close" aria-label="Close notification">&times;</button>
-        </div>
-      `;
-        document.body.appendChild(notification);
-
-        if (!document.getElementById("notification-styles")) {
-          const styles = document.createElement("style");
-          styles.id = "notification-styles";
-          styles.textContent = `
-          .notification {
-            position: fixed; top: 20px; right: 20px; z-index: 1000;
-            max-width: 400px; padding: 1rem 1.5rem; background: var(--gradient-primary);
-            color: white; border-radius: var(--border-radius); box-shadow: var(--shadow-xl);
-            transform: translateX(120%); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-          }
-          .notification.show { transform: translateX(0); }
-          .notification-content { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-          .notification-message { font-size: 0.875rem; line-height: 1.4; }
-          .notification-close { background: none; border: none; color: inherit; font-size: 1.25rem; cursor: pointer; padding: 0.25rem; border-radius: 50%; transition: background-color 0.2s; }
-          .notification-close:hover { background-color: rgba(255, 255, 255, 0.2); }
-        `;
-          document.head.appendChild(styles);
-        }
-
-        requestAnimationFrame(() => {
-          notification.classList.add("show");
-        });
-
-        const closeNotification = () => {
-          notification.classList.remove("show");
-          setTimeout(() => notification.remove(), 400);
-        };
-
-        const closeBtn = notification.querySelector(".notification-close");
-        if (closeBtn) {
-          closeBtn.addEventListener("click", closeNotification, { once: true });
-        }
-        setTimeout(closeNotification, 5000);
-      }
-
-      let resizeTimer: number;
-      window.addEventListener("resize", () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = window.setTimeout(() => {
+      window.addEventListener(
+        "resize",
+        debounce(() => {
           config.isMobile = window.innerWidth <= 768;
-        }, 250);
-      });
+          if (config.isMobile) {
+            document
+              .querySelectorAll<HTMLElement>(".glass-card, .magnetic-btn")
+              .forEach((el) => {
+                el.style.transform = "";
+              });
+          }
+        }, 250)
+      );
 
-      if (!config.isMobile) {
-        const interactiveElements = document.querySelectorAll<HTMLElement>(
-          "button, a, .glass-card"
-        );
-        interactiveElements.forEach((element) => {
-          element.addEventListener("mouseenter", () => {
-            document.body.style.cursor = "pointer";
-          });
-          element.addEventListener("mouseleave", () => {
-            document.body.style.cursor = "default";
-          });
-        });
-      }
+      const preloadLink = document.createElement("link");
+      preloadLink.rel = "preload";
+      preloadLink.href = "https://mcvalquiriasreserva.site.agendapro.com/ar";
+      preloadLink.as = "document";
+      document.head.appendChild(preloadLink);
     });
   </script>
-</section>
+</BaseLayout>

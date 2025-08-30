@@ -2,6 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
@@ -52,11 +53,6 @@ const structuredData = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto - Scalabrini</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-  />
   <title>
     Contacto - Reserva tu Cita en Scalabrini Beauty Salon | Palermo, Buenos
     Aires
@@ -119,14 +115,18 @@ const structuredData = {
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="dns-prefetch" href="//wa.me" />
+  <link rel="dns-prefetch" href="//mcvalquiriasreserva.site.agendapro.com" />
 
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
   />
 </head>
-<section class="contact-section">
-  <div class="animated-bg">
+
+<main class="contact-section">
+  <div class="animated-bg" aria-hidden="true">
     <div class="bg-shape shape-1"></div>
     <div class="bg-shape shape-2"></div>
     <div class="bg-shape shape-3"></div>
@@ -138,7 +138,7 @@ const structuredData = {
     </div>
   </div>
 
-  <div class="hero-section">
+  <header class="hero-section">
     <div class="hero-content">
       <h1 class="hero-title">
         <span class="title-word">Agenda</span>
@@ -148,14 +148,14 @@ const structuredData = {
       <p class="hero-subtitle">
         Reserva tu momento de belleza y transformación
       </p>
-      <div class="hero-divider"></div>
+      <div class="hero-divider" aria-hidden="true"></div>
     </div>
-  </div>
+  </header>
 
   <div class="content-grid">
-    <div class="booking-card glass-card">
+    <section class="booking-card glass-card">
       <div class="card-header">
-        <div class="header-icon">
+        <div class="header-icon" aria-hidden="true">
           <div class="icon-wrapper">
             <svg
               width="32"
@@ -164,6 +164,7 @@ const structuredData = {
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              aria-hidden="true"
             >
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
               <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -181,15 +182,20 @@ const structuredData = {
           reservas online
         </p>
 
-        <button class="primary-btn magnetic-btn" id="bookingBtn">
-          <span class="btn-bg"></span>
+        <button
+          class="primary-btn magnetic-btn"
+          id="bookingBtn"
+          type="button"
+          aria-describedby="booking-help"
+        >
+          <span class="btn-bg" aria-hidden="true"></span>
           <span class="btn-text">Reservar con Agenda Pro</span>
-          <div class="btn-shine"></div>
+          <div class="btn-shine" aria-hidden="true"></div>
         </button>
 
         <div class="trust-badges">
           <div class="trust-badge">
-            <div class="badge-icon">
+            <div class="badge-icon" aria-hidden="true">
               <svg
                 width="16"
                 height="16"
@@ -206,7 +212,7 @@ const structuredData = {
             <span>Sistema seguro</span>
           </div>
           <div class="trust-badge">
-            <div class="badge-icon">
+            <div class="badge-icon" aria-hidden="true">
               <svg
                 width="16"
                 height="16"
@@ -222,11 +228,12 @@ const structuredData = {
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="info-card glass-card">
+    <!-- Info Card -->
+    <section class="info-card glass-card">
       <div class="card-header">
-        <div class="header-icon">
+        <div class="header-icon" aria-hidden="true">
           <div class="icon-wrapper">
             <svg
               width="32"
@@ -235,6 +242,7 @@ const structuredData = {
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              aria-hidden="true"
             >
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="6" x2="12" y2="12"></line>
@@ -248,7 +256,7 @@ const structuredData = {
       <div class="info-content">
         <div class="info-items">
           <div class="info-item" data-delay="0.1">
-            <div class="info-icon">
+            <div class="info-icon" aria-hidden="true">
               <svg
                 width="20"
                 height="20"
@@ -262,18 +270,26 @@ const structuredData = {
               </svg>
             </div>
             <div class="info-text">
-              <h3>Ubicaciónes</h3>
-              <h4><b>Local-Estetica</b></h4>
-              <p>Av. Raúl Scalabrini Ortiz 932 <br />Palermo, CABA</p>
-              <br />
-              <h4><b>Local-Uñas</b></h4>
-
-              <p>Av. Gral. Las Heras 2480 <br /> Palermo, CABA</p>
+              <h3>Ubicaciones</h3>
+              <div class="location-item">
+                <h4><strong>Local Estética</strong></h4>
+                <address>
+                  Av. Raúl Scalabrini Ortiz 932<br />
+                  Palermo, CABA
+                </address>
+              </div>
+              <div class="location-item">
+                <h4><strong>Local Uñas</strong></h4>
+                <address>
+                  Av. Gral. Las Heras 2480<br />
+                  Palermo, CABA
+                </address>
+              </div>
             </div>
           </div>
 
           <div class="info-item" data-delay="0.2">
-            <div class="info-icon">
+            <div class="info-icon" aria-hidden="true">
               <svg
                 width="20"
                 height="20"
@@ -289,12 +305,16 @@ const structuredData = {
             </div>
             <div class="info-text">
               <h3>Teléfono</h3>
-              <p>+54 11 1234-5678</p>
+              <p>
+                <a href="tel:+541138247547" class="phone-link">
+                  +54 11 3824-7547
+                </a>
+              </p>
             </div>
           </div>
 
           <div class="info-item" data-delay="0.3">
-            <div class="info-icon">
+            <div class="info-icon" aria-hidden="true">
               <svg
                 width="20"
                 height="20"
@@ -309,12 +329,13 @@ const structuredData = {
             </div>
             <div class="info-text">
               <h3>Horarios</h3>
-              <p>Lun a Sáb: 10:00Hs - 20:00Hs</p>
+              <p>Lun a Sáb: 10:00 - 20:00 hs</p>
+              <p class="closed-info">Domingos: Cerrado</p>
             </div>
           </div>
 
           <div class="info-item highlight-item" data-delay="0.4">
-            <div class="info-icon">
+            <div class="info-icon" aria-hidden="true">
               <svg
                 width="20"
                 height="20"
@@ -341,8 +362,12 @@ const structuredData = {
         </div>
 
         <div class="quick-actions">
-          <a href="tel:+541138247547" class="action-btn call-btn">
-            <div class="btn-icon">
+          <a
+            href="tel:+541138247547"
+            class="action-btn call-btn"
+            aria-label="Llamar al salón"
+          >
+            <div class="btn-icon" aria-hidden="true">
               <svg
                 width="18"
                 height="18"
@@ -363,8 +388,9 @@ const structuredData = {
             class="action-btn whatsapp-btn"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Contactar por WhatsApp"
           >
-            <div class="btn-icon">
+            <div class="btn-icon" aria-hidden="true">
               <svg
                 width="18"
                 height="18"
@@ -388,1397 +414,1351 @@ const structuredData = {
             <a
               href="https://www.facebook.com/share/19rnhuKXb7/"
               class="social-link facebook"
-              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Seguir en Facebook"
             >
-              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
             </a>
             <a
               href="https://www.instagram.com/mcvalquirias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               class="social-link instagram"
-              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Seguir en Instagram"
             >
-              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
             <a
               href="https://www.tiktok.com/@mc.valquirias"
-              class="social-link whatsapp"
-              aria-label="WhatsApp"
+              class="social-link tiktok"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Seguir en TikTok"
             >
-              <i class="fa-brands fa-tiktok"></i>
+              <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 
-  <style>
-    :root {
-      --primary-purple: #8b5cf6;
-      --primary-gold: #f59e0b;
-      --secondary-purple: #a855f7;
-      --light-purple: #c4b5fd;
-      --dark-purple: #6d28d9;
-      --white: #ffffff;
-      --black: #0f0f23;
-      --gray-100: #f8fafc;
-      --gray-200: #e2e8f0;
-      --gray-300: #cbd5e1;
-      --gray-400: #94a3b8;
-      --gray-500: #64748b;
-      --gray-600: #475569;
-      --gray-700: #334155;
-      --gray-800: #1e293b;
-      --gray-900: #0f172a;
+  <div id="loadingIndicator" class="loading-indicator" aria-hidden="true">
+    <div class="spinner"></div>
+    <span>Conectando con Agenda Pro...</span>
+  </div>
+</main>
 
-      --gradient-primary: linear-gradient(
-        135deg,
-        var(--primary-purple),
-        var(--primary-gold)
-      );
-      --gradient-secondary: linear-gradient(
-        135deg,
-        var(--secondary-purple),
-        var(--light-purple)
-      );
-      --gradient-dark: linear-gradient(
-        135deg,
-        var(--dark-purple),
-        var(--primary-purple)
-      );
+<style>
+  :root {
+    --primary-purple: #8b5cf6;
+    --primary-gold: #f59e0b;
+    --secondary-purple: #a855f7;
+    --light-purple: #c4b5fd;
+    --dark-purple: #6d28d9;
+    --white: #ffffff;
+    --black: #0f0f23;
+    --gray-100: #f8fafc;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
 
-      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-      --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-        0 2px 4px -2px rgb(0 0 0 / 0.1);
-      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-        0 4px 6px -4px rgb(0 0 0 / 0.1);
-      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-        0 8px 10px -6px rgb(0 0 0 / 0.1);
-      --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-      --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.3);
+    --gradient-primary: linear-gradient(
+      135deg,
+      var(--primary-purple),
+      var(--primary-gold)
+    );
+    --gradient-secondary: linear-gradient(
+      135deg,
+      var(--secondary-purple),
+      var(--light-purple)
+    );
+    --gradient-dark: linear-gradient(
+      135deg,
+      var(--dark-purple),
+      var(--primary-purple)
+    );
 
-      --border-radius: 1rem;
-      --border-radius-lg: 1.5rem;
-      --border-radius-xl: 2rem;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.3);
 
-      --transition-fast: 0.15s ease-out;
-      --transition-normal: 0.3s ease-out;
-      --transition-slow: 0.5s ease-out;
+    --border-radius: 1rem;
+    --border-radius-lg: 1.5rem;
+    --border-radius-xl: 2rem;
 
-      --z-background: -1;
-      --z-content: 1;
-      --z-overlay: 10;
-      --z-modal: 100;
-    }
+    --transition-fast: 0.15s ease-out;
+    --transition-normal: 0.3s ease-out;
+    --transition-slow: 0.5s ease-out;
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background-color: #0f0f23;
-      font-family: "Inter", sans-serif;
-      color: #ffffff;
-    }
-    body::-webkit-scrollbar {
-      display: none;
-    }
-    .contact-section {
-      position: relative;
-      min-height: 100vh;
-      padding: 6rem 1.5rem 4rem;
-      background: linear-gradient(135deg, #faf5ff 0%, #fff7ed 100%);
-      font-family:
-        "Inter",
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-      overflow-x: hidden;
-    }
+    --z-background: -1;
+    --z-content: 1;
+    --z-overlay: 10;
+    --z-modal: 100;
+  }
 
-    .animated-bg {
-      position: absolute;
-      inset: 0;
-      z-index: var(--z-background);
-      overflow: hidden;
-    }
-    .bg-shape {
-      position: absolute;
-      border-radius: 50%;
-      background: var(--gradient-primary);
-      opacity: 0.1;
-      filter: blur(80px);
-      animation: morphShape 20s ease-in-out infinite;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    .shape-1 {
-      width: 400px;
-      height: 400px;
-      top: -10%;
-      right: -10%;
-      animation-delay: 0s;
-    }
+  body {
+    background-color: #0f0f23;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+  }
 
-    .shape-2 {
-      width: 300px;
-      height: 300px;
-      bottom: -5%;
-      left: -5%;
-      animation-delay: 7s;
-    }
+  body::-webkit-scrollbar {
+    display: none;
+  }
 
-    .shape-3 {
-      width: 350px;
-      height: 350px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation-delay: 14s;
-    }
+  .contact-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 6rem 1.5rem 4rem;
+    background: linear-gradient(135deg, #faf5ff 0%, #fff7ed 100%);
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    overflow-x: hidden;
+  }
 
-    .floating-orbs {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
+  .animated-bg {
+    position: absolute;
+    inset: 0;
+    z-index: var(--z-background);
+    overflow: hidden;
+  }
 
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      background: var(--gradient-secondary);
-      opacity: 0.2;
-      animation: floatOrb 15s ease-in-out infinite;
-    }
+  .bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+    filter: blur(80px);
+    animation: morphShape 20s ease-in-out infinite;
+    will-change: transform;
+  }
 
-    .orb-1 {
-      width: 60px;
-      height: 60px;
-      top: 20%;
-      left: 10%;
-      animation-delay: 0s;
-    }
+  .shape-1 {
+    width: 400px;
+    height: 400px;
+    top: -10%;
+    right: -10%;
+    animation-delay: 0s;
+  }
 
-    .orb-2 {
-      width: 80px;
-      height: 80px;
-      top: 60%;
-      right: 15%;
-      animation-delay: 5s;
-    }
+  .shape-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -5%;
+    left: -5%;
+    animation-delay: 7s;
+  }
 
-    .orb-3 {
-      width: 40px;
-      height: 40px;
-      bottom: 30%;
-      left: 20%;
-      animation-delay: 10s;
-    }
+  .shape-3 {
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 14s;
+  }
 
-    .orb-4 {
-      width: 70px;
-      height: 70px;
-      top: 40%;
-      right: 30%;
-      animation-delay: 12s;
-    }
-    @keyframes fadeInSlideUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+  .floating-orbs {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
 
-    @keyframes morphShape {
-      0%,
-      100% {
-        transform: translate(0, 0) rotate(0deg) scale(1);
-      }
-      25% {
-        transform: translate(20px, -20px) rotate(90deg) scale(1.1);
-      }
-      50% {
-        transform: translate(-15px, 15px) rotate(180deg) scale(0.9);
-      }
-      75% {
-        transform: translate(-20px, -15px) rotate(270deg) scale(1.05);
-      }
-    }
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--gradient-secondary);
+    opacity: 0.2;
+    animation: floatOrb 15s ease-in-out infinite;
+    will-change: transform;
+  }
 
-    @keyframes floatOrb {
-      0%,
-      100% {
-        transform: translateY(0px) translateX(0px) scale(1);
-      }
-      33% {
-        transform: translateY(-30px) translateX(20px) scale(1.1);
-      }
-      66% {
-        transform: translateY(10px) translateX(-15px) scale(0.9);
-      }
-    }
+  .orb-1 {
+    width: 60px;
+    height: 60px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
 
-    .hero-section {
-      text-align: center;
-      margin-bottom: 4rem;
-      position: relative;
-      z-index: var(--z-content);
-    }
+  .orb-2 {
+    width: 80px;
+    height: 80px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 5s;
+  }
 
-    .hero-content {
-      animation: fadeInUp 1s ease-out;
-    }
+  .orb-3 {
+    width: 40px;
+    height: 40px;
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 10s;
+  }
 
-    .hero-title {
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      color: var(--gray-900);
-    }
+  .orb-4 {
+    width: 70px;
+    height: 70px;
+    top: 40%;
+    right: 30%;
+    animation-delay: 12s;
+  }
 
-    .title-word {
-      display: inline-block;
-      animation: slideInDown 0.8s ease-out forwards;
+  @keyframes fadeInSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes morphShape {
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    25% {
+      transform: translate(20px, -20px) rotate(90deg) scale(1.1);
+    }
+    50% {
+      transform: translate(-15px, 15px) rotate(180deg) scale(0.9);
+    }
+    75% {
+      transform: translate(-20px, -15px) rotate(270deg) scale(1.05);
+    }
+  }
+
+  @keyframes floatOrb {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+    }
+    33% {
+      transform: translateY(-30px) translateX(20px) scale(1.1);
+    }
+    66% {
+      transform: translateY(10px) translateX(-15px) scale(0.9);
+    }
+  }
+
+  .hero-section {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: var(--z-content);
+  }
+
+  .hero-content {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--gray-900);
+  }
+
+  .title-word {
+    display: inline-block;
+    animation: slideInDown 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .title-word:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  .title-word:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .title-word:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-out 0.8s both;
+  }
+
+  .hero-divider {
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin: 0 auto;
+    border-radius: 2px;
+    animation: scaleX 0.8s ease-out 1s both;
+    transform-origin: center;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
       opacity: 0;
     }
+    to {
+      opacity: 1;
+    }
+  }
 
-    .title-word:nth-child(1) {
-      animation-delay: 0.2s;
+  @keyframes scaleX {
+    from {
+      transform: scaleX(0);
     }
-    .title-word:nth-child(2) {
-      animation-delay: 0.4s;
+    to {
+      transform: scaleX(1);
     }
-    .title-word:nth-child(3) {
-      animation-delay: 0.6s;
-    }
+  }
 
-    .highlight {
-      background: var(--gradient-primary);
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradientShift 3s ease-in-out infinite;
-    }
+  .content-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: var(--z-content);
+  }
 
-    .hero-subtitle {
-      font-size: clamp(1.125rem, 2vw, 1.25rem);
-      color: var(--gray-600);
-      margin-bottom: 2rem;
-      animation: fadeIn 1s ease-out 0.8s both;
-    }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius-xl);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-slow);
+    animation: slideInUp 0.8s ease-out;
+    will-change: transform;
+  }
 
-    .hero-divider {
-      width: 100px;
-      height: 4px;
-      background: var(--gradient-primary);
-      margin: 0 auto;
-      border-radius: 2px;
-      animation: scaleX 0.8s ease-out 1s both;
-      transform-origin: center;
-    }
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transition: left 1.5s ease-in-out;
+  }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+  .glass-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-2xl), var(--shadow-glow);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
 
-    @keyframes slideInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+  .glass-card:hover::before {
+    left: 100%;
+  }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
+  .booking-card {
+    animation-delay: 0.2s;
+  }
 
-    @keyframes scaleX {
-      from {
-        transform: scaleX(0);
-      }
-      to {
-        transform: scaleX(1);
-      }
-    }
+  .info-card {
+    animation-delay: 0.4s;
+  }
 
-    @keyframes gradientShift {
-      0%,
-      100% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .header-icon {
+    margin-bottom: 1rem;
+  }
+
+  .icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    color: var(--white);
+    animation: iconPulse 2s ease-in-out infinite;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card-header h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0;
+  }
+
+  @keyframes iconPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      box-shadow: var(--shadow-lg);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
+    }
+  }
+
+  .booking-content {
+    text-align: center;
+  }
+
+  .booking-description {
+    color: var(--gray-600);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .primary-btn {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem 2rem;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    margin-bottom: 1.5rem;
+    will-change: transform;
+  }
+
+  .primary-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  .btn-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-dark);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+
+  .btn-text {
+    position: relative;
+    z-index: 2;
+    transition: transform var(--transition-normal);
+  }
+
+  .btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.8s ease-out;
+  }
+
+  .primary-btn:hover:not(:disabled) .btn-bg {
+    opacity: 1;
+  }
+
+  .primary-btn:hover:not(:disabled) .btn-text {
+    transform: scale(1.05);
+  }
+
+  .primary-btn:hover:not(:disabled) .btn-shine {
+    left: 100%;
+  }
+
+  .primary-btn:focus-visible {
+    outline: 2px solid var(--primary-purple);
+    outline-offset: 2px;
+  }
+
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    animation: slideInUp 0.6s ease-out;
+  }
+
+  .trust-badge:nth-child(1) {
+    animation-delay: 1.2s;
+  }
+  .trust-badge:nth-child(2) {
+    animation-delay: 1.4s;
+  }
+
+  .badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--gradient-secondary);
+    color: var(--white);
+    border-radius: 50%;
+  }
+
+  .info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all var(--transition-normal);
+    opacity: 0;
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .info-item[data-delay="0.1"] {
+    animation-delay: 0.8s;
+  }
+  .info-item[data-delay="0.2"] {
+    animation-delay: 1s;
+  }
+  .info-item[data-delay="0.3"] {
+    animation-delay: 1.2s;
+  }
+  .info-item[data-delay="0.4"] {
+    animation-delay: 1.4s;
+  }
+
+  .info-item:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateX(8px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .highlight-item {
+    background: linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.1),
+      rgba(245, 158, 11, 0.1)
+    );
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  .info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform var(--transition-normal);
+  }
+
+  .info-item:hover .info-icon {
+    transform: rotate(360deg) scale(1.1);
+  }
+
+  .info-text h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+  }
+
+  .info-text p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+  }
+
+  .location-item {
+    margin-bottom: 1rem;
+  }
+
+  .location-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .location-item h4 {
+    font-size: 0.95rem;
+    color: var(--gray-800);
+    margin-bottom: 0.25rem;
+  }
+
+  .location-item address {
+    font-style: normal;
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .phone-link {
+    color: var(--primary-purple);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+  }
+
+  .phone-link:hover {
+    color: var(--dark-purple);
+    text-decoration: underline;
+  }
+
+  .closed-info {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    font-style: italic;
+  }
+
+  .features-list {
+    list-style: none;
+    margin-top: 0.5rem;
+  }
+
+  .features-list li {
+    position: relative;
+    padding-left: 1rem;
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+    opacity: 0;
+    animation: fadeInLeft 0.4s ease-out forwards;
+  }
+
+  .features-list li:nth-child(1) {
+    animation-delay: 1.8s;
+  }
+  .features-list li:nth-child(2) {
+    animation-delay: 2s;
+  }
+  .features-list li:nth-child(3) {
+    animation-delay: 2.2s;
+  }
+  .features-list li:nth-child(4) {
+    animation-delay: 2.4s;
+  }
+
+  .features-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.375rem;
+    height: 0.375rem;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .quick-actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+  }
+
+  .action-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+
+  .action-btn:hover::before {
+    opacity: 0.1;
+  }
+
+  .action-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .action-btn:focus-visible {
+    outline: 2px solid var(--primary-purple);
+    outline-offset: 2px;
+  }
+
+  .call-btn {
+    background: var(--gradient-primary);
+    color: var(--white);
+  }
+
+  .whatsapp-btn {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: var(--white);
+  }
+
+  .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-normal);
+  }
+
+  .action-btn:hover .btn-icon {
+    transform: scale(1.2) rotate(15deg);
+  }
+
+  .social-section {
+    text-align: center;
+  }
+
+  .social-section h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    color: var(--white);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+  }
+
+  .social-link::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    animation: rotate 2s linear infinite;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+
+  .social-link:hover::before {
+    opacity: 1;
+  }
+
+  .social-link:hover {
+    transform: translateY(-4px) rotate(15deg) scale(1.1);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .social-link:focus-visible {
+    outline: 2px solid var(--primary-purple);
+    outline-offset: 2px;
+  }
+
+  .facebook {
+    background: linear-gradient(135deg, #1877f2, #42a5f5);
+  }
+
+  .instagram {
+    background: linear-gradient(135deg, #e4405f, #fd1d1d, #fcb045);
+  }
+
+  .tiktok {
+    background: linear-gradient(135deg, #000000, #ff0050);
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: var(--z-modal);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 2rem 3rem;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-2xl);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+  }
+
+  .loading-indicator.show {
+    display: flex;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--gray-200);
+    border-top: 3px solid var(--primary-purple);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  .loading-indicator span {
+    color: var(--gray-700);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: var(--z-modal);
+    max-width: 400px;
+    padding: 1rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-xl);
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .notification.show {
+    transform: translateX(0);
+  }
+
+  .notification-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .notification-message {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .notification-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+  }
+
+  .notification-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .contact-section {
+      padding: 4rem 1rem 2rem;
     }
 
     .content-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
-      gap: 2rem;
-      position: relative;
-      z-index: var(--z-content);
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
     .glass-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: var(--border-radius-xl);
-      padding: 2.5rem;
-      box-shadow: var(--shadow-xl);
-      position: relative;
-      overflow: hidden;
-      transition: all var(--transition-slow);
-      animation: slideInUp 0.8s ease-out;
+      padding: 1.5rem;
     }
 
-    .glass-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-      );
-      transition: left 1.5s ease-in-out;
-    }
-
-    .glass-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: var(--shadow-2xl), var(--shadow-glow);
-      border-color: rgba(139, 92, 246, 0.3);
-    }
-
-    .glass-card:hover::before {
-      left: 100%;
-    }
-
-    .booking-card {
-      animation-delay: 0.2s;
-    }
-
-    .info-card {
-      animation-delay: 0.4s;
-    }
-
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .card-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .header-icon {
-      margin-bottom: 1rem;
-    }
-
-    .icon-wrapper {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 4rem;
-      height: 4rem;
-      background: var(--gradient-primary);
-      border-radius: 50%;
-      color: var(--white);
-      animation: iconPulse 2s ease-in-out infinite;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .card-header h2 {
-      font-size: 1.875rem;
-      font-weight: 700;
-      color: var(--gray-900);
-      margin: 0;
-    }
-
-    @keyframes iconPulse {
-      0%,
-      100% {
-        transform: scale(1);
-        box-shadow: var(--shadow-lg);
-      }
-      50% {
-        transform: scale(1.05);
-        box-shadow: var(--shadow-xl), var(--shadow-glow);
-      }
-    }
-
-    .booking-content {
-      text-align: center;
-    }
-
-    .booking-description {
-      color: var(--gray-600);
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .primary-btn {
-      position: relative;
-      width: 100%;
-      max-width: 320px;
-      padding: 1rem 2rem;
-      background: var(--gradient-primary);
-      color: var(--white);
-      border: none;
-      border-radius: 50px;
-      font-size: 1.125rem;
-      font-weight: 600;
-      cursor: pointer;
-      overflow: hidden;
-      transition: all var(--transition-normal);
-      margin-bottom: 1.5rem;
-    }
-
-    .btn-bg {
-      position: absolute;
-      inset: 0;
-      background: var(--gradient-dark);
-      opacity: 0;
-      transition: opacity var(--transition-normal);
-    }
-
-    .btn-text {
-      position: relative;
-      z-index: 2;
-      transition: transform var(--transition-normal);
-    }
-
-    .btn-shine {
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-      );
-      transition: left 0.8s ease-out;
-    }
-
-    .primary-btn:hover .btn-bg {
-      opacity: 1;
-    }
-
-    .primary-btn:hover .btn-text {
-      transform: scale(1.05);
-    }
-
-    .primary-btn:hover .btn-shine {
-      left: 100%;
-    }
-
-    .primary-btn:focus {
-      outline: 2px solid var(--primary-purple);
-      outline-offset: 2px;
-    }
-
-    .magnetic-btn {
-      transition: transform var(--transition-fast);
-    }
-
-    .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--gray-600);
-      font-size: 0.875rem;
-      animation: slideInUp 0.6s ease-out;
-    }
-
-    .trust-badge:nth-child(1) {
-      animation-delay: 1.2s;
-    }
-    .trust-badge:nth-child(2) {
-      animation-delay: 1.4s;
-    }
-
-    .badge-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.5rem;
-      height: 1.5rem;
-      background: var(--gradient-secondary);
-      color: var(--white);
-      border-radius: 50%;
-      animation: spin 3s linear infinite;
-    }
-
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .info-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .info-items {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.25rem;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: var(--border-radius);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      transition: all var(--transition-normal);
-      opacity: 0;
-      animation: slideInLeft 0.6s ease-out forwards;
-    }
-
-    .info-item[data-delay="0.1"] {
-      animation-delay: 0.8s;
-    }
-    .info-item[data-delay="0.2"] {
-      animation-delay: 1s;
-    }
-    .info-item[data-delay="0.3"] {
-      animation-delay: 1.2s;
-    }
-    .info-item[data-delay="0.4"] {
-      animation-delay: 1.4s;
-    }
-
-    .info-item:hover {
-      background: rgba(255, 255, 255, 0.8);
-      transform: translateX(8px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .highlight-item {
-      background: linear-gradient(
-        135deg,
-        rgba(139, 92, 246, 0.1),
-        rgba(245, 158, 11, 0.1)
-      );
-      border-color: rgba(139, 92, 246, 0.3);
-    }
-
-    .info-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.5rem;
-      height: 2.5rem;
-      background: var(--gradient-primary);
-      color: var(--white);
-      border-radius: 50%;
-      flex-shrink: 0;
-      transition: transform var(--transition-normal);
-    }
-
-    .info-item:hover .info-icon {
-      transform: rotate(360deg) scale(1.1);
-    }
-
-    .info-text h3 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: var(--gray-900);
-      margin-bottom: 0.25rem;
-    }
-
-    .info-text p {
-      color: var(--gray-600);
-      font-size: 0.875rem;
-      line-height: 1.5;
-    }
-
-    .features-list {
-      list-style: none;
-      margin-top: 0.5rem;
-    }
-
-    .features-list li {
-      position: relative;
-      padding-left: 1rem;
-      color: var(--gray-600);
-      font-size: 0.875rem;
-      margin-bottom: 0.25rem;
-      opacity: 0;
-      animation: fadeInLeft 0.4s ease-out forwards;
-    }
-
-    .features-list li:nth-child(1) {
-      animation-delay: 1.8s;
-    }
-    .features-list li:nth-child(2) {
-      animation-delay: 2s;
-    }
-    .features-list li:nth-child(3) {
-      animation-delay: 2.2s;
-    }
-    .features-list li:nth-child(4) {
-      animation-delay: 2.4s;
-    }
-
-    .features-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 0.375rem;
-      height: 0.375rem;
-      background: var(--gradient-primary);
-      border-radius: 50%;
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes fadeInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    .hero-title {
+      font-size: clamp(2rem, 8vw, 3rem);
     }
 
     .quick-actions {
-      display: flex;
+      flex-direction: column;
+    }
+
+    .trust-badges {
+      flex-direction: column;
+      align-items: center;
       gap: 1rem;
     }
 
-    .action-btn {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.875rem 1rem;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.875rem;
-      transition: all var(--transition-normal);
-      position: relative;
-      overflow: hidden;
+    .bg-shape {
+      filter: blur(60px);
+      opacity: 0.05;
     }
 
-    .action-btn::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: inherit;
-      opacity: 0;
-      transition: opacity var(--transition-normal);
+    .notification {
+      right: 10px;
+      left: 10px;
+      max-width: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .glass-card {
+      padding: 1rem;
     }
 
-    .action-btn:hover::before {
-      opacity: 0.1;
-    }
-
-    .action-btn:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .call-btn {
-      background: var(--gradient-primary);
-      color: var(--white);
-    }
-
-    .whatsapp-btn {
-      background: linear-gradient(135deg, #25d366, #128c7e);
-      color: var(--white);
-    }
-
-    .btn-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform var(--transition-normal);
-    }
-
-    .action-btn:hover .btn-icon {
-      transform: scale(1.2) rotate(15deg);
-    }
-
-    .social-section {
+    .info-item {
+      flex-direction: column;
       text-align: center;
-    }
-
-    .social-section h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--gray-900);
-      margin-bottom: 1rem;
+      gap: 0.75rem;
+      padding: 1rem;
     }
 
     .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 3rem;
-      height: 3rem;
-      background: var(--gradient-primary);
-      color: var(--white);
-      border-radius: 50%;
-      text-decoration: none;
-      transition: all var(--transition-normal);
-      position: relative;
-      overflow: hidden;
+      width: 2.5rem;
+      height: 2.5rem;
     }
 
-    .social-link::before {
-      content: "";
-      position: absolute;
-      inset: -50%;
-      background: conic-gradient(
-        from 0deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-      );
-      animation: rotate 2s linear infinite;
-      opacity: 0;
-      transition: opacity var(--transition-normal);
-    }
-
-    .social-link:hover::before {
-      opacity: 1;
-    }
-
-    .social-link:hover {
-      transform: translateY(-4px) rotate(15deg) scale(1.1);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .facebook {
-      background: linear-gradient(135deg, #1877f2, #42a5f5);
-    }
-    .instagram {
-      background: linear-gradient(135deg, #e4405f, #fd1d1d, #fcb045);
-    }
-    .whatsapp {
-      background: linear-gradient(135deg, #0f7d99, #ff0000);
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .cta-section {
-      max-width: 1000px;
-      margin: 4rem auto 0;
-      padding: 3rem 2rem;
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: var(--border-radius-xl);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      animation: slideInUp 0.8s ease-out 0.6s both;
-    }
-
-    .cta-bg-animation {
-      position: absolute;
-      inset: -100%;
-      background: conic-gradient(
-        from 0deg,
-        transparent,
-        rgba(139, 92, 246, 0.1),
-        transparent,
-        rgba(245, 158, 11, 0.1),
-        transparent
-      );
-      animation: rotate 20s linear infinite;
-      opacity: 0.8;
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta-title {
-      font-size: clamp(1.875rem, 4vw, 2.5rem);
-      font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: 1rem;
-      animation: typeWriter 2s steps(30) 1.5s both;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 3px solid var(--primary-purple);
-    }
-
-    .cta-subtitle {
-      color: var(--gray-600);
-      font-size: 1.125rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @keyframes typeWriter {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-btn {
-      position: relative;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.125rem;
-      min-width: 160px;
-      text-align: center;
-      overflow: hidden;
-      transition: all var(--transition-normal);
-      border: 2px solid transparent;
-    }
-
-    .cta-btn.primary {
-      background: var(--gradient-primary);
-      color: var(--white);
-    }
-
-    .cta-btn.secondary {
-      background: var(--white);
-      color: var(--primary-purple);
-      border-color: var(--primary-purple);
-    }
-
-    .btn-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .btn-particles {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-    }
-
-    .btn-particles::before,
-    .btn-particles::after {
-      content: "";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: var(--white);
-      border-radius: 50%;
-      opacity: 0;
-      animation: particle 2s ease-in-out infinite;
-    }
-
-    .btn-particles::before {
-      top: 20%;
-      left: 20%;
-      animation-delay: 0s;
-    }
-
-    .btn-particles::after {
-      bottom: 20%;
-      right: 20%;
-      animation-delay: 1s;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .cta-btn.secondary:hover {
-      background: var(--gradient-primary);
-      color: var(--white);
-      border-color: transparent;
-    }
-
-    @keyframes particle {
-      0%,
-      100% {
-        opacity: 0;
-        transform: scale(0);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
+    .floating-orbs,
     .floating-elements {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+      display: none;
     }
 
-    .floating-dot {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: var(--gradient-primary);
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: floatingDot 6s ease-in-out infinite;
+    .loading-indicator {
+      padding: 1.5rem 2rem;
+      margin: 0 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
 
-    .floating-dot:nth-child(1) {
-      top: 15%;
-      left: 10%;
-      animation-delay: 0s;
+    .glass-card:hover {
+      transform: none;
     }
 
-    .floating-dot:nth-child(2) {
-      top: 25%;
-      right: 15%;
-      animation-delay: 1.5s;
+    .action-btn:hover,
+    .social-link:hover {
+      transform: none;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .contact-section {
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
     }
 
-    .floating-dot:nth-child(3) {
-      bottom: 20%;
-      left: 20%;
-      animation-delay: 3s;
+    .glass-card {
+      background: rgba(15, 15, 35, 0.7);
+      border-color: rgba(255, 255, 255, 0.1);
     }
 
-    .floating-dot:nth-child(4) {
-      bottom: 30%;
-      right: 25%;
-      animation-delay: 4.5s;
+    .hero-title,
+    .card-header h2,
+    .info-text h3,
+    .social-section h3 {
+      color: var(--gray-100);
     }
 
-    @keyframes floatingDot {
-      0%,
-      100% {
-        transform: translateY(0px);
-        opacity: 0.6;
-      }
-      50% {
-        transform: translateY(-20px);
-        opacity: 1;
-      }
+    .hero-subtitle,
+    .booking-description,
+    .info-text p {
+      color: var(--gray-300);
     }
 
-    @media (max-width: 768px) {
-      .contact-section {
-        padding: 4rem 1rem 2rem;
-      }
-
-      .content-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .glass-card {
-        padding: 1.5rem;
-      }
-
-      .hero-title {
-        font-size: clamp(2rem, 8vw, 3rem);
-      }
-
-      .quick-actions {
-        flex-direction: column;
-      }
-
-      .trust-badges {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .cta-section {
-        margin-top: 2rem;
-        padding: 2rem 1rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .cta-btn {
-        width: 100%;
-        max-width: 280px;
-      }
-
-      .cta-title {
-        white-space: normal;
-        border-right: none;
-        animation: fadeIn 1s ease-out 1.5s both;
-      }
-
-      .bg-shape {
-        filter: blur(60px);
-        opacity: 0.05;
-      }
+    .location-item h4 {
+      color: var(--gray-200);
     }
 
-    @media (max-width: 480px) {
-      .glass-card {
-        padding: 1rem;
-      }
-
-      .info-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.75rem;
-      }
-
-      .social-links {
-        gap: 0.75rem;
-      }
-
-      .social-link {
-        width: 2.5rem;
-        height: 2.5rem;
-      }
-
-      .floating-orbs,
-      .floating-elements {
-        display: none;
-      }
+    .info-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+    .info-item:hover {
+      background: rgba(255, 255, 255, 0.1);
     }
 
-    @media (prefers-color-scheme: dark) {
-      .contact-section {
-        background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
-      }
-
-      .glass-card {
-        background: rgba(15, 15, 35, 0.7);
-        border-color: rgba(255, 255, 255, 0.1);
-      }
-
-      .hero-title,
-      .card-header h2,
-      .info-text h3,
-      .social-section h3,
-      .cta-title {
-        color: var(--gray-100);
-      }
-
-      .hero-subtitle,
-      .booking-description,
-      .info-text p,
-      .cta-subtitle {
-        color: var(--gray-300);
-      }
-
-      .info-item {
-        background: rgba(255, 255, 255, 0.05);
-        border-color: rgba(255, 255, 255, 0.1);
-      }
-
-      .info-item:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
+    .loading-indicator {
+      background: rgba(15, 15, 35, 0.95);
+      color: var(--gray-100);
     }
-  </style>
+  }
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const config = {
-        reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)")
-          .matches,
-        isMobile: window.innerWidth <= 768,
+  @media print {
+    .animated-bg,
+    .hero-divider,
+    .btn-shine,
+    .floating-orbs {
+      display: none !important;
+    }
+
+    .glass-card {
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: none;
+    }
+
+    .contact-section {
+      background: white;
+      color: black;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const config = {
+      reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)")
+        .matches,
+      isMobile: window.innerWidth <= 768,
+    };
+
+    const throttle = (func: (...args: any[]) => void, limit: number) => {
+      let inThrottle: boolean;
+      return function (this: any, ...args: any[]) {
+        if (!inThrottle) {
+          func.apply(this, args);
+          inThrottle = true;
+          setTimeout(() => (inThrottle = false), limit);
+        }
+      };
+    };
+
+    const debounce = (func: (...args: any[]) => void, wait: number) => {
+      let timeout: number | undefined;
+      return function (this: any, ...args: any[]) {
+        clearTimeout(timeout);
+        timeout = window.setTimeout(() => func.apply(this, args), wait);
+      };
+    };
+
+    const magneticButtons =
+      document.querySelectorAll<HTMLElement>(".magnetic-btn");
+    magneticButtons.forEach((button) => {
+      if (config.reducedMotion || config.isMobile) return;
+
+      const handleMouseMove = (e: MouseEvent) => {
+        const rect = button.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.02)`;
       };
 
-      const throttle = (
-        func: (...args: any[]) => void,
-        limit: number
-      ): ((...args: any[]) => void) => {
-        let inThrottle: boolean;
-        return function (this: any, ...args: any[]) {
-          if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => (inThrottle = false), limit);
-          }
-        };
+      const handleMouseLeave = () => {
+        button.style.transform = "translate(0, 0) scale(1)";
       };
 
-      const magneticButtons = document.querySelectorAll(".magnetic-btn");
-      magneticButtons.forEach((button) => {
-        if (config.reducedMotion || config.isMobile) return;
-        if (!(button instanceof HTMLElement)) return;
+      button.addEventListener("mousemove", throttle(handleMouseMove, 16));
+      button.addEventListener("mouseleave", handleMouseLeave);
+    });
 
-        button.addEventListener("mousemove", (e: MouseEvent) => {
-          const rect = button.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-          button.style.transform = `translate(${x * 0.1}px, ${
-            y * 0.1
-          }px) scale(1.02)`;
-        });
+    const bookingBtn = document.getElementById(
+      "bookingBtn"
+    ) as HTMLButtonElement | null;
+    const loadingIndicator = document.getElementById("loadingIndicator");
+    const btnText = bookingBtn?.querySelector<HTMLElement>(".btn-text");
 
-        button.addEventListener("mouseleave", () => {
-          button.style.transform = "translate(0, 0) scale(1)";
-        });
-      });
+    if (bookingBtn && loadingIndicator && btnText) {
+      const originalText = btnText.textContent || "";
 
-      const bookingBtn = document.getElementById("bookingBtn");
-      if (bookingBtn && bookingBtn instanceof HTMLElement) {
-        bookingBtn.addEventListener("click", (e: MouseEvent) => {
-          e.preventDefault();
-          const btnText = bookingBtn.querySelector(".btn-text");
-          if (!(btnText instanceof HTMLElement)) return;
+      bookingBtn.addEventListener("click", async (e: MouseEvent) => {
+        e.preventDefault();
 
-          btnText.textContent = "Conectando...";
-          bookingBtn.style.pointerEvents = "none";
+        btnText.textContent = "Conectando...";
+        bookingBtn.disabled = true;
+        loadingIndicator.classList.add("show");
 
+        try {
+          await new Promise((resolve) => setTimeout(resolve, 1500));
+          showNotification(
+            "¡Te redirigiremos a Agenda Pro para completar tu reserva!",
+            "success"
+          );
           setTimeout(() => {
-            showNotification(
-              "¡Te redirigiremos a Agenda Pro para completar tu reserva!",
-              "success"
+            window.open(
+              "https://mcvalquiriasreserva.site.agendapro.com/ar",
+              "_blank",
+              "noopener,noreferrer"
             );
-            window.location.href =
-              "https://mcvalquiriasreserva.site.agendapro.com/ar";
+          }, 800);
+        } catch (error) {
+          console.error("Error al conectar:", error);
+          showNotification(
+            "Error al conectar. Por favor, intenta nuevamente.",
+            "error"
+          );
+        } finally {
+          setTimeout(() => {
+            btnText.textContent = originalText;
+            bookingBtn.disabled = false;
+            loadingIndicator.classList.remove("show");
           }, 2000);
-        });
-      }
-
-      const cards = document.querySelectorAll(".glass-card");
-      cards.forEach((card) => {
-        if (config.reducedMotion || config.isMobile) return;
-        if (!(card instanceof HTMLElement)) return;
-
-        card.addEventListener("mousemove", (e: MouseEvent) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = (y - centerY) / 10;
-          const rotateY = (centerX - x) / 10;
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        });
-
-        card.addEventListener("mouseleave", () => {
-          card.style.transform =
-            "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
-        });
+        }
       });
+    }
 
-      if (!config.reducedMotion && !config.isMobile) {
-        const handleScroll = throttle(() => {
-          const scrolled = window.pageYOffset;
-          document.querySelectorAll<HTMLElement>(".orb").forEach((orb) => {
-            const speed = parseFloat(orb.dataset.speed || "0.3");
-            orb.style.transform = `translateY(${scrolled * speed}px)`;
-          });
-          document
-            .querySelectorAll<HTMLElement>(".bg-shape")
-            .forEach((shape) => {
-              const speed = parseFloat(shape.dataset.speed || "0.1");
-              shape.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        }, 16);
+    const cards = document.querySelectorAll<HTMLElement>(".glass-card");
+    cards.forEach((card) => {
+      if (config.reducedMotion || config.isMobile) return;
 
-        window.addEventListener("scroll", handleScroll, { passive: true });
-      }
+      const handleMouseMove = (e: MouseEvent) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateX = (y - rect.height / 2) / 15;
+        const rotateY = (rect.width / 2 - x) / 15;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      };
 
-      if ("IntersectionObserver" in window && !config.reducedMotion) {
-        const observerOptions: IntersectionObserverInit = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
+      const handleMouseLeave = () => {
+        card.style.transform =
+          "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.target instanceof HTMLElement) {
-              entry.target.style.animationPlayState = "running";
-              observer.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
+      card.addEventListener("mousemove", throttle(handleMouseMove, 16));
+      card.addEventListener("mouseleave", handleMouseLeave);
+    });
 
-        document
-          .querySelectorAll<HTMLElement>(
-            "[data-delay], .features-list li, .trust-badge"
-          )
-          .forEach((el) => {
-            el.style.animationPlayState = "paused";
-            observer.observe(el);
-          });
-      }
+    function showNotification(
+      message: string,
+      type: "info" | "success" | "warning" | "error" = "info"
+    ) {
+      document.querySelectorAll(".notification").forEach((n) => n.remove());
 
-      function showNotification(
-        message: string,
-        type: "info" | "success" | "error" = "info"
-      ) {
-        const notification = document.createElement("div");
-        notification.className = `notification notification-${type}`;
-        notification.innerHTML = `
+      const notification = document.createElement("div");
+      notification.className = `notification notification-${type}`;
+      notification.setAttribute("role", "alert");
+      notification.innerHTML = `
         <div class="notification-content">
           <span class="notification-message">${message}</span>
-          <button class="notification-close" aria-label="Close notification">&times;</button>
-        </div>
-      `;
-        document.body.appendChild(notification);
+          <button class="notification-close" aria-label="Cerrar notificación">&times;</button>
+        </div>`;
 
-        if (!document.getElementById("notification-styles")) {
-          const styles = document.createElement("style");
-          styles.id = "notification-styles";
-          styles.textContent = `
-          .notification {
-            position: fixed; top: 20px; right: 20px; z-index: 1000;
-            max-width: 400px; padding: 1rem 1.5rem; background: var(--gradient-primary);
-            color: white; border-radius: var(--border-radius); box-shadow: var(--shadow-xl);
-            transform: translateX(120%); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-          }
-          .notification.show { transform: translateX(0); }
-          .notification-content { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-          .notification-message { font-size: 0.875rem; line-height: 1.4; }
-          .notification-close { background: none; border: none; color: inherit; font-size: 1.25rem; cursor: pointer; padding: 0.25rem; border-radius: 50%; transition: background-color 0.2s; }
-          .notification-close:hover { background-color: rgba(255, 255, 255, 0.2); }
-        `;
-          document.head.appendChild(styles);
-        }
+      document.body.appendChild(notification);
+      requestAnimationFrame(() => notification.classList.add("show"));
 
-        requestAnimationFrame(() => {
-          notification.classList.add("show");
-        });
+      const closeNotification = () => {
+        notification.classList.remove("show");
+        setTimeout(() => notification.remove(), 400);
+      };
 
-        const closeNotification = () => {
-          notification.classList.remove("show");
-          setTimeout(() => notification.remove(), 400);
-        };
+      notification
+        .querySelector(".notification-close")
+        ?.addEventListener("click", closeNotification, { once: true });
+      setTimeout(closeNotification, 5000);
+    }
 
-        const closeBtn = notification.querySelector(".notification-close");
-        if (closeBtn) {
-          closeBtn.addEventListener("click", closeNotification, { once: true });
-        }
-        setTimeout(closeNotification, 5000);
-      }
-
-      let resizeTimer: number;
-      window.addEventListener("resize", () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = window.setTimeout(() => {
-          config.isMobile = window.innerWidth <= 768;
-        }, 250);
-      });
-
-      if (!config.isMobile) {
-        const interactiveElements = document.querySelectorAll<HTMLElement>(
-          "button, a, .glass-card"
-        );
-        interactiveElements.forEach((element) => {
-          element.addEventListener("mouseenter", () => {
-            document.body.style.cursor = "pointer";
+    if ("IntersectionObserver" in window && !config.reducedMotion) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const target = entry.target as HTMLElement;
+              target.style.animationPlayState = "running";
+              observer.unobserve(target);
+            }
           });
-          element.addEventListener("mouseleave", () => {
-            document.body.style.cursor = "default";
-          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      );
+
+      document
+        .querySelectorAll<HTMLElement>(
+          "[data-delay], .features-list li, .trust-badge"
+        )
+        .forEach((el) => {
+          el.style.animationPlayState = "paused";
+          observer.observe(el);
         });
-      }
-    });
-  </script>
-</section>
+    }
+
+    window.addEventListener(
+      "resize",
+      debounce(() => {
+        config.isMobile = window.innerWidth <= 768;
+        if (config.isMobile) {
+          document
+            .querySelectorAll<HTMLElement>(".glass-card, .magnetic-btn")
+            .forEach((el) => {
+              el.style.transform = "";
+            });
+        }
+      }, 250)
+    );
+
+    const preloadLink = document.createElement("link");
+    preloadLink.rel = "preload";
+    preloadLink.href = "https://mcvalquiriasreserva.site.agendapro.com/ar";
+    preloadLink.as = "document";
+    document.head.appendChild(preloadLink);
+  });
+</script>
