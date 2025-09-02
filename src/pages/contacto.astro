@@ -1723,7 +1723,7 @@ const structuredData = {
     if ("IntersectionObserver" in window && !config.reducedMotion) {
       const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
+          entries.forEach((entry)  => {
             if (entry.isIntersecting) {
               const target = entry.target as HTMLElement;
               target.style.animationPlayState = "running";
