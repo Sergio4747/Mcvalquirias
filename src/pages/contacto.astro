@@ -182,16 +182,19 @@ const structuredData = {
           reservas online
         </p>
 
-        <button
+        <a
+          href="https://mcvalquiriasreserva.site.agendapro.com/"
+          target="_blank"
+          rel="noopener noreferrer"
           class="primary-btn magnetic-btn"
           id="bookingBtn"
-          type="button"
+          role="button"
           aria-describedby="booking-help"
         >
           <span class="btn-bg" aria-hidden="true"></span>
           <span class="btn-text">Reservar con Agenda Pro</span>
           <div class="btn-shine" aria-hidden="true"></div>
-        </button>
+        </a>
 
         <div class="trust-badges">
           <div class="trust-badge">
@@ -891,21 +894,25 @@ const structuredData = {
   }
 
   .primary-btn {
+    /* Propiedades que ya tenías */
     position: relative;
     width: 100%;
     max-width: 320px;
     padding: 1rem 2rem;
     background: var(--gradient-primary);
     color: var(--white);
-    border: none;
     border-radius: 50px;
     font-size: 1.125rem;
     font-weight: 600;
-    cursor: pointer;
     overflow: hidden;
     transition: all var(--transition-normal);
     margin-bottom: 1.5rem;
     will-change: transform;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
   }
 
   .primary-btn:disabled {
@@ -1723,7 +1730,7 @@ const structuredData = {
     if ("IntersectionObserver" in window && !config.reducedMotion) {
       const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry)  => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
               const target = entry.target as HTMLElement;
               target.style.animationPlayState = "running";
