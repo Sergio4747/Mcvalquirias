@@ -1595,7 +1595,7 @@ const heroConfig = {
 
         <div class="animate-zoom-in-delay">
           <button class="hero-button" id="cta-button">
-            <a href="https://mcvalquiriasreserva.site.agendapro.com/ar"
+            <a href="https://agora.red/mcvalqurias.estetica"
               ><span style="position: relative; z-index: 2;">{ctaText}</span></a
             >
           </button>
@@ -2185,7 +2185,7 @@ const heroConfig = {
       document.addEventListener("DOMContentLoaded", function () {
         // Se especifica que 'button' es un elemento de botón o nulo.
         const button = document.getElementById(
-          "cta-button"
+          "cta-button",
         ) as HTMLButtonElement | null;
 
         if (button) {
@@ -2245,7 +2245,7 @@ const heroConfig = {
             const scrolled = window.pageYOffset;
             // Se especifica que 'container' es un elemento HTML.
             const container = document.querySelector(
-              ".hero-container"
+              ".hero-container",
             ) as HTMLElement | null;
             const particles = document.querySelectorAll(".particle");
 
@@ -2289,7 +2289,7 @@ const heroConfig = {
         }, observerOptions);
 
         const animatedElements = document.querySelectorAll(
-          ".story-card, .philosophy-card, .team-card, .value-card"
+          ".story-card, .philosophy-card, .team-card, .value-card",
         );
         animatedElements.forEach((el) => observer.observe(el));
 
@@ -2310,7 +2310,7 @@ const heroConfig = {
           // Usamos funciones de flecha.
           item.addEventListener("mouseenter", () => {
             const number = item.querySelector(
-              ".stat-number"
+              ".stat-number",
             ) as HTMLElement | null;
             if (number) {
               number.style.transform = "scale(1.1)";
@@ -2319,7 +2319,7 @@ const heroConfig = {
           });
           item.addEventListener("mouseleave", () => {
             const number = item.querySelector(
-              ".stat-number"
+              ".stat-number",
             ) as HTMLElement | null;
             if (number) {
               number.style.transform = "scale(1)";
@@ -2332,7 +2332,7 @@ const heroConfig = {
       const style = document.createElement("style");
       style.textContent = `
     .animate-in-view {
-      animation: slideUpStagger 0.8s ease-out forwards !important;
+    animation: slideUpStagger 0.8s ease-out forwards !important;
     }
   `;
       document.head.appendChild(style);
